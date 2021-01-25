@@ -1,0 +1,44 @@
+// Avatars
+.ant-avatar {
+  img {
+    border-radius: $pengyi-border-radius;
+    @include transition($pengyi-transition);
+  }
+}
+
+.avatar {
+  &-select {
+
+    &:hover {
+      .ant-avatar-square {
+        background: $gray-300;
+      }
+      img {
+        transform: scale(.8);
+        border-radius: $pengyi-border-radius;
+      }
+    }
+
+    &.active {
+      .ant-avatar-square {
+        background-color: $pengyi-1;
+      }
+      img {
+        transform: scale(.8);
+      }
+    }
+  }
+
+}
+
+.ant-avatar {
+  &-square {
+    border-radius: $pengyi-border-radius;
+    @include transition($pengyi-transition)
+  }
+  &-image {
+    img{
+      object-fit: cover
+    }
+  }
+}

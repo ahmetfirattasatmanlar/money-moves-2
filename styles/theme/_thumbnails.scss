@@ -1,0 +1,35 @@
+.project-thumbnail {
+  display: inline-block;
+  @extend .card;
+  // max-height: 15rem;
+  width: $img-width;
+  height: $img-height;
+  overflow: hidden;
+  vertical-align: middle;
+  margin-bottom: $img-margin-right;
+  box-shadow: $pengyi-shadow;
+
+  &:hover {
+    box-shadow: 0 .5rem 2rem rgba(0,0,0,.05);
+    cursor: pointer;
+    img {opacity: 0.8;}
+  }
+  img {
+   width: $img-width;
+   height: $img-height;
+   object-fit: cover;
+  }
+  &:nth-child(3n+3){
+    margin-right: 0;
+  }
+
+  &-mobile {
+    height: $img-mobile-height;
+    img {height: $img-mobile-height;object-position: center top}
+  }
+  &-large {
+    width: $img-width*1.55;
+    height: $img-height*1.55;
+    img {height: $img-height*1.55; width:$img-width*1.55; object-position: center top}
+  }
+}

@@ -1,0 +1,88 @@
+// Cards
+
+.ant-card {
+  &-body {
+    padding: 1rem;
+  }
+  &-meta {
+    &-title{@extend .title}
+  }
+}
+.card {
+  border: 0;
+  border-radius: $pengyi-border-radius;
+  box-shadow: $pengyi-shadow;
+  margin-bottom: 2rem;
+  &-title{
+    @extend .title;
+  }
+}
+
+// .invision-link {
+//   @extend .project-thumbnail;
+// }
+
+.app-cards-group {
+  display: flex;
+       justify-content:  space-between;
+       flex-wrap: wrap;
+}
+
+.card-portfolio {
+  padding: 0;
+  display: inline-block;
+  vertical-align: top;
+  // margin-right: $img-margin-right;
+  width: $img-width;
+  @extend .card;
+  @extend .mx-2;
+  &:hover {
+    box-shadow: $box-shadow;
+    cursor: pointer;
+    transform: translateY(-1rem);
+    opacity: 1;
+  }
+  // &:nth-child(3n+2){
+  //   margin-right: 0;
+  // }
+  &-disabled {
+    background-color: #dddddd;
+    box-shadow: 0 0 0 $white;
+    opacity: .5;
+    background-color: darken($body-bg, 5%);
+  }
+}
+// Cards
+.ant{
+  &-card {
+    &-title { @extend .title}
+    &-cover{
+      @extend .card-img-container;
+      // @include border-bottom-radius(0);
+      border-bottom-left-radius: 0!important;
+      border-bottom-right-radius: 0!important;
+      
+      margin: auto;
+    }
+    &-actions {
+      background: transparent;
+      border-top: 1px solid transparent
+    }
+  }
+}
+
+
+.card-img-container {
+  width: $img-width;
+  height: $img-height;
+  overflow: hidden;
+  border-radius: $pengyi-border-radius;
+
+  img {
+    width: $img-width;
+    height: $img-height;
+    object-fit: cover;
+    object-position: top;
+    vertical-align: top;
+  }
+}

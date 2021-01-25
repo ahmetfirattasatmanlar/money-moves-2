@@ -1,0 +1,15 @@
+
+.ant-statistic {
+  &-content {
+    
+    font-size: $font-size-base;
+    @extend .d-flex;
+    @extend .align-items-center;
+
+    &-prefix {
+      .anticon {
+        vertical-align: 0
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+.ant-divider {
+  &-inner {
+    &-text {
+      // font-weight: $font-weight-bold;
+      @extend .title;
+    }
+  }
+}

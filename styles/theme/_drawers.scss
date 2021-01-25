@@ -1,0 +1,33 @@
+
+
+// Ant Drawers
+.ant {
+  &-drawer {
+    &-content{
+      &-wrapper {
+        // overflow: hidden;
+      }
+    }
+    &-mask {
+      background: transparent;
+    }
+    &-body {
+      padding: 0;
+    }
+    &-open {
+      @extend .d-flex;
+      &.ant-drawer-right {
+        .ant-drawer-content-wrapper {
+          border-radius: $pengyi-border-radius;
+          box-shadow: 0 0 0 #000;
+          width: 25rem!important;
+          // height: 30rem;
+          height: 95%;
+          margin-right: 3rem;
+          overflow: hidden;
+          @extend .align-self-center;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.ant-select {
+  background: $white !important;
+  box-shadow: $pengyi-shadow;
+  border-radius: $pengyi-border-radius;
+  overflow: hidden;
+
+  &-selection {
+    &__placeholder {color: lighten($body-color, 30%);}
+  }
+  .ant-input {
+  border-radius: $pengyi-border-radius;
+  border-width: 0px!important;
+    &:focus {
+      border-color: transparent!important;
+    }
+  }
+}

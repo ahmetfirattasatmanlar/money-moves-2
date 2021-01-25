@@ -1,0 +1,40 @@
+// Cookie
+.cookie {
+  @extend .card;
+  position: fixed;
+  width: 20rem;
+  bottom: 0;
+  right: 10%;
+  margin: 0;
+  background-color: $light;
+  @include border-top-radius($pengyi-border-radius);
+  @include border-bottom-radius(0);
+  overflow: hidden;
+  transition: all .8s ease-in-out;
+  color: $body-color;
+  &-isOpen {transform: translateY(0); opacity: 1; }
+  &-isClosed { transform: translateY(50rem); opacity: 0;}
+
+  &-header {
+    @extend .card-header;
+    background-color: transparent;
+    border: 0;
+    background: $header-bg;
+    @extend .d-flex;
+    @extend .justify-content-between;
+    @extend .align-items-center;
+  }
+
+  &-body {
+    @extend .card-body;
+    background: $gray-200;
+    max-height: 20rem;
+    overflow: scroll;
+  }
+  &-footer { @extend .card-footer }
+  &-title {
+    @extend .card-title;
+    margin: 0;
+  }
+
+}

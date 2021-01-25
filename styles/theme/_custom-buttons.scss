@@ -1,0 +1,20 @@
+
+// // Ant Buttons
+.ant {
+  &-btn {
+    @extend .d-flex;
+    @extend .align-items-center;
+    @extend .justify-content-center;
+    &-primary {
+      background: $btn-gradient;
+      border: 0;
+      border-radius: $pengyi-border-radius;
+    }
+  }
+}
+
+.btn {
+  &-rounded {
+    border-radius: $pengyi-border-radius;
+  }
+}

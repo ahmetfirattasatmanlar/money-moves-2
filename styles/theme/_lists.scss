@@ -1,0 +1,46 @@
+.list-item {
+  display: flex;
+  align-items: center;
+  padding: .5rem;
+  margin-bottom: .2rem;
+  @include transition($pengyi-transition);
+  border-radius: $pengyi-border-radius;
+  color: $body-color;
+  font-size: $h6-font-size;
+
+  &-action {
+    &:hover {
+      cursor: pointer;
+      box-shadow: $pengyi-shadow;
+    }
+  }
+  &-title {
+    margin: 0 .5rem;
+    font-size: $h6-font-size;
+  }
+  &-actions {
+    @extend .ml-auto;
+  }
+  &.active {
+    // background: $pengyi-1;
+    color: $pengyi-1;
+    font-weight: $font-weight-bold;
+
+    .list-item-title {
+      color: $pengyi-1;
+      font-weight: $font-weight-bold;
+
+    }
+    color: $pengyi-1;
+    box-shadow: $pengyi-shadow;
+    background: $white;
+
+    &:hover {
+      box-shadow: $pengyi-shadow;
+      // background-color: $pengyi-1;
+    }
+  }
+  &:hover {
+    background-color: $white;
+  }
+}

@@ -1,0 +1,94 @@
+// Layout Positioning Only
+.app {height: 100vh;width: 100%; background: $header-bg;}
+.ant {
+  &-layout {
+    &-sider{ width: $sider-width!important; max-width: $sider-width!important; min-width: $sider-width!important;}
+    &-has-sider {
+      // If Layout has sider, apply this to inner layout
+      .ant-layout {padding-left: $sider-width;}
+    }
+  }
+}
+
+// Main Styles
+
+.ant {
+  // Layout Styles
+  &-layout {
+    // &-header, 
+    // &-content {
+    //   // padding: 16px 24px;
+    // }
+    &-header { 
+      height: auto;
+      background: transparent;
+    }
+    &-sider {
+      overflow: auto;
+      position: fixed;
+      margin-left: 1rem;
+    }
+    // 
+    // 
+    // 
+    .ant-page-header,
+    .ant-layout-content {
+      max-width: $inner-container-width;
+      margin: auto;
+      padding: 16px 24px;
+    }
+  }
+  // Page/
+  &-page {
+    &-header{
+      @extend .d-flex;
+      @extend .align-items-center;
+      background: transparent;
+      padding: 0;
+      &-heading{
+        &-title {
+          font-size: $h1-font-size;
+        }
+      }
+      &-content {
+        @extend .ml-auto;
+        @extend .d-flex;
+        @extend .align-items-center;
+      }
+    }
+  }
+  // Menu
+  // Ant Menu
+  &-menu {
+    &-inline {
+      &-collapsed {
+        width: $sider-width;
+        > .ant-menu-item {
+          padding: 0!important; text-align: center;
+        }
+        > .ant-menu-submenu {
+          > .ant-menu-submenu-title {
+            padding: 0!important; text-align: center;
+          }
+        }
+      }
+    }
+    &-dark {background: transparent;}
+  }
+}
+
+
+// Sider Styles
+.ant-layout-sider {
+  height: 100vh;
+  background: transparent;
+  @extend .d-flex;
+  @extend .align-items-center;
+  &-children {
+    background: $sider-bg;
+    box-shadow: $pengyi-shadow;
+    border-radius: $pengyi-border-radius*10;
+    height: auto;
+    padding: 1rem 0
+  }
+}
