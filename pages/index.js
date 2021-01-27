@@ -10,6 +10,8 @@ import ServiceItem from '../components/Shared/ServiceItem'
 import apiClient from '../services/apiClient';
 import PortfolioItem from '../components/Shared/Portfolio/PortfolioItem';
 import AOS from 'aos'
+import MessengerCustomerChat from 'react-messenger-customer-chat';
+
 
 export default function Home() {
   useEffect(() => {	AOS.init()})
@@ -150,6 +152,10 @@ export default function Home() {
 
         {/* <h2>Meet our team</h2> */}
         {/* <Collaborators/> */}
+        <MessengerCustomerChat
+          pageId="101921091461361"
+          appId="404665513945389"
+        />
 
       </div>
 
