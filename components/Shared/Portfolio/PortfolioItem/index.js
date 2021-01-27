@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
 import { Card } from 'antd';
-// import TagList from '../../Tags/TagList';
+import TagList from '../../Tags/TagList';
 import DownloadIcon from '../../Actions/DownloadIcon'
 import { Redirect } from 'react-router-dom';
 import AppContext from '../../../../services/AppContext';
@@ -18,7 +18,7 @@ class PortfolioItem extends Component {
       isPublic: true
     }
   }
- 
+
   componentDidMount(){
     this.renderIfPublic()
   }
@@ -30,7 +30,7 @@ class PortfolioItem extends Component {
   handleOnClick = () => {
     this.setState({redirect: true});
   }
-  
+
   // getColors = colors =>
   // this.setState(state => ({ colors: [...state.colors, ...colors] }));
 
@@ -74,7 +74,7 @@ class PortfolioItem extends Component {
               // </ColorExtractor>
             }
             // actions={[
-            //   <DownloadIcon files={item.screens} name={item.name}/>, 
+            //   <DownloadIcon files={item.screens} name={item.name}/>,
             // ]}
           >
             <Meta
@@ -84,11 +84,11 @@ class PortfolioItem extends Component {
                   <div>
                   {/* <div className="ant-card-meta-title">{item.name}</div> */}
                   <div className="ant-card-meta-title">{item.portfolioId}</div>
-                    {/* <TagList tags={item.tags.slice(0, item.tagCount)} disabled/> */}
+                    <TagList tags={item.tags.slice(0, item.tagCount)} disabled/>
                   </div>
                   {/* <AppContext.Consumer>
                     {(context)=>(
-                      context.user && 
+                      context.user &&
                       <div className="ml-auto">
                         <DownloadIcon files={item.screens} name={item.name}/>
                       </div>
@@ -97,13 +97,13 @@ class PortfolioItem extends Component {
                 </div>
               }
             />
-    
+
           </Card>
         )}
       </AppContext.Consumer>
     )
   }
-  
+
 }
 
 PortfolioItem.defaultProps = {

@@ -1,10 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import Head from 'next/head'
-// import logo from '../public/pengyi-logo.svg';
-// import upwork from '../public/Upwork.png';
-// import linkedin from '../public/linkedin.svg';
-// import clutch from '../public/clutch.png';
-// import dribbble from '../public/dribbble.svg';
 import Chip from '../components/Shared/Chip'
 import ServiceItem from '../components/Shared/ServiceItem'
 import apiClient from '../services/apiClient';
@@ -42,7 +37,7 @@ export default function Home() {
           <div className="row">
             <div className="col-sm-8 mx-auto">
               <div className="con-rounded con-shadow con-shadow-top py-5 px-2">
-                {/* <img src={logo} alt="" className="rounded-circle mb-4" data-aos="fade-in"/> */}
+                <img src="./pengyi-logo.svg" alt="" className="rounded-circle mb-4" data-aos="fade-in"/>
                 <h1 className="text-white text-center h3"><strong className="h1 font-weight-bold">PengYi Labs</strong><br/> We bring your <strong>digital projects</strong> to life</h1>
               </div>
             </div>
@@ -67,9 +62,6 @@ export default function Home() {
               <Chip content="Invision"/>
               <Chip content="ReactJS"/>
               </div>
-
-             {/* We are fluent in several programming languages and frameworks, always inquisitive to find new ways to develop responsive websites, mobile and apps with very efficient UX. We work from the idea to the mockups and then to the prototype along side with your team to assure  */}
-
               <div className="row">
                <div className="col-sm-6">
                <ServiceItem
@@ -109,11 +101,6 @@ export default function Home() {
              />
                </div>
              </div>
-
-
-
-
-
           </div>
         </div>
       </div>
@@ -147,47 +134,7 @@ export default function Home() {
           </div>
         </div>
 
-
-        {/* <h2>Meet our team</h2> */}
-        {/* <Collaborators/> */}
-
       </div>
-
-
-
-      {/* <h3>ROBERTO — CoFounder</h3>
-
-      <p>Rob is a digital nomad and loves to combine travel and work, which enhances his quick learning abilities. His primary skills are Front End Developing and UX/UI, and is proficient in Python and Javascript. Rob can chat with you in English, Spanish and mandarin.</p>
-
-      <h3>CARLOS — CoFounder</h3>
-      <p>Description</p>
-
-      <h3>RODRIGO — General Manager</h3>
-
-      <p>Rodrigo is the glue that keeps us together, always ready to help clients and continually making sure our projects move forward efficiently. He is a fan of sports, movies and great food. Besides being super organized, Rodrigo will be your project´s primary contact.</p>
-
-      <h2>Operations</h2>
-
-      <h3>FABIAN — Developer</h3>
-
-      <p>Fabs is an analytic developer who is continuously looking to find the best possible solutions for every challenge. He loves many creative endeavours as anime, photography, designing and even can plan events or cook delicious meals.</p>
-
-      <h3>ANA LAURA — Marketing Coordinator</h3>
-
-      <p>Ana is an enthusiastic marketing specialist who believes content is the way to innovation. She has been working in the digital marketing industry for the last decade. She is a fan of female sports who as well loves to blog.</p>
-
-      <h3>REINALDO - Graphic Design </h3>
-
-      <p>Reinado is a creative designer always curious on creating new ways to visualize beautiful graphics for websites, marketing and products. He is a fan of everything not mainstream and a soon to be daddy.</p>
-
-      <h3>WENDY </h3>
-
-      <p>Wendy is our Jr. Designer, passionate for improving the user experience and making each project as beautiful as it can look.</p>
-
-      <h3>ZAITEL</h3>
-
-      <p>Zaitel is our Jr. Content Developer, she is in charge of creating social content so that we can keep you updated in what we are up to.</p> */}
-
       <div className="container text-center">
         <div className="row mb-5">
           <div className="col-sm-8 mx-auto">
@@ -199,9 +146,6 @@ export default function Home() {
           <a className="rounded-lg text-primary  shadow bg-white btn btn-light btn-block text-center" href="https://www.notion.so/pengyilabs/Content-Marketing-Structure-1b6cd2ee92974aa0885a8e67fe495bf8?p=b86870a7aa984053ae269cfffb96d389">Why does a Content Marketing Strategy matter? </a>
           <a className="rounded-lg text-primary  shadow bg-white btn btn-light btn-block text-center" href="https://www.notion.so/pengyilabs/What-s-a-digital-strategy-c73b6b35f13c41aba8d7bd4b5cf9dda2">What’s a digital strategy?</a>
 
-
-
-
           </div>
         </div>
       </div>
@@ -210,16 +154,16 @@ export default function Home() {
           <h3 className="text-white text-center">We are available for new projects on all major hiring platforms</h3>
           <div className="social-icons py-5 text-center">
             <a className="pr-5"  href="https://www.upwork.com/agencies/~01b0561df3bf4ea42c" rel="noopener noreferrer" target="_blank">
-              {/* <img width="10%" src={upwork} alt="upwork logo"></img> */}
+              <img width="10%" src="./Upwork.png" alt="upwork logo"></img>
             </a>
             <a className="pr-5" href="https://www.linkedin.com/company/pengyilabs/" rel="noopener noreferrer" target="_blank">
-              {/* <img width="10%" src={linkedin} alt="linkedin logo"></img> */}
+              <img width="10%" src="./linkedin.svg" alt="linkedin logo"></img>
             </a>
             <a className="pr-5" href="https://dribbble.com/pengyilabs" rel="noopener noreferrer" target="_blank">
-              {/* <img width="10%" src={dribbble} alt="dribbble logo"></img> */}
+              <img width="10%" src="./dribbble.svg" alt="dribbble logo"></img>
             </a>
             <a className="pr-5" href="https://clutch.co/profile/pengyi-labs" rel="noopener noreferrer" target="_blank">
-              {/* <img width="10%" src={clutch} alt="clutch logo"></img> */}
+              <img width="10%" src="./clutch.png" alt="clutch logo"></img>
             </a>
           </div>
           <p className="my-2 text-center">
