@@ -33,7 +33,7 @@ export default function Home() {
                   <img src="./contact.svg"></img>
               </div>
               <div className="col-5">
-              <form>
+              <form name="contact" method="POST" data-netlify="true">
                   <div className="form-group">
                     <label for="exampleInputEmail1">Name</label>
                     <input type="email" className="form-control bg-transparent border border-secondary"  placeholder="Name" />
