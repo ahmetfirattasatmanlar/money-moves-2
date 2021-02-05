@@ -94,7 +94,9 @@ code {
   }
 }
 
-
+.bg-transparent {
+  background: transparent;
+}
 
 .video-card {
   height: $img-height*2;

@@ -160,6 +160,12 @@ export default function Home() {
         />
 
       </div>
+      <div>
+        <h3 className="text-center my-4">SEE WHAT OUR CLIENTES THINKS ABOUT US</h3>
+        <div className="d-flex justify-content-center">
+          <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script> <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="3" data-height="350" data-clutchcompany-id="1417563"></div>
+        </div>
+      </div>
       <div className="container text-center">
         <div className="row mb-5">
           <div className="col-sm-8 mx-auto">
