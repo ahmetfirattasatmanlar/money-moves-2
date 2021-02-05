@@ -34,27 +34,28 @@ export default function Home() {
               </div>
               <div className="col-5">
               <form name="contact" method="POST" data-netlify="true">
+                <input type="hidden" name="form-name" value="contact" />
                   <div className="form-group">
-                    <label for="exampleInputEmail1">Name</label>
-                    <input type="email" className="form-control bg-transparent border border-secondary"  placeholder="Name" />
+                    <label>Name</label>
+                    <input type="email" name="name" className="form-control bg-transparent border border-secondary" placeholder="Name" />
                   </div>
                   <div className="form-group">
-                    <label for="exampleInputPassword1">Email</label>
-                    <input type="email" className="form-control bg-transparent border border-secondary" placeholder="Email" />
+                    <label>Email</label>
+                    <input type="email" name="email" className="form-control bg-transparent border border-secondary" placeholder="Email" />
                   </div>
                   <div className="form-group">
-                    <label for="exampleInputPassword1">Subject</label>
-                    <input type="text" className="form-control bg-transparent border border-secondary" placeholder="Subject" />
+                    <label>Subject</label>
+                    <input type="text" name="subject" className="form-control bg-transparent border border-secondary" placeholder="Subject" />
                   </div>
                   <div className="form-group">
-                    <label for="exampleInputPassword1">Message</label>
-                    <textarea className="form-control bg-transparent border border-secondary" placeholder="Message" />
+                    <label>Message</label>
+                    <textarea name="message" className="form-control bg-transparent border border-secondary" placeholder="Message" />
                   </div>
                   <div className="row align-items-center">
                     <div className="col-7">
                     <div className="form-check">
-                      <input className="form-check-input" type="checkbox" id="gridCheck" />
-                      <label className="form-check-label" for="gridCheck">
+                      <input className="form-check-input" type="checkbox" name="terms" />
+                      <label className="form-check-label">
                         Accept terms & conditions
                       </label>
                     </div>
