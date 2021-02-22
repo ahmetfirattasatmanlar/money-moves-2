@@ -21,16 +21,16 @@ export default function Footer() {
           <h3 className="text-white text-center">We are available for new projects on all major hiring platforms</h3>
           <div className="social-icons py-5 text-center">
             <a className="pr-5"  href="https://www.upwork.com/agencies/~01b0561df3bf4ea42c" rel="noopener noreferrer" target="_blank">
-              <img width="10%" src="./Upwork.png" alt="upwork logo"></img>
+              <img width="10%" src="/Upwork.png" alt="upwork logo"></img>
             </a>
             <a className="pr-5" href="https://www.linkedin.com/company/pengyilabs/" rel="noopener noreferrer" target="_blank">
-              <img width="10%" src="./linkedin.svg" alt="linkedin logo"></img>
+              <img width="10%" src="/linkedin.svg" alt="linkedin logo"></img>
             </a>
             <a className="pr-5" href="https://dribbble.com/pengyilabs" rel="noopener noreferrer" target="_blank">
-              <img width="10%" src="./dribbble.svg" alt="dribbble logo"></img>
+              <img width="10%" src="/dribbble.svg" alt="dribbble logo"></img>
             </a>
             <a className="pr-5" href="https://clutch.co/profile/pengyi-labs" rel="noopener noreferrer" target="_blank">
-              <img width="10%" src="./clutch.png" alt="clutch logo"></img>
+              <img width="10%" src="/clutch.png" alt="clutch logo"></img>
             </a>
           </div>
           <p className="my-2 text-center">

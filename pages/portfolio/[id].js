@@ -45,7 +45,6 @@ export default function Home() {
 			if(e.response) console.log(e.response)
 		}
   }
-  console.log(related, 'related')
   return (
     <div>
       <Head>
@@ -74,13 +73,18 @@ export default function Home() {
           <div className="text-center">
               <h1 className="text-primary mb-3">{item.fields.PortfolioItem}</h1>
               <div className="mb-3">
-                <TagList tags={item.fields.Tags.slice(0, item.tagCount)} disabled />
+                <TagList tags={item.fields.Tags.slice(0, item.tagCount)} />
               </div>
-              {item.fields.Screens.length > 0 ? item.fields.Screens.map(img => 
-                <img src={img.url} class="img-fluid my-2" alt="Responsive image"></img>
+              {item.fields.Videos ? item.fields.Videos.map(img =>
+                <video autoPlay muted src={img.url} class="img-fluid my-2"></video>
               ) : undefined}
+              <div className="row">
+              {item.fields.Screens.length > 0 ? item.fields.Screens.map(img =>
+                <div className="col-6"><img src={img.url} class="img-fluid my-2"></img></div>
+              ) : undefined}
+              </div>
               <div className="my-5">
-              <a href={item.fields.Invision} target="_blank" class="btn btn-primary">VISIT PROJECT</a>
+              {item.fields.Invision ?  <a href={item.fields.Invision} target="_blank" class="btn btn-primary text-white">VISIT PROJECT</a> : undefined}
               </div>
           </div>
           ) : undefined}

@@ -1,12 +1,13 @@
 import React, {Fragment} from "react";
 import {Tag} from 'antd';
+import Link from 'next/link'
 
 function TagList (props) {
   let renderTag = (tag) => {
     if(props.disabled){
       return <span className="text-muted">{tag}</span>
     } else{
-      return <a href={`/portfolio/tags/${tag}`} className="text-primary">{tag}</a>
+      return <Link href={`/portfolio/tags/${tag}`} className="text-primary">{tag}</Link>
       // return <span className="text-muted">{tag}</span>
     }
   }

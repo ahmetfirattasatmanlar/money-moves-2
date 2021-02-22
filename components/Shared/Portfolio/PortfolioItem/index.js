@@ -49,7 +49,7 @@ class PortfolioItem extends Component {
     return (
       <AppContext.Consumer>
         {(context)=>(
-          (this.state.isPublic || context.user) &&
+          (this.state.isPublic) &&
           <Link href={`/portfolio/${item.portfolioId}`}>
           <Card
           className={`card-portfolio ${!this.state.isPublic && 'card-portfolio-disabled'}`}
