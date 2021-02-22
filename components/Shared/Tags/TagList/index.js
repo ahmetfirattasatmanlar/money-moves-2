@@ -1,5 +1,4 @@
 import React, {Fragment} from "react";
-import {Link,  withRouter} from 'react-router-dom';
 import {Tag} from 'antd';
 
 function TagList (props) {
@@ -7,7 +6,7 @@ function TagList (props) {
     if(props.disabled){
       return <span className="text-muted">{tag}</span>
     } else{
-      return <Link to={`/portfolio/tags/${tag}`} className="text-primary">{tag}</Link>
+      return <a href={`/portfolio/tags/${tag}`} className="text-primary">{tag}</a>
       // return <span className="text-muted">{tag}</span>
     }
   }

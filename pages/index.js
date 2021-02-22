@@ -24,7 +24,7 @@ export default function Home() {
 		let params = 'marketing';
     try {
       const {data: portfolioList} = await apiClient.getPortfolioItems(params);
-      setPortfolio(portfolioList.records.slice(0,10))
+      setPortfolio(portfolioList.records.slice(0,21))
 		} catch (e) {
 			if(e.response) console.log(e.response)
 		}
@@ -63,7 +63,7 @@ export default function Home() {
         </div>
       </header>
 
-      <div className="container">
+      <div className="container" id="aboutus">
         <div className="row">
           <div className="col-sm-8 mx-auto mt-5">
              <div className="card">
@@ -72,7 +72,7 @@ export default function Home() {
               </div>
              </div>
 
-             <h2 className="text-center">Our Skills</h2>
+             <h2 className="text-center" id="services">Our Skills</h2>
 
             <div className="text-center">
             <Chip content="HTML"/>
@@ -124,9 +124,9 @@ export default function Home() {
       </div>
 
 
-      <div className="container text-center">
+      <div className="container text-center" id="portfolio">
         <div className="row">
-          <div className="col-sm-8 mx-auto">
+          <div className="mx-auto">
           <h2 className="font-weight-bold">Portfolio</h2>
         <h3>Check our Work</h3>
         <p className="text-muted">With a proven track record of over 45 online projects since its launch in 2018, we work with a global perspective of growth in mind.</p>
@@ -167,7 +167,7 @@ export default function Home() {
           <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script> <div className="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="3" data-height="350" data-clutchcompany-id="1417563"></div>
         </div>
       </div>
-      <div className="container text-center">
+      <div className="container text-center" id="blog">
         <div className="row mb-5">
           <div className="col-sm-8 mx-auto">
           <h2 className="text-primary">BLOG</h2>

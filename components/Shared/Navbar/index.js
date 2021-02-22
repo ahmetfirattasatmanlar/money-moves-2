@@ -11,19 +11,19 @@ export default function Navbar() {
         <div className="collapse navbar-collapse" id="navbarText">
           <ul className="navbar-nav mr-auto ml-auto">
             <li className="nav-item active mx-3">
-              <a className="nav-link text-primary font-weight-bold" href="#"><u>Home</u> <span className="sr-only">(current)</span></a>
+              <a className="nav-link font-weight-bold" href="/">Home</a>
             </li>
             <li className="nav-item mx-3">
-              <a className="nav-link font-weight-bold text-dark" href="#">About Us</a>
+              <a className="nav-link font-weight-bold text-dark" href="/#aboutus">About Us</a>
             </li>
             <li className="nav-item mx-3">
-              <a className="nav-link font-weight-bold text-dark" href="#">Services</a>
+              <a className="nav-link font-weight-bold text-dark" href="/#services">Services</a>
             </li>
             <li className="nav-item mx-3">
-              <a className="nav-link font-weight-bold text-dark" href="#">Portfolio</a>
+              <a className="nav-link font-weight-bold text-dark" href="/#portfolio">Portfolio</a>
             </li>
             <li className="nav-item mx-3">
-              <a className="nav-link font-weight-bold text-dark" href="#">Blog</a>
+              <a className="nav-link font-weight-bold text-dark" href="/#blog">Blog</a>
             </li>
           </ul>
           <Link href="/contact">

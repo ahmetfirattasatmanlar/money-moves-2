@@ -1,11 +1,9 @@
 import React, { Component} from 'react';
 import { Card } from 'antd';
 import TagList from '../../Tags/TagList';
-import DownloadIcon from '../../Actions/DownloadIcon'
 import { Redirect } from 'react-router-dom';
 import AppContext from '../../../../services/AppContext';
-import { withRouter } from 'react-router-dom';
-// import { ColorExtractor } from "react-color-extractor";
+import Link from 'next/link'
 
 const { Meta } = Card;
 
@@ -31,15 +29,6 @@ class PortfolioItem extends Component {
     this.setState({redirect: true});
   }
 
-  // getColors = colors =>
-  // this.setState(state => ({ colors: [...state.colors, ...colors] }));
-
-  // renderColor(){
-  //   if(this.state.colors.length > 0) {
-  //     return this.state.colors[0];
-  //   } else return false
-  // }
-
   render(){
     let {portfolioId, name, screens, tags, tagCount} = this.props;
     let item = {
@@ -61,10 +50,10 @@ class PortfolioItem extends Component {
       <AppContext.Consumer>
         {(context)=>(
           (this.state.isPublic || context.user) &&
+          <Link href={`/portfolio/${item.portfolioId}`}>
           <Card
-          // className="card-portfolio" style={{background: `${this.renderColor()}`}}
           className={`card-portfolio ${!this.state.isPublic && 'card-portfolio-disabled'}`}
-          onClick={this.handleOnClick}
+          // onClick={this.handleOnClick}
           cover={
               // <ColorExtractor getColors={this.getColors}>
                 <img
@@ -82,23 +71,15 @@ class PortfolioItem extends Component {
               description={
                 <div className="d-flex align-items-center">
                   <div>
-                  {/* <div className="ant-card-meta-title">{item.name}</div> */}
                   <div className="ant-card-meta-title">{item.portfolioId}</div>
                     <TagList tags={item.tags.slice(0, item.tagCount)} disabled/>
                   </div>
-                  {/* <AppContext.Consumer>
-                    {(context)=>(
-                      context.user &&
-                      <div className="ml-auto">
-                        <DownloadIcon files={item.screens} name={item.name}/>
-                      </div>
-                    )}
-                  </AppContext.Consumer> */}
                 </div>
               }
             />
 
           </Card>
+          </Link>
         )}
       </AppContext.Consumer>
     )

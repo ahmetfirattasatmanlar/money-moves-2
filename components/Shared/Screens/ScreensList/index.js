@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import Screen from 'Components/Shared/Screens/Screen'
+import Screen from '../Screen'
 
 function ScreenList(props) {
   let screenProps = {
