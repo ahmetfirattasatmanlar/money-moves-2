@@ -162,7 +162,7 @@ export default function Home() {
 
       </div>
       <div>
-        <h3 className="text-center my-4">SEE WHAT OUR CLIENTES THINKS ABOUT US</h3>
+        <h3 className="text-center my-4">SEE WHAT OUR CLIENTS THINKS ABOUT US</h3>
         <div className="d-flex justify-content-center">
           <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script> <div className="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="3" data-height="350" data-clutchcompany-id="1417563"></div>
         </div>
@@ -171,12 +171,12 @@ export default function Home() {
         <div className="row mb-5">
           <div className="col-sm-8 mx-auto">
           <h2 className="text-primary">BLOG</h2>
-          <a className="rounded-lg text-primary  shadow bg-white btn btn-light btn-block text-center" href="https://www.notion.so/pengyilabs/What-is-a-Content-Marketing-0da942bbda554b7b958cdce64512dbcb">What is Content Marketing?</a>
-          <a className="rounded-lg text-primary  shadow bg-white btn btn-light btn-block text-center" href="https://www.notion.so/pengyilabs/A-deep-look-into-UpWork-and-Angelist-requirements-for-top-marketing-jobs-558c0c4d9fb64f938ca84ad12169d4b3">A deep look into UpWork and Angelist requirements for top marketing jobs</a>
-          <a className="rounded-lg text-primary  shadow bg-white btn btn-light btn-block text-center" href="https://www.notion.so/pengyilabs/An-insider-s-view-into-8base-s-Backend-As-Service-d7c7cc4e8ea54fd9ab2d51a7ff391878">An insider´s view into 8base’s Backend-As-Service</a>
-          <a className="rounded-lg text-primary  shadow bg-white btn btn-light btn-block text-center" href="https://www.notion.so/pengyilabs/What-is-an-Empathy-Map-310bc6e10c9f43969fb47bff340c1ba6">What is an Empathy Map?</a>
-          <a className="rounded-lg text-primary  shadow bg-white btn btn-light btn-block text-center" href="https://www.notion.so/pengyilabs/Content-Marketing-Structure-1b6cd2ee92974aa0885a8e67fe495bf8?p=b86870a7aa984053ae269cfffb96d389">Why does a Content Marketing Strategy matter? </a>
-          <a className="rounded-lg text-primary  shadow bg-white btn btn-light btn-block text-center" href="https://www.notion.so/pengyilabs/What-s-a-digital-strategy-c73b6b35f13c41aba8d7bd4b5cf9dda2">What’s a digital strategy?</a>
+          <a className="rounded-lg text-primary  shadow bg-white btn btn-light btn-block text-center" href="https://pengyilabs.medium.com/how-to-manage-productivity-without-micromanaging-7eeb21ca1c9e" target="_blank">How to Manage Productivity without Micromanaging</a>
+          <a className="rounded-lg text-primary  shadow bg-white btn btn-light btn-block text-center" href="https://pengyilabs.medium.com/remote-work-tools-cbb0687b90bf" target="_blank">Remote Work: TOOLS</a>
+          <a className="rounded-lg text-primary  shadow bg-white btn btn-light btn-block text-center" href="https://pengyilabs.medium.com/setting-up-a-company-in-singapore-as-a-latam-company-2021-32f56d7066cb" target="_blank">Setting up a company in Singapore</a>
+          <a className="rounded-lg text-primary  shadow bg-white btn btn-light btn-block text-center" href="https://pengyilabs.medium.com/remote-work-team-a70038f58fdf" target="_blank">Remote Work: Team</a>
+          <a className="rounded-lg text-primary  shadow bg-white btn btn-light btn-block text-center" href="https://www.notion.so/pengyilabs/Content-Marketing-Structure-1b6cd2ee92974aa0885a8e67fe495bf8?p=b86870a7aa984053ae269cfffb96d389" target="_blank">Why does a Content Marketing Strategy matter? </a>
+          <a className="rounded-lg text-primary  shadow bg-white btn btn-light btn-block text-center" href="https://www.notion.so/pengyilabs/What-s-a-digital-strategy-c73b6b35f13c41aba8d7bd4b5cf9dda2" target="_blank">What’s a digital strategy?</a>
 
           </div>
         </div>

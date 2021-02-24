@@ -40,7 +40,7 @@ export default function Home() {
 		let params = 'marketing'
     try {
       const {data: portfolioList} = await apiClient.getPortfolioItems(params);
-      setRelated(portfolioList.records.slice(0, 6))
+      setRelated(portfolioList.records.slice(0, 3))
 		} catch (e) {
 			if(e.response) console.log(e.response)
 		}
@@ -68,7 +68,7 @@ export default function Home() {
         </div>
         
         <div className="container my-5">
-        <Link href="/" className="btn btn-link">BACK TO PORTFOLIO</Link>
+        <Link href="/#portfolio" className="btn btn-link">BACK TO PORTFOLIO</Link>
           {(portfolio && portfolio.length > 0) ? portfolio.map(item => 
           <div className="text-center">
               <h1 className="text-primary mb-3">{item.fields.PortfolioItem}</h1>
