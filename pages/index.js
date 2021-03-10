@@ -1,18 +1,15 @@
 import React, {useState, useEffect} from 'react';
-import Head from 'next/head'
-import Chip from '../components/Shared/Chip'
-import ServiceItem from '../components/Shared/ServiceItem'
-import apiClient from '../services/apiClient';
-import PortfolioItem from '../components/Shared/Portfolio/PortfolioItem';
-import Navbar from '../components/Shared/Navbar'
-import Footer from '../components/Shared/Footer'
-import AOS from 'aos'
-import MessengerCustomerChat from 'react-messenger-customer-chat';
+import Chip from 'components/_common/Chip'
+import ServiceItem from 'components/_common/ServiceItem'
+import apiClient from 'services/apiClient';
+import PortfolioItem from 'components/_common/Portfolio/PortfolioItem';
+import SiteWrapper from 'components/_common/site-wrapper'
+// import AOS from 'aos'
 
 
 export default function Home() {
-  useEffect(() => {	AOS.init()})
-	useEffect(() => {AOS.refresh()}, [])
+  // useEffect(() => {	AOS.init()})
+	// useEffect(() => {AOS.refresh()}, [])
 
   const [portfolio, setPortfolio ] = useState([])
 
@@ -30,26 +27,8 @@ export default function Home() {
 		}
   }
   return (
-    <div>
-      <Head>
-        <title>PengYi Labs Costa Rica</title>
-        <link rel="icon" href="/favicon.ico" />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164970324-1"></script>
-        <script
-            dangerouslySetInnerHTML={{
-              __html: `window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'UA-164970324-1');`
-            }}
-          />
-      </Head>
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5WGCCSM"
-      height="0" width="0" style={{display: 'none', visibility: 'hidden'}}></iframe></noscript>
-      <div>
-        <div>
-          <Navbar />
-        </div>
+    <SiteWrapper>
+      
       <header className="py-5 bg-primary full-height">
         <div className="container text-center  ">
           <div className="row">
@@ -155,10 +134,7 @@ export default function Home() {
 
         {/* <h2>Meet our team</h2> */}
         {/* <Collaborators/> */}
-        <MessengerCustomerChat
-          pageId="101921091461361"
-          appId="404665513945389"
-        />
+        
 
       </div>
       <div>
@@ -181,8 +157,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    <Footer />
-    </div>
-    </div>
+    </SiteWrapper>
   )
 }
