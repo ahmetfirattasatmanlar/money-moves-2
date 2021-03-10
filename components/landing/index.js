@@ -1,7 +1,7 @@
 import React from 'react';
-import SiteWrapper from 'components/_common/site-wrapper'
+import SiteWrapper from 'components/Shared/site-wrapper'
 
-export default () => {
+export default function Landing() {
   return (
     <SiteWrapper>
         <div className="container">
