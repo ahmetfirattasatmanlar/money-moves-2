@@ -20,7 +20,7 @@ export default function Navbar() {
               <a className="nav-link font-weight-bold text-dark" href="/#services">Services</a>
             </li>
             <li className="nav-item mx-3">
-              <a className="nav-link font-weight-bold text-dark" href="/#portfolio">Portfolio</a>
+              <a className="nav-link font-weight-bold text-dark" href="/portfolio">Portfolio</a>
             </li>
             <li className="nav-item mx-3">
               <a className="nav-link font-weight-bold text-dark" href="/#blog">Blog</a>

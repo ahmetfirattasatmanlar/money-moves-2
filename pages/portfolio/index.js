@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import apiClient from 'services/apiClient';
-import PortfolioCard from 'components/_common/portfolio-card';
+// import PortfolioItem from 'components/_common/Portfolio/PortfolioItem';
+import PortfolioCard from 'components/_common/portfolio-card'
+import SiteWrapper from 'components/_common/site-wrapper'
 // import AOS from 'aos'
-import { useRouter } from 'next/router'
-import SiteWrapper from 'components/_common/site-wrapper';
 
 
-export default function Home() {
+export default function AllPortfolio() {
   // useEffect(() => {	AOS.init()})
 	// useEffect(() => {AOS.refresh()}, [])
 
@@ -16,13 +16,11 @@ export default function Home() {
     fetchPortfolio()
   }, [])
 
-  const router = useRouter()
   const fetchPortfolio = async () =>{
-    const { id } = router.query
-    let params = { id }
+		let params = {};
     try {
       const {data: portfolioList} = await apiClient.getPortfolioItems(params);
-      setPortfolio(portfolioList.records.slice(0,10))
+      setPortfolio(portfolioList.records)
 		} catch (e) {
 			if(e.response) console.log(e.response)
 		}
@@ -33,13 +31,14 @@ export default function Home() {
 
       <div className="container text-center">
         <div className="row">
-          <div className="col-sm-8 mx-auto">
-          <h2 className="font-weight-bold mt-4">Portfolio</h2>
+          <div className="mx-auto">
+          <h2 className="font-weight-bold">Portfolio</h2>
         <h3>Check our Work</h3>
         <p className="text-muted">With a proven track record of over 45 online projects since its launch in 2018, we work with a global perspective of growth in mind.</p>
 
         <div>
           {(portfolio && portfolio.length > 0) ? portfolio.map(item => <PortfolioCard {...item.fields} key={item.id}/>) : undefined}
+          {/* {(portfolio && portfolio.length > 0) ? portfolio.map(item => <PortfolioItem {...item.fields} key={item.id}/>) : undefined} */}
         </div>
           </div>
         </div>
