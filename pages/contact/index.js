@@ -1,31 +1,9 @@
 import React from 'react';
-import Head from 'next/head'
-import Navbar from '../../components/Shared/Navbar'
-import Footer from '../../components/Shared/Footer'
+import SiteWrapper from 'components/_common/site-wrapper'
 
-export default function Home() {
+export default () => {
   return (
-    <div>
-      <Head>
-        <title>PengYi Labs Costa Rica</title>
-        <link rel="icon" href="/favicon.ico" />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164970324-1"></script>
-        <script
-            dangerouslySetInnerHTML={{
-              __html: `window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'UA-164970324-1');`
-            }}
-          />
-      </Head>
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5WGCCSM"
-      height="0" width="0" style={{display: 'none', visibility: 'hidden'}}></iframe></noscript>
-      <div>
-        <div>
-          <Navbar />
-        </div>
-
+    <SiteWrapper>
         <div className="container">
           <div className="my-5 row align-items-center justify-content-around">
               <div className="col-5">
@@ -69,9 +47,6 @@ export default function Home() {
               </div>
           </div>
         </div>
-    
-        <Footer />
-    </div>
-    </div>
+    </SiteWrapper>
   )
 }
