@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import apiClient from 'services/apiClient';
 import TagList from 'components/_common/Tags/TagList';
-import PortfolioItem from 'components/_common/Portfolio/PortfolioItem';
+import PortfolioCard from 'components/_common/portfolio-card';
 // import AOS from 'aos'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import SiteWrapper from 'components/_common/site-wrapper';
 
-export default function Home() {
+export default function PortfolioItemPage() {
   // useEffect(() => {	AOS.init()})
 	// useEffect(() => {AOS.refresh()}, [])
 
@@ -20,6 +20,7 @@ export default function Home() {
   const fetchPortfolio = async () =>{
     const { id } = router.query
 		let params = { id }
+    console.log(params)
     try {
       const {data: portfolioList} = await apiClient.getPortfolioItem(params);
       console.log(portfolioList)
@@ -45,25 +46,27 @@ export default function Home() {
   }
   return (
     <SiteWrapper>
-
         <div className="container my-5">
-        <Link href="/#portfolio" className="btn btn-link">BACK TO PORTFOLIO</Link>
+          <Link href="/portfolio" className="btn btn-link">BACK TO PORTFOLIO</Link>
           {(portfolio && portfolio.length > 0) ? portfolio.map(item =>
-          <div className="text-center">
+          <div className="text-center" key={item.ProjectId}>
               <h1 className="text-primary mb-3">{item.fields.PortfolioItem}</h1>
+              {item.fields.Description ? <p>{item.fields.Description}</p> : undefined}
               <div className="mb-3">
                 <TagList tags={item.fields.Tags.slice(0, item.tagCount)} />
               </div>
               {item.fields.Videos ? item.fields.Videos.map(img =>
-                <video autoPlay muted src={img.url} class="img-fluid my-2"></video>
+                <video key={img.id} autoPlay muted src={img.url} className="img-fluid my-2"></video>
               ) : undefined}
               <div className="row">
+
+
               {item.fields.Screens.length > 0 ? item.fields.Screens.map(img =>
-                <div className="col-6"><img src={img.url} class="img-fluid my-2"></img></div>
+                <div className="col-6" key={img.id}><img src={img.url} className="img-fluid my-2"></img></div>
               ) : undefined}
               </div>
               <div className="my-5">
-              {item.fields.Invision ?  <a href={item.fields.Invision} target="_blank" class="btn btn-primary text-white">VISIT PROJECT</a> : undefined}
+              {item.fields.Invision ?  <a href={item.fields.Invision} target="_blank" className="btn btn-primary text-white">VISIT PROJECT</a> : undefined}
               </div>
           </div>
           ) : undefined}
@@ -72,7 +75,7 @@ export default function Home() {
         <div className="container text-center">
             <h1 className="text-primary mb-3">Related Projects</h1>
             {related.map(rel => {
-              return <PortfolioItem {...rel.fields} key={rel.id}/>
+              return <PortfolioCard {...rel.fields} key={rel.id}/>
             })}
         </div>
     </SiteWrapper>
