@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import apiClient from 'services/apiClient';
-import PortfolioItem from 'components/_common/Portfolio/PortfolioItem';
+import PortfolioCard from 'components/_common/portfolio-card';
 // import AOS from 'aos'
 import { useRouter } from 'next/router'
 import SiteWrapper from 'components/_common/site-wrapper';
@@ -39,7 +39,7 @@ export default function Home() {
         <p className="text-muted">With a proven track record of over 45 online projects since its launch in 2018, we work with a global perspective of growth in mind.</p>
 
         <div>
-          {(portfolio && portfolio.length > 0) ? portfolio.map(item => <PortfolioItem {...item.fields} key={item.id}/>) : undefined}
+          {(portfolio && portfolio.length > 0) ? portfolio.map(item => <PortfolioCard {...item.fields} key={item.id}/>) : undefined}
         </div>
           </div>
         </div>
