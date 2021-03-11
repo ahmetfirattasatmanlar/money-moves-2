@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import apiClient from 'services/apiClient';
-import TagList from 'components/_common/tags/taglist' ;
+import TagList from 'components/_common/taglist' ;
 
 
 export default function AllTags(props){
