@@ -19,6 +19,7 @@ export default {
 				filterBy.push(params[key])
 				return false
 			});
+			// Error somewhere around here
 			return http.get(`${apiUrl}Portfolio${apiKey}&filterByFormula=Find(%22${filterBy[0]}%22%2C+tags)`);
 		} else {
 			return http.get(`${apiUrl}Portfolio${apiKey}`);
@@ -57,6 +58,9 @@ export default {
 	getColaborators: async() => {
 		return http.get(`${apiUrl}Service%20Providers${apiKey}&view=Contract`)
 	},
+	getTags: async() => {
+		return http.get(`${apiUrl}Tags${apiKey}`)
+	}
 	// sendSlackNotification:(params)=> {
 	// 	return http.post('https://hooks.slack.com/services/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', JSON.stringify(params))
 	// },

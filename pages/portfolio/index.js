@@ -2,10 +2,9 @@ import React, {useState, useEffect} from 'react';
 import apiClient from 'services/apiClient';
 import PortfolioCard from 'components/_common/portfolio-card'
 import SiteWrapper from 'components/_common/site-wrapper'
-// import AllTags from 'components/_common/tags/all-tags'
+import AllTags from 'components/_common/tags/all-tags'
 import Spinner from 'components/_common/spinner'
 // import AOS from 'aos'
-
 
 export default function AllPortfolio() {
   // useEffect(() => {	AOS.init()})
@@ -41,7 +40,7 @@ export default function AllPortfolio() {
             {loading ? <Spinner/> : <>
               {(portfolio && portfolio.length > 0) ? portfolio.map(item => <PortfolioCard {...item.fields} key={item.id}/>) : undefined}
               {/* {(portfolio && portfolio.length > 0) ? portfolio.map(item => <PortfolioItem {...item.fields} key={item.id}/>) : undefined} */}
-              {/* <AllTags/> */}
+              <AllTags/>
             </>}
           </div>
         </div>

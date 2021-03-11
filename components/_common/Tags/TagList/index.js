@@ -4,12 +4,13 @@ import Link from 'next/link'
 
 
 export default function TagList({tags}){
+  console.log(tags)
+
   return tags ? <div>
-      {tags.map(tag => {
-        console.log(tag)
-        return <Link key={tag.id} href={`/portfolio/tags/${tag.}`} className="text-primary">{tag}</Link>
-      })}
-  </div> : null
+    {tags.map(tag => {
+      return <Tag key={tag.id}><Link href={`/portfolio/tags/${tag.fields.Name}`} className="text-primary badge badge-sm">{tag.fields.Name}</Link></Tag>
+    })}
+</div> : null
 }
 
 
