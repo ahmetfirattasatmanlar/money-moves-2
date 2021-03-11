@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import apiClient from 'services/apiClient';
 import PortfolioCard from 'components/_common/portfolio-card'
 import SiteWrapper from 'components/_common/site-wrapper'
-import AllTags from 'components/_common/tags/all-tags'
+import AllTags from 'components/_common/tags/alltags'
 import Spinner from 'components/_common/spinner'
 // import AOS from 'aos'
 
