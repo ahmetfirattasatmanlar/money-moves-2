@@ -28,7 +28,7 @@ export default function PortfolioCard({Tags, PortfolioId, Screens, PortfolioItem
             // title={item.name}
             description={
               <div className="d-flex align-items-center">
-                <div>
+                <div className="w-100">
                   <div className="ant-card-meta-title">{PortfolioItem}</div>
                   <TagList tags={Tags.splice(0,2)} disabled/>
                 </div>

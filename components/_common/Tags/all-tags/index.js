@@ -1,7 +1,6 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import apiClient from 'services/apiClient';
-import TagList from 'components/_common/tags/TagList' ;
-import Spinner from 'components/_common/spinner'
+import TagList from 'components/_common/tags/taglist' ;
 
 
 export default function AllTags(props){
@@ -12,22 +11,18 @@ export default function AllTags(props){
 
   const fetchData = async () =>{
     try {
-      const {data: tagslist} = await apiClient.getAllPortfolio();
-      console.log(tagslist)
-      // setData({
-      //   tags: this.getTags(portfolioList.records),
-      //   isMounted: true
+      // Need to change THIS
+      const {data: taglist} = await apiClient.getAllPortfolio();
+      console.log(taglist.records)
+      setTags(taglist.records)
       // })
 		} catch (e) {
 			if(e.response){console.log('portfolio didnt load')}
 		}
   }
 
-  return (
-    <div>
-      Tags
-    </div>
-  )
+  return tags ? <TagList tags={tags}/> : null
+
 }
 
 
