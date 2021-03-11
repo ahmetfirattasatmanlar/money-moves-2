@@ -5,16 +5,13 @@ function VideoEmbed(props) {
   return (
     props.url &&
       <div className="video-card">
-        <video 
+        <video
           controls={false}
           autoPlay
           muted
           className="video-embed"
           src={props.url} />
       </div>
-    // <div class="embed-responsive embed-responsive-16by9">
-    //   <iframe title="video-yt" class="embed-responsive-item" src={props.url} allowfullscreen></iframe>
-    // </div>
   )
 }
 

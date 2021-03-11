@@ -1,12 +1,12 @@
 import React from 'react';
 import Link from 'next/link'
-import { Card } from 'antd';
-import TagList from 'components/_common/Tags/TagList';
+import { Card, Tag } from 'antd';
 
 const { Meta } = Card;
 
-export default function PortfolioCard({Tags, PortfolioId, Screens, PortfolioItem}){
-  // {Tags, PortfolioId, Screens, PortfolioItem}
+export default function PortfolioCard({Screens, PortfolioItem, DynamicTags}){
+  // {DynamicTags ? console.log(DynamicTags) : null}
+
   let renderThumb = () => {
     if(Screens.length > 0 ){
       return Screens[0].thumbnails.large.url || DataTransferItemList.Screens[0].thumbnails.large.url;
@@ -14,6 +14,7 @@ export default function PortfolioCard({Tags, PortfolioId, Screens, PortfolioItem
   }
   return Screens ? (
     <Link as={`/portfolio/${PortfolioItem}`} href="/portfolio/[id]">
+      <span>
       <Card
         // className={`card-portfolio ${!this.state.isPublic && 'card-portfolio-disabled'}`}
         className="card-portfolio"
@@ -27,14 +28,17 @@ export default function PortfolioCard({Tags, PortfolioId, Screens, PortfolioItem
             // title={item.name}
             description={
               <div className="d-flex align-items-center">
-                <div>
+                <div className="w-100">
                   <div className="ant-card-meta-title">{PortfolioItem}</div>
-                  <TagList tags={Tags.splice(0,2)} disabled/>
+                  {DynamicTags && DynamicTags.length > 0 ? DynamicTags.splice(0,2).map(tag=> {
+                    return <Tag key={tag}><Link href={`/portfolio/tags/${tag}`} className="text-primary badge badge-sm">{tag}</Link></Tag>
+                  }) : undefined}
                 </div>
               </div>
             }
           />
         </Card>
+      </span>
     </Link>
   ) : null
 }

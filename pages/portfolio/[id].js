@@ -1,32 +1,41 @@
 import React, {useState, useEffect} from 'react';
 import apiClient from 'services/apiClient';
-import TagList from 'components/_common/Tags/TagList';
 import PortfolioCard from 'components/_common/portfolio-card';
 // import AOS from 'aos'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import SiteWrapper from 'components/_common/site-wrapper';
+import Spinner from 'components/_common/spinner'
+import { Tag } from 'antd';
 
 export default function PortfolioItemPage() {
   // useEffect(() => {	AOS.init()})
 	// useEffect(() => {AOS.refresh()}, [])
 
   const [portfolio, setPortfolio ] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  const router = useRouter()
+  // const { id } = router.query
+  // let params = { id }
 
   useEffect(() => {
-    fetchPortfolio()
-  }, [])
-  const router = useRouter()
+    router.query.id ? fetchPortfolio() : null
+  }, [router.query.id])
+
   const fetchPortfolio = async () =>{
-    const { id } = router.query
-		let params = { id }
-    console.log(params)
+
     try {
-      const {data: portfolioList} = await apiClient.getPortfolioItem(params);
-      console.log(portfolioList)
-      setPortfolio(portfolioList.records.slice(0))
+      // const {data: portfolioList} = await apiClient.getPortfolioItem(params);
+      const {data: portfolioList} = await apiClient.getPortfolioItem({id: router.query.id});
+      setPortfolio(portfolioList.records[0])
+
+      setLoading(false)
 		} catch (e) {
-			if(e.response) console.log(e.response)
+			if(e.response) {
+        console.log(e.response)
+        setLoading(false)
+      }
 		}
   }
 
@@ -47,37 +56,47 @@ export default function PortfolioItemPage() {
   return (
     <SiteWrapper>
         <div className="container my-5">
-          <Link href="/portfolio" className="btn btn-link">BACK TO PORTFOLIO</Link>
-          {(portfolio && portfolio.length > 0) ? portfolio.map(item =>
-          <div className="text-center" key={item.ProjectId}>
-              <h1 className="text-primary mb-3">{item.fields.PortfolioItem}</h1>
-              {item.fields.Description ? <p>{item.fields.Description}</p> : undefined}
-              <div className="mb-3">
-                <TagList tags={item.fields.Tags.slice(0, item.tagCount)} />
+          <div className="text-center"><Link href="/portfolio" ><span className="btn btn-light btn-sm py-0">BACK TO PORTFOLIO</span></Link></div>
+          {loading ? <Spinner/> : <>
+            {portfolio ?
+              <div key={portfolio.id}>
+                <div className="row">
+                  <div className="col-sm-8 mx-auto text-center">
+                    <h1 className="text-primary mb-3 font-weight-bold">{portfolio.fields.PortfolioItem}</h1>
+                    {portfolio.fields.Description ? <p>{portfolio.fields.Description}</p> : undefined}
+                    <div className="mb-3">
+                    {/* <TagList tags={item.fields.DynamicTags.slice(0, item.tagCount)} /> */}
+                    {portfolio && portfolio.fields && portfolio.fields.DynamicTags ? portfolio.fields.DynamicTags.map(tag => <Tag key={tag}><Link href={`/portfolio/tags/${tag}`} className="text-primary badge badge-sm">{tag}</Link></Tag>) : undefined}
+                    </div>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col text-center">
+                    {portfolio.fields.Videos ? portfolio.fields.Videos.map(img =>
+                      <video key={img.id} autoPlay muted src={img.url} className="img-fluid my-2"></video>
+                    ) : undefined}
+                    {portfolio.fields.Screens.length > 0 ? portfolio.fields.Screens.map(img =>
+                      <img src={img.url} key={img.id} className="img-fluid my-2 shadow-lg rounded"></img>
+                    ) : undefined}
+                    <div className="my-5  text-center">
+                    {portfolio.fields.Invision ?  <a href={portfolio.fields.Invision} target="_blank" className="btn btn-primary text-white">VISIT PROJECT</a> : undefined}
+                    </div>
+                  </div>
+                </div>
               </div>
-              {item.fields.Videos ? item.fields.Videos.map(img =>
-                <video key={img.id} autoPlay muted src={img.url} className="img-fluid my-2"></video>
-              ) : undefined}
-              <div className="row">
+              : undefined}
+              <div className="text-center">
+                <h1 className="text-primary mb-3">Related Projects</h1>
+                <div>
+                {related.map(rel => <PortfolioCard {...rel.fields} key={rel.id}/>)}
+                </div>
+              </div>
+          </>}
 
 
-              {item.fields.Screens.length > 0 ? item.fields.Screens.map(img =>
-                <div className="col-6" key={img.id}><img src={img.url} className="img-fluid my-2"></img></div>
-              ) : undefined}
-              </div>
-              <div className="my-5">
-              {item.fields.Invision ?  <a href={item.fields.Invision} target="_blank" className="btn btn-primary text-white">VISIT PROJECT</a> : undefined}
-              </div>
-          </div>
-          ) : undefined}
         </div>
 
-        <div className="container text-center">
-            <h1 className="text-primary mb-3">Related Projects</h1>
-            {related.map(rel => {
-              return <PortfolioCard {...rel.fields} key={rel.id}/>
-            })}
-        </div>
+
     </SiteWrapper>
   )
 }
