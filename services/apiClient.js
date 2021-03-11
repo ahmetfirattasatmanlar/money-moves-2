@@ -1,11 +1,10 @@
 import http from "./httpService";
 // import queryString from 'query-string';
-import Airtable from 'airtable';
+// import Airtable from 'airtable';
 // import { message } from "antd";
-var base = new Airtable({apiKey: 'keyvWcdRs864e3vqn'}).base('app0fX9jxKMIGZG05');
+// var base = new Airtable({apiKey: 'keyvWcdRs864e3vqn'}).base('app0fX9jxKMIGZG05');
 var apiUrl = `https://api.airtable.com/v0/app0fX9jxKMIGZG05/`;
 var apiKey = `?api_key=keyvWcdRs864e3vqn`;
-
 
 
 export default {
@@ -30,7 +29,7 @@ export default {
 	},
 	getPortfolioItem: async(params) => {
 		let filterBy= []
-		
+
 		Object.keys(params).map(function(key, index) {
 			filterBy.push(params[key])
 			return false
@@ -58,43 +57,7 @@ export default {
 	getColaborators: async() => {
 		return http.get(`${apiUrl}Service%20Providers${apiKey}&view=Contract`)
 	},
-	sendSlackNotification:(params)=> {
-		return http.post('https://hooks.slack.com/services/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', JSON.stringify(params))
-	},
-	
-	// Tasks
-	getTasks: async(params)=> {
-		return http.get(`${apiUrl}Tasks/${apiKey}&sort%5B0%5D%5Bfield%5D=Date&sort%5B0%5D%5Bdirection%5D=desc`)
-	},
-	deleteTask: async (id) => {
-		let message = "";
-		base('Tasks').destroy(id, function(err, deletedRecord) {
-			if (err) {
-				console.log(err)
-				message = err;
-			}
-			// console.log('Deleted record', deletedRecord.id);
-			message = deletedRecord
-		});
-		return message
-	},
-	createTask: async(params) => {
-		base('Tasks').create({
-			"Project": [
-				"reccUmWKVoTLCtT1Q"
-			],
-			"Time": 10800,
-			"Collaborator": [
-				"recrsrfjbtRYBwDQe"
-			],
-			"Phase": "⛳ 5 UI Design",
-			"Description": "Creating global components and dashboard designs"
-		}, function(err, record) {
-			if (err) {
-				console.error(err);
-				return;
-			}
-			console.log(record.getId());
-		});
-	}
+	// sendSlackNotification:(params)=> {
+	// 	return http.post('https://hooks.slack.com/services/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', JSON.stringify(params))
+	// },
 }
