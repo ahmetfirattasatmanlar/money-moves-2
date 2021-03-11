@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head'
-import Navbar from 'components/_common/Navbar'
+import Navbar from 'components/_common/navbar'
 import Footer from 'components/_common/Footer'
 import MessengerCustomerChat from 'react-messenger-customer-chat';
 
@@ -29,4 +29,3 @@ export default function SiteWrapper({children}){
     </>
   )
 }
-
