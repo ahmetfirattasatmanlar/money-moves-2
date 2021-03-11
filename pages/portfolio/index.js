@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import apiClient from 'services/apiClient';
-// import PortfolioItem from 'components/_common/Portfolio/PortfolioItem';
 import PortfolioCard from 'components/_common/portfolio-card'
 import SiteWrapper from 'components/_common/site-wrapper'
 // import AOS from 'aos'
@@ -20,6 +19,7 @@ export default function AllPortfolio() {
 		let params = {};
     try {
       const {data: portfolioList} = await apiClient.getPortfolioItems(params);
+      // console.log(portfolioList)
       setPortfolio(portfolioList.records)
 		} catch (e) {
 			if(e.response) console.log(e.response)

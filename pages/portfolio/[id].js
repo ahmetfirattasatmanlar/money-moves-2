@@ -13,17 +13,19 @@ export default function PortfolioItemPage() {
 
   const [portfolio, setPortfolio ] = useState([])
 
-  useEffect(() => {
-    fetchPortfolio()
-  }, [])
   const router = useRouter()
+  // const { id } = router.query
+  // let params = { id }
+
+  useEffect(() => {
+    router.query.id ? fetchPortfolio() : null
+  }, [router.query.id])
+
   const fetchPortfolio = async () =>{
-    const { id } = router.query
-		let params = { id }
-    console.log(params)
+
     try {
-      const {data: portfolioList} = await apiClient.getPortfolioItem(params);
-      console.log(portfolioList)
+      // const {data: portfolioList} = await apiClient.getPortfolioItem(params);
+      const {data: portfolioList} = await apiClient.getPortfolioItem({id: router.query.id});
       setPortfolio(portfolioList.records.slice(0))
 		} catch (e) {
 			if(e.response) console.log(e.response)
@@ -49,7 +51,7 @@ export default function PortfolioItemPage() {
         <div className="container my-5">
           <Link href="/portfolio" className="btn btn-link">BACK TO PORTFOLIO</Link>
           {(portfolio && portfolio.length > 0) ? portfolio.map(item =>
-          <div className="text-center" key={item.ProjectId}>
+          <div className="text-center" key={item.id}>
               <h1 className="text-primary mb-3">{item.fields.PortfolioItem}</h1>
               {item.fields.Description ? <p>{item.fields.Description}</p> : undefined}
               <div className="mb-3">
@@ -59,11 +61,9 @@ export default function PortfolioItemPage() {
                 <video key={img.id} autoPlay muted src={img.url} className="img-fluid my-2"></video>
               ) : undefined}
               <div className="row">
-
-
-              {item.fields.Screens.length > 0 ? item.fields.Screens.map(img =>
-                <div className="col-6" key={img.id}><img src={img.url} className="img-fluid my-2"></img></div>
-              ) : undefined}
+                {item.fields.Screens.length > 0 ? item.fields.Screens.map(img =>
+                  <div className="col-6" key={img.id}><img src={img.url} className="img-fluid my-2"></img></div>
+                ) : undefined}
               </div>
               <div className="my-5">
               {item.fields.Invision ?  <a href={item.fields.Invision} target="_blank" className="btn btn-primary text-white">VISIT PROJECT</a> : undefined}

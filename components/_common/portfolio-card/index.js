@@ -14,6 +14,7 @@ export default function PortfolioCard({Tags, PortfolioId, Screens, PortfolioItem
   }
   return Screens ? (
     <Link as={`/portfolio/${PortfolioItem}`} href="/portfolio/[id]">
+      <span>
       <Card
         // className={`card-portfolio ${!this.state.isPublic && 'card-portfolio-disabled'}`}
         className="card-portfolio"
@@ -35,6 +36,7 @@ export default function PortfolioCard({Tags, PortfolioId, Screens, PortfolioItem
             }
           />
         </Card>
+      </span>
     </Link>
   ) : null
 }
