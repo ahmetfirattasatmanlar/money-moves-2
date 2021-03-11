@@ -77,7 +77,7 @@ export default function PortfolioItemPage() {
                     {item.fields.Screens.length > 0 ? item.fields.Screens.map(img =>
                       <img src={img.url} key={img.id} className="img-fluid my-2 shadow-lg rounded"></img>
                     ) : undefined}
-                    <div className="my-5">
+                    <div className="my-5  text-center">
                     {item.fields.Invision ?  <a href={item.fields.Invision} target="_blank" className="btn btn-primary text-white">VISIT PROJECT</a> : undefined}
                     </div>
                   </div>
