@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 
 export default function TagList({tags}){
-  console.log(tags)
+  // console.log(tags)
 
   return tags ? <div>
     {tags.map(tag => {
