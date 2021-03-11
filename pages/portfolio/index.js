@@ -29,11 +29,11 @@ export default function AllPortfolio() {
     <SiteWrapper>
 
 
-      <div className="container text-center">
+      <div className="container-fluid text-center">
         <div className="row">
           <div className="mx-auto">
-          <h2 className="font-weight-bold">Portfolio</h2>
-        <h3>Check our Work</h3>
+          <h2 className="font-weight-bold mt-5 display-4 text-primary">Portfolio</h2>
+          <h3 className="h5">Check our Work</h3>
         <p className="text-muted">With a proven track record of over 45 online projects since its launch in 2018, we work with a global perspective of growth in mind.</p>
 
         <div>
