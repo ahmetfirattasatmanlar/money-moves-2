@@ -78,7 +78,7 @@ export default function PortfolioItemPage() {
                       <img src={img.url} key={img.id} className="img-fluid my-2 shadow-lg rounded"></img>
                     ) : undefined}
                     <div className="my-5">
-                    {/* {item.fields.Invision ?  <a href={item.fields.Invision} target="_blank" className="btn btn-primary text-white">VISIT PROJECT</a> : undefined} */}
+                    {item.fields.Invision ?  <a href={item.fields.Invision} target="_blank" className="btn btn-primary text-white">VISIT PROJECT</a> : undefined}
                     </div>
                   </div>
                 </div>
