@@ -23,7 +23,7 @@ export default function Home() {
     // const { id } = router.query
     // let params = { id }
     try {
-      const {data: portfolioList} = await apiClient.getPortfolioItems({id: router.query.id});
+      const {data: portfolioList} = await apiClient.getPortfolioItems({name: router.query.id});
       console.log
       setPortfolio(portfolioList.records)
 		} catch (e) {
@@ -43,9 +43,12 @@ export default function Home() {
           <h3 className="h5">Check our Work</h3>
           <p className="text-muted">With a proven track record of over 45 online projects since its launch in 2018, we work with a global perspective of growth in mind.</p>
 
-          <div>
-            {(portfolio && portfolio.length > 0) ? portfolio.map(item => <PortfolioCard {...item.fields} key={item.id}/>) : undefined}
+
           </div>
+        </div>
+        <div className="row">
+        <div className="col">
+            {(portfolio && portfolio.length > 0) ? portfolio.map(item => <PortfolioCard {...item.fields} key={item.id}/>) : undefined}
           </div>
         </div>
       </div>

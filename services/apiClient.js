@@ -9,9 +9,6 @@ var apiKey = `?api_key=keyvWcdRs864e3vqn`;
 
 export default {
 	// Get Fields from a Table
-	getFaqs: async(params = {}) => {
-		return http.get(`${apiUrl}Faqs/${apiKey}`);
-	},
 	getPortfolioItems: async(params) => {
 		let filterBy = []
 		if(Object.keys(params).length > 0){
