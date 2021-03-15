@@ -18,7 +18,7 @@ export default function Landing() {
   }, [])
 
   const fetchPortfolio = async () =>{
-		let params = 'marketing';
+		let params = {};
     try {
       const {data: portfolioList} = await apiClient.getPortfolioItems(params);
       setPortfolio(portfolioList.records.slice(0,21))

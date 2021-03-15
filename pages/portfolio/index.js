@@ -16,9 +16,9 @@ export default function AllPortfolio() {
   useEffect(() => fetchPortfolio(), [0])
 
   const fetchPortfolio = async () =>{
-		let params = {};
+		// let params = {};
     try {
-      const {data: portfolioList} = await apiClient.getPortfolioItems(params);
+      const {data: portfolioList} = await apiClient.getAllPortfolio();
       // console.log(portfolioList)
       setPortfolio(portfolioList.records)
       setLoading(false)
