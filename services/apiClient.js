@@ -16,11 +16,21 @@ export default {
 				filterBy.push(params[key])
 				return false
 			});
+			console.log(filterBy)
 			// Error somewhere around here
 			return http.get(`${apiUrl}Portfolio${apiKey}&filterByFormula=Find(%22${filterBy[0]}%22%2C+tags)`);
 		} else {
 			return http.get(`${apiUrl}Portfolio${apiKey}`);
 		}
+	},
+	getPortfolioItemsBy: async(params)=> {
+		// console.log(params.fields)
+		let filterBy = Object.entries(params.fields).length > 0 ? Object.entries(params.fields).map(filter=> `&filterByFormula=Find(%22${filter[1]}%22%2C+${filter[0]})`) : null;
+		// console.log(filterBy)
+		// let filterBy = params.fields ? params.fields.map(field => `&filterByFormula=${field}`).join('') : null ;
+		let pageSize = params.pageSize ? `&pageSize=${params.pageSize}` : null;
+		console.log(`${apiUrl}Portfolio${apiKey}${pageSize}${filterBy}`)
+		return http.get(`${apiUrl}Portfolio${apiKey}${pageSize}${filterBy}`);
 	},
 	getAllPortfolio: async(params = {}) => {
 		return http.get(`${apiUrl}Portfolio${apiKey}`);
