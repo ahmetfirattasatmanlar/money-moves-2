@@ -36,7 +36,7 @@ export default function Home() {
   return (
     <SiteWrapper>
       <div className="container text-center my-5">
-        <div className="text-center mt-5"><Link href="/portfolio" ><span className="btn btn-light btn-sm py-0">BACK TO PORTFOLIO</span></Link></div>
+        <div className="text-center mt-5"><a href="/portfolio" ><span className="btn btn-light btn-sm py-0">BACK TO PORTFOLIO</span></a></div>
         <div className="row">
           <div className="col-sm-8 mx-auto">
             <h2 className="font-weight-bold display-4 text-primary">{router && router.query && router.query.id ? router.query.id : undefined} Portfolio </h2>
