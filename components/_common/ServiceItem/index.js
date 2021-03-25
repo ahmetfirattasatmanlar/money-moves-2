@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 import { FaChevronRight } from "react-icons/fa";
-import Link from 'next/link'
 
 export default function ServiceItem({service, description, goTo}){
   return (
-    <Link href={`${goTo ? `/portfolio/tags/${goTo}` : '/portfolio'}`}>
+    <a href={`${goTo ? `/portfolio/tags/${goTo}` : '/portfolio'}`}>
       <div className="card">
         <div className="card-header bg-primary con-rounded-top">
           <h3 className="card-title m-0 text-white d-flex justify-content-between align-items-center">
@@ -17,8 +16,8 @@ export default function ServiceItem({service, description, goTo}){
           <p>{description}</p>
         </div>
       </div>
-    </Link>
-    
+    </a>
+
   )
 }
 

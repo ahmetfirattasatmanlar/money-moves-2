@@ -3,7 +3,6 @@ import apiClient from 'services/apiClient';
 import PortfolioCard from 'components/_common/portfolio-card';
 // import AOS from 'aos'
 import { useRouter } from 'next/router'
-import Link from 'next/link'
 import SiteWrapper from 'components/_common/site-wrapper';
 import Spinner from 'components/_common/spinner'
 import { Tag } from 'antd';
@@ -59,7 +58,7 @@ export default function PortfolioItemPage() {
   return (
     <SiteWrapper>
         <div className="container my-5">
-          <div className="text-center"><Link href="/portfolio" ><span className="btn btn-light btn-sm py-0">BACK TO PORTFOLIO</span></Link></div>
+          <div className="text-center"><a href="/portfolio" ><span className="btn btn-light btn-sm py-0">BACK TO PORTFOLIO</span></a></div>
           {loading ? <Spinner/> : <>
             {item ?
               <div key={item.id}>
@@ -69,7 +68,7 @@ export default function PortfolioItemPage() {
                     {item.fields.Description ? <p>{item.fields.Description}</p> : undefined}
                     <div className="mb-3">
                     {/* <TagList tags={item.fields.DynamicTags.slice(0, item.tagCount)} /> */}
-                    {item.fields && item.fields.DynamicTags ? item.fields.DynamicTags.map(tag => <Tag key={tag}><Link href={`/portfolio/tags/${tag}`} className="text-primary badge badge-sm">{tag}</Link></Tag>) : undefined}
+                    {item.fields && item.fields.DynamicTags ? item.fields.DynamicTags.map(tag => <Tag key={tag}><a href={`/portfolio/tags/${tag}`} className="text-primary badge badge-sm">{tag}</a></Tag>) : undefined}
                     </div>
                   </div>
                 </div>
