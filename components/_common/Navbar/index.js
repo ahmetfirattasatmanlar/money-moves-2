@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
 
 export default function Navbar() {
     return (
@@ -26,9 +25,9 @@ export default function Navbar() {
               <a className="nav-link font-weight-bold text-dark" href="/#blog">Blog</a>
             </li>
           </ul>
-          <Link href="/contact">
+          <a href="/contact">
           <button type="button" className="btn btn-primary px-4 rounded-lg">Contact</button>
-          </Link>
+          </a>
         </div>
       </nav>
     )

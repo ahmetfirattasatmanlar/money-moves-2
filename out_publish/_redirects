@@ -1,2 +1,4 @@
 # Next-on-Netlify Redirects
 /_next/image*  url=:url w=:width q=:quality  /.netlify/functions/next_image?url=:url&w=:width&q=:quality  200
+/portfolio/tags/:id  /portfolio/tags/[id].html  200
+/portfolio/:id  /portfolio/[id].html  200

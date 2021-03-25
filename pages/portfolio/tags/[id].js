@@ -4,7 +4,6 @@ import PortfolioCard from 'components/_common/portfolio-card';
 // import AOS from 'aos'
 import { useRouter } from 'next/router'
 import SiteWrapper from 'components/_common/site-wrapper';
-import Link from 'next/link'
 import Spinner from 'components/_common/spinner'
 
 export default function Home() {

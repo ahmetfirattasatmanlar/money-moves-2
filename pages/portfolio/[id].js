@@ -3,7 +3,6 @@ import apiClient from 'services/apiClient';
 import PortfolioCard from 'components/_common/portfolio-card';
 // import AOS from 'aos'
 import { useRouter } from 'next/router'
-import Link from 'next/link'
 import SiteWrapper from 'components/_common/site-wrapper';
 import Spinner from 'components/_common/spinner'
 import { Tag } from 'antd';
