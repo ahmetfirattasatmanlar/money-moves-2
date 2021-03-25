@@ -3,7 +3,7 @@ import React from 'react'
 export default function Navbar() {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-        <Link className="navbar-brand" href="/"><img src="/pengyi-logo-navbar.svg" alt="upwork logo"></img></Link>
+        <a className="navbar-brand" href="/"><img src="/pengyi-logo-navbar.svg" alt="Pengyi logo"></img></a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
