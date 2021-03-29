@@ -1,6 +1,5 @@
 import React, {Fragment} from "react";
 import {Tag} from 'antd';
-import Link from 'next/link'
 
 
 export default function TagList({tags}){
@@ -8,7 +7,7 @@ export default function TagList({tags}){
 
   return tags ? <div>
     {tags.map(tag => {
-      return <Tag key={tag.id}><Link href={`/portfolio/tags/${tag.fields.Name}`} className="text-primary badge badge-sm">{tag.fields.Name}</Link></Tag>
+      return <Tag key={tag.id}><a href={`/portfolio/tags/${tag.fields.Name}`} className="text-primary badge badge-sm">{tag.fields.Name}</a></Tag>
     })}
 </div> : null
 }
