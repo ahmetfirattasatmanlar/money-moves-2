@@ -8,7 +8,7 @@ export default function SiteWrapper({children}){
   return (
     <>
       <Head>
-        <title>PengYi Labs Costa Rica</title>
+        <title>PengYi Labs Costa Rica | Singapore</title>
         <link rel="icon" href="/favicon.ico" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164970324-1"></script>
         <script
@@ -22,6 +22,10 @@ export default function SiteWrapper({children}){
       </Head>
       <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5WGCCSM"
       height="0" width="0" style={{display: 'none', visibility: 'hidden'}}></iframe></noscript>
+
+
+
+
       <Navbar />
       {children}
       <Footer/>
