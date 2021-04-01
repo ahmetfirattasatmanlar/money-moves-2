@@ -30,7 +30,11 @@ export default function PortfolioCard({Screens, PortfolioItem, DynamicTags}){
                 <div className="w-100">
                   <div className="ant-card-meta-title">{PortfolioItem}</div>
                   {DynamicTags && DynamicTags.length > 0 ? DynamicTags.splice(0,2).map(tag=> {
-                    return <Tag key={tag}><a href={`/portfolio/tags/${tag}`} className="text-primary badge badge-sm">{tag}</a></Tag>
+                    // return <Tag key={tag}><a href={`/portfolio/tags/${tag}`} className="text-primary badge badge-sm">{tag}</a></Tag>
+                    return <Tag key={tag}>
+                      {/* <a href={`/portfolio/tags/${tag}`} className="text-primary badge badge-sm">{tag}</a> */}
+                      <span className="text-primary badge badge-sm">{tag}</span>
+                      </Tag>
                   }) : undefined}
                 </div>
               </div>
