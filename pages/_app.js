@@ -1,16 +1,23 @@
 import '../styles/App.scss'
-// import ReactGa from 'react-ga'
-import React, {useEffect} from 'react'
+import React from 'react'
+import {useEffect} from 'react'
+import { initGA, logPageView } from 'utils/analytics'
 
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
-    // ReactGa.initialize('UA-164970324-1')
-    // Report Page View to Google Analytics
-    // console.log(window.location.hostname, window.location.pathname,window.location.search)
-    // ReactGa.pageview(window.location.pathname + window.location.search)
+    runGA()
     return () => {}
   }, [])
+
+  const runGA =() =>{
+    if (!window.GA_INITIALIZED) {
+      initGA()
+      window.GA_INITIALIZED = true
+    }
+    logPageView()
+  }
+
   return <Component {...pageProps} />
 }
 
