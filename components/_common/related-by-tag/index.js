@@ -15,7 +15,7 @@ export default function RelatedByTag({tag}){
     try {
       const {data: portfolioList} = await apiClient.getPortfolioItemsBy(params);
       setPortfolio(portfolioList.records)
-      console.log(portfolioList.records)
+      // console.log(portfolioList.records)
 		} catch (e) {
 			if(e.response) {
         console.log(e.response)

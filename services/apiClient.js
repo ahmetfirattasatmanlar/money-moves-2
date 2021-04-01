@@ -29,7 +29,7 @@ export default {
 		// console.log(filterBy)
 		// let filterBy = params.fields ? params.fields.map(field => `&filterByFormula=${field}`).join('') : null ;
 		let pageSize = params.pageSize ? `&pageSize=${params.pageSize}` : null;
-		console.log(`${apiUrl}Portfolio${apiKey}${pageSize}${filterBy}`)
+		// console.log(`${apiUrl}Portfolio${apiKey}${pageSize}${filterBy}`)
 		return http.get(`${apiUrl}Portfolio${apiKey}${pageSize}${filterBy}`);
 	},
 	getAllPortfolio: async(params = {}) => {
