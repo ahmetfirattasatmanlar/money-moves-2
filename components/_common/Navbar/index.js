@@ -1,10 +1,10 @@
 import React from 'react'
-import ReactGA from 'react-ga'
+// import ReactGA from 'react-ga'
 
 
 export default function Navbar() {
   const sendToGA = (clickedOn) => {
-    ReactGA.event({category: 'Button', action: `Clicked on ${clickedOn || ''}`})
+    // ReactGA.event({category: 'Button', action: `Clicked on ${clickedOn || ''}`})
   }
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm">

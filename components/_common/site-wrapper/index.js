@@ -3,8 +3,17 @@ import Head from 'next/head'
 import Navbar from 'components/_common/Navbar'
 import Footer from 'components/_common/Footer'
 import MessengerCustomerChat from 'react-messenger-customer-chat';
+import {useState, useEffect} from 'react'
 
 export default function SiteWrapper({children}){
+  const [showChat, setShowChat] = useState(false)
+
+  useEffect(() => {
+    return window.location.hostname === 'pengyilabs.io' ? setShowChat(true): null
+    return () => {}
+  }, [])
+
+
   return (
     <>
       <Head>
@@ -26,7 +35,9 @@ export default function SiteWrapper({children}){
       <Navbar />
       {children}
       <Footer/>
-      <MessengerCustomerChat pageId="101921091461361" appId="404665513945389"/>
+      {showChat && <MessengerCustomerChat pageId="101921091461361" appId="404665513945389"/>}
+      {/* {window.location.hostname === 'pengyilabs.io' ?  : undefined} */}
+
     </>
   )
 }
