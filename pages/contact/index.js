@@ -30,18 +30,8 @@ export default () => {
                     <label>Message</label>
                     <textarea name="message" className="form-control bg-transparent border border-secondary" placeholder="Message" required />
                   </div>
-                  <div className="row align-items-center">
-                    <div className="col-7">
-                    <div className="form-check">
-                      <input className="form-check-input" type="checkbox" name="termsConditions" required />
-                      <label className="form-check-label">
-                        Accept terms & conditions
-                      </label>
-                    </div>
-                    </div>
-                    <div className="col">
-                      <button type="submit" className="btn btn-primary px-4 rounded-lg btn-block">Send Message</button>
-                    </div>
+                  <div className="form-group">
+                    <button type="submit" className="btn btn-primary px-4 rounded-lg btn-block">Send Message</button>
                   </div>
                 </form>
               </div>
