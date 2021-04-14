@@ -1,10 +1,10 @@
 import React from 'react'
-import { logEvent } from 'utils/analytics'
+// import { logEvent } from 'utils/analytics'
 
 
 export default function Navbar() {
   const handleGAClick = (e) => {
-    logEvent('Button',e.target.innerText)
+    // logEvent('Button',e.target.innerText)
   }
   return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm">

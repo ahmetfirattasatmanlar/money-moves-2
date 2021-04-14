@@ -6,7 +6,7 @@ import { initGA, logPageView } from 'utils/analytics'
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
-    runGA()
+    // runGA()
     return () => {}
   }, [])
 
