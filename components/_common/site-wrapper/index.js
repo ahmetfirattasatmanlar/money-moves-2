@@ -31,9 +31,18 @@ export default function SiteWrapper({children}){
           '[https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);](https://www.googletagmanager.com/gtm.js?id=%27+i+dl;f.parentNode.insertBefore(j,f);)
           })(window,document,'script','dataLayer','GTM-5WGCCSM');`
         }}/>
+
+        <script dangerouslySetInnerHTML={{__html:
+          	`window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('set', {'user_id': 'USER_ID'});
+
+            gtag('config', 'UA-164970324-1');`
+        }}/>
       </Head>
-      {/* Google Tag Manager (noscript) */}
       <noscript dangerouslySetInnerHTML={{__html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5WGCCSM" height="0" width="0" style="display:none;visibility:hidden"></iframe>`}}/>
+
       <Navbar />
       {children}
       <Footer/>
