@@ -1,6 +1,4 @@
-import React from 'react';
-import Login from 'components/_common/login'
-
+import Login from 'pages/login'
 
 export default function Home() {
   return <Login/>
