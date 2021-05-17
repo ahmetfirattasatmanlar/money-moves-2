@@ -19,8 +19,8 @@ export default function Login() {
         </p>
       </div>
 
-      <button className="btn btn-light bg-white shadow btn-block  py-3 mb-3" style={{borderRadius: '10rem'}}>Sign In with Google</button>
-      <button className="btn btn-light bg-white shadow btn-block py-3 " style={{borderRadius: '10rem'}}>Sign In with Facebook</button>
+      <button className="btn btn-light bg-white shadow btn-block  pl-1 py-3 mb-3" style={{borderRadius: '10rem'}}><img src="/icon-google.svg" className="mr-2" alt="Sign in with Google" />   Sign In with Google</button>
+      <button className="btn btn-light bg-white shadow btn-block pl-1 py-3 " style={{borderRadius: '10rem'}}><img src="/icon-fb.svg" className="mr-2" alt="Sign in with Facebook" /> Sign In with Facebook</button>
 
 
       {!withEmail ?

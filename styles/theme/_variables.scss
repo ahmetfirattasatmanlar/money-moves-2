@@ -12,7 +12,7 @@ $gray-200: #F4F5FA !default;
 
 $gray-300: #dee2e6 !default;
 $gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
+$gray-500: #A7AAB2 !default;
 $gray-600: #6c757d !default;
 $gray-700: #5C616F !default;
 $gray-800: #343a40 !default;
@@ -44,7 +44,7 @@ $red:     #dc3545 !default;
 $orange:  #fd7e14 !default;
 $yellow:  #ffc107 !default;
 $green:   #28a745 !default;
-$teal:    #20c997 !default;
+$teal:    #00B167!default;
 $cyan:    #0BB8E4 !default;
 
 $colors: () !default;
@@ -69,8 +69,8 @@ $colors: map-merge(
 );
 
 $primary:       $cyan !default;
-$secondary:     $gray-600 !default;
-$success:       $green !default;
+$secondary:     $gray-500 !default;
+$success:       $teal !default;
 $info:          $blue !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
