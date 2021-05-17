@@ -64,7 +64,7 @@ export default function Register() {
           :
           <button className="btn btn-primary py-3 btn-block"  style={{borderRadius: '10rem'}}>
             <Link href="/home">
-              <a>Create Account</a>
+              <a className="text-white">Create Account</a>
             </Link>
           </button>
         }
