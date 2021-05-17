@@ -62,8 +62,8 @@ export default function RecoverPassword() {
 
           :
           <button className="btn btn-primary py-3 btn-block "  style={{borderRadius: '10rem'}}>
-            <Link href="/home">
-              <a className="text-white">Send Password</a>
+            <Link href="/">
+              <a className="text-white">Save Password</a>
             </Link>
           </button>
         }
