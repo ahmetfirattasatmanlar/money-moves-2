@@ -5,7 +5,7 @@ import { FaCheck } from 'react-icons/fa'
 export default function Home() {
   return (
     <AppWrapper>
-      <div className="bg-info text-white pt-5 pb-3 px-4" style={{height: "300px"}}>
+      <div className="text-white pt-5 pb-3 px-4" style={{height: "300px"}}>
         <div className="d-flex justify-content-between w-100">
           <img src="/logoWhite.svg" />
           <img src="/bell.svg" />
