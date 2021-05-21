@@ -8,7 +8,7 @@ export default function ButtonContainer(props) {
         height: "100px",
         maxWidth: "25rem",
       }}
-      className="w-100 bg-white d-flex align-items-center justify-content-around shadow-lg"
+      className="w-100 bg-white d-flex align-items-center justify-content-around"
     >
       <button
         className="btn btn border d-flex align-items-center justify-content-center"

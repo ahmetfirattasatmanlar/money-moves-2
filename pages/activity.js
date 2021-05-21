@@ -7,7 +7,7 @@ import PageTitle from "components/_common/PageTitle";
 
 export default function Activity() {
   return (
-    <AppWrapper>
+    <AppWrapper withNav={true}>
       <div className="d-flex flex-column justify-content-around align-items-center">
         <LogoContainer />
         <ContentBody>

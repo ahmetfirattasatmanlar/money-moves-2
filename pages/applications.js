@@ -7,7 +7,7 @@ import Dropdown from "components/_common/Dropdown";
 
 export default function Applications() {
   return (
-    <AppWrapper>
+    <AppWrapper withNav={true}>
       <div
         className="d-flex flex-column justify-content-around align-items-center"
         style={{ minheight: "100vh" }}
