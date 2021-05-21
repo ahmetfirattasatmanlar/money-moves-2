@@ -3,7 +3,7 @@ export default function PageTitle(props) {
   console.log(props);
   return (
     <div
-      className={`d-flex flex-column justify-content-between align-items-${align} border`}
+      className={`d-flex flex-column justify-content-between align-items-${align}`}
       style={{
         width: "90%",
         height: "125px",
