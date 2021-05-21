@@ -5,6 +5,7 @@ import LogoContainer from "components/_common/LogoContainer";
 import ContentBody from "components/_common/ContentBody";
 import LoanProgramCard from "components/_common/LoanProgramCard";
 import PageTitle from "components/_common/PageTitle";
+import ProgressBar from "components/_common/ProgressBar";
 
 export default function NewLoan() {
   const [newLoanStatus, setNewLoanStatus] = useState(false);
@@ -33,7 +34,7 @@ export default function NewLoan() {
         <div className="d-flex flex-column justify-content-around align-items-center">
           <LogoContainer />
           <ContentBody>
-            <div class="progress w-75 border mt-4" style={{ height: "10px" }}>
+            {/* <div class="progress w-75 border mt-4" style={{ height: "10px" }}>
               <div
                 class="progress-bar"
                 role="progressbar"
@@ -42,7 +43,8 @@ export default function NewLoan() {
                 aria-valuemin="0"
                 aria-valuemax="100"
               ></div>
-            </div>
+            </div> */}
+            <ProgressBar progress={"25%"} />
             <PageTitle
               title={"New Loan"}
               subTitle={"We have a program to suit your needs"}
@@ -85,6 +87,7 @@ export default function NewLoan() {
         <div className="d-flex flex-column justify-content-around align-items-center">
           <LogoContainer />
           <ContentBody>
+            <ProgressBar progress={"50%"} />
             <PageTitle
               title={"Configure your loan"}
               subTitle={"Set the loan according to your needs"}
@@ -93,11 +96,12 @@ export default function NewLoan() {
             />
 
             <p>Amount</p>
-            <div className="d-flex">
+            <InputAmount />
+            {/* <div className="d-flex">
               <p>-</p>
               <p>$250,000</p>
               <p>+</p>
-            </div>
+            </div> */}
 
             <select>
               <option>Amortization</option>

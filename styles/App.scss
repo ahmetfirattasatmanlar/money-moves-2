@@ -1,4 +1,29 @@
 @import "theme/bootstrap.scss";
+html,
+body {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  #__next {
+    overflow-x: hidden;
+    background-color: #343a40;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    position: relative;
+  }
+}
+
+.test {
+  border: 2px solid red;
+}
+
+.background {
+  background-color: #343a40;
+}
 
 .bg-gradient {
   @include gradient-y(#e8ebf5, #ffffff);
