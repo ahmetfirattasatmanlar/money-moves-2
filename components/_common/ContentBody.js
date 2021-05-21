@@ -7,6 +7,7 @@ export default function ContentBody({ children }) {
         minHeight: "80vh",
         width: "100%",
         borderRadius: "2rem",
+        overflowX: "hidden",
       }}
     >
       {children}

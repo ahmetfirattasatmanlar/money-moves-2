@@ -3,8 +3,13 @@ export default function PageTitle(props) {
   console.log(props);
   return (
     <div
-      className={`d-flex flex-column justify-content-between align-items-${align}`}
-      style={{ width: "90%", height: "125px", marginTop: "20px" }}
+      className={`d-flex flex-column justify-content-between align-items-${align} border`}
+      style={{
+        width: "90%",
+        height: "125px",
+        marginTop: "20px",
+        position: "relative",
+      }}
     >
       {upperTitle && (
         <h2 style={{ fontSize: "1rem" }}>

@@ -16,7 +16,11 @@ export default function ActivityCalendar() {
   return (
     <ul
       className="d-flex"
-      style={{ listStyle: "none", top: "200px", position: "absolute" }}
+      style={{
+        listStyle: "none",
+        top: "50px",
+        position: "absolute",
+      }}
     >
       {months.map((month) => {
         return (
