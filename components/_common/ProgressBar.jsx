@@ -1,9 +1,9 @@
 export default function ProgressBar(props) {
   const { progress } = props;
   return (
-    <div class="progress w-75 border mt-4" style={{ height: "10px" }}>
+    <div className="progress w-75 border mt-4" style={{ height: "10px" }}>
       <div
-        class="progress-bar"
+        className="progress-bar"
         role="progressbar"
         style={{ width: `${progress}` }}
         aria-valuenow="25"

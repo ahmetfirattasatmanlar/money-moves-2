@@ -6,6 +6,10 @@ import ContentBody from "components/_common/ContentBody";
 import LoanProgramCard from "components/_common/LoanProgramCard";
 import PageTitle from "components/_common/PageTitle";
 import ProgressBar from "components/_common/ProgressBar";
+import Amount from "components/_common/Amount";
+import LoanDropdown from "components/_common/LoanDropdown";
+import CreditScoreCard from "components/_common/CreditScoreCard";
+import ButtonsContainer from "components/_common/ButtonsContainer";
 
 export default function NewLoan() {
   const [newLoanStatus, setNewLoanStatus] = useState(false);
@@ -16,7 +20,6 @@ export default function NewLoan() {
   };
 
   const changeLoanState = (event) => {
-    console.log(event.target.value);
     if (loanState < 3 && event.target.value === "next") {
       setLoanState(loanState + 1);
     }
@@ -24,13 +27,11 @@ export default function NewLoan() {
     if (loanState >= 0 && event.target.value === "back") {
       setLoanState(loanState - 1);
     }
-
-    console.log(loanState);
   };
 
   if (!newLoanStatus) {
     return (
-      <AppWrapper>
+      <AppWrapper withNav={true}>
         <div className="d-flex flex-column justify-content-around align-items-center">
           <LogoContainer />
           <ContentBody>
@@ -83,7 +84,7 @@ export default function NewLoan() {
 
   if (newLoanStatus) {
     return (
-      <AppWrapper>
+      <AppWrapper withNav={false}>
         <div className="d-flex flex-column justify-content-around align-items-center">
           <LogoContainer />
           <ContentBody>
@@ -96,56 +97,19 @@ export default function NewLoan() {
             />
 
             <p>Amount</p>
-            <InputAmount />
-            {/* <div className="d-flex">
-              <p>-</p>
-              <p>$250,000</p>
-              <p>+</p>
-            </div> */}
+            <Amount />
 
-            <select>
-              <option>Amortization</option>
-            </select>
-
-            <select>
-              <option>Amortization</option>
-            </select>
+            <LoanDropdown text={"Term"} />
+            <LoanDropdown text={"Amortization"} />
 
             <h3>Estimated credit score</h3>
-            <div className="d-flex">
-              <div className="d-flex flex-column">
-                <h4>Good</h4>
-                <p>14,99%</p>
-                <p>Interest rate</p>
-                <p>$299,99</p>
-                <p>Monthly payment</p>
-              </div>
-
-              <div className="d-flex flex-column">
-                <h4>Good</h4>
-                <p>14,99%</p>
-                <p>Interest rate</p>
-                <p>$299,99</p>
-                <p>Monthly payment</p>
-              </div>
-
-              <div className="d-flex flex-column">
-                <h4>Good</h4>
-                <p>14,99%</p>
-                <p>Interest rate</p>
-                <p>$299,99</p>
-                <p>Monthly payment</p>
-              </div>
+            <div className="d-flex justify-content-around">
+              <CreditScoreCard />
+              <CreditScoreCard />
+              <CreditScoreCard />
             </div>
 
-            <div>
-              <button type="button" value="back" onClick={changeLoanState}>
-                Back
-              </button>
-              <button type="button" value="next" onClick={changeLoanState}>
-                Next
-              </button>
-            </div>
+            <ButtonsContainer click={changeLoanState} />
           </ContentBody>
         </div>
       </AppWrapper>

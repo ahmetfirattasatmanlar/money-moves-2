@@ -44,6 +44,48 @@ export default function Activity() {
               activityType={"Accredited Cash Loan"}
               date={"Nov 23, 2021 10:33am"}
             />
+            <ActivityCard
+              src={"acreditedLoan.svg"}
+              amount={"20,000"}
+              activityType={"Accredited Cash Loan"}
+              date={"Nov 23, 2021 10:33am"}
+            />
+            <ActivityCard
+              src={"acreditedLoan.svg"}
+              amount={"20,000"}
+              activityType={"Accredited Cash Loan"}
+              date={"Nov 23, 2021 10:33am"}
+            />
+            <ActivityCard
+              src={"acreditedLoan.svg"}
+              amount={"20,000"}
+              activityType={"Accredited Cash Loan"}
+              date={"Nov 23, 2021 10:33am"}
+            />
+            <ActivityCard
+              src={"acreditedLoan.svg"}
+              amount={"20,000"}
+              activityType={"Accredited Cash Loan"}
+              date={"Nov 23, 2021 10:33am"}
+            />
+            <ActivityCard
+              src={"acreditedLoan.svg"}
+              amount={"20,000"}
+              activityType={"Accredited Cash Loan"}
+              date={"Nov 23, 2021 10:33am"}
+            />
+            <ActivityCard
+              src={"acreditedLoan.svg"}
+              amount={"20,000"}
+              activityType={"Accredited Cash Loan"}
+              date={"Nov 23, 2021 10:33am"}
+            />
+            <ActivityCard
+              src={"acreditedLoan.svg"}
+              amount={"20,000"}
+              activityType={"Accredited Cash Loan"}
+              date={"Nov 23, 2021 10:33am"}
+            />
           </div>
         </ContentBody>
       </div>

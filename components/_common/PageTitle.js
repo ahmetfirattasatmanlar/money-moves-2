@@ -1,6 +1,5 @@
 export default function PageTitle(props) {
   const { title, subTitle, upperTitle, element, align } = props;
-  console.log(props);
   return (
     <div
       className={`d-flex flex-column justify-content-between align-items-${align}`}

@@ -1,6 +1,8 @@
 import Nav from "./nav";
+import ButtonsContainer from "./ButtonsContainer";
 
-export default function AppWrapper({ children }) {
+export default function AppWrapper(props) {
+  const { withNav } = props;
   return (
     <div
       style={{
@@ -10,8 +12,9 @@ export default function AppWrapper({ children }) {
       }}
       className="d-flex flex-column justify-content-between"
     >
-      {children}
-      <Nav />
+      {props.children}
+      {withNav && <Nav />}
+      {!withNav && <ButtonsContainer />}
     </div>
   );
 }
