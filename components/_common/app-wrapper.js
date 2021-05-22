@@ -2,7 +2,8 @@ import Nav from "./nav";
 import ButtonsContainer from "./ButtonsContainer";
 
 export default function AppWrapper(props) {
-  const { withNav } = props;
+  const { withNav, click } = props;
+  console.log(click);
   return (
     <div
       style={{

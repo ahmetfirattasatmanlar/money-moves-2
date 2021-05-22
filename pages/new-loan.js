@@ -12,39 +12,29 @@ import CreditScoreCard from "components/_common/CreditScoreCard";
 import ButtonsContainer from "components/_common/ButtonsContainer";
 
 export default function NewLoan() {
-  const [newLoanStatus, setNewLoanStatus] = useState(false);
+  const [newLoanStatus, setNewLoanStatus] = useState("initial");
   const [loanState, setLoanState] = useState(0);
 
   const changeLoanStatus = () => {
     setNewLoanStatus(true);
   };
 
-  const changeLoanState = (event) => {
+  const changeState = (event) => {
     if (loanState < 3 && event.target.value === "next") {
       setLoanState(loanState + 1);
     }
 
     if (loanState >= 0 && event.target.value === "back") {
-      setLoanState(loanState - 1);
+      setLoanState("initial");
     }
   };
 
-  if (!newLoanStatus) {
+  if (newLoanStatus === "initial") {
     return (
-      <AppWrapper withNav={true}>
+      <AppWrapper withNav={true} click={changeState}>
         <div className="d-flex flex-column justify-content-around align-items-center">
           <LogoContainer />
           <ContentBody>
-            {/* <div class="progress w-75 border mt-4" style={{ height: "10px" }}>
-              <div
-                class="progress-bar"
-                role="progressbar"
-                style={{ width: "25%" }}
-                aria-valuenow="25"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              ></div>
-            </div> */}
             <ProgressBar progress={"25%"} />
             <PageTitle
               title={"New Loan"}
@@ -109,7 +99,7 @@ export default function NewLoan() {
               <CreditScoreCard />
             </div>
 
-            <ButtonsContainer click={changeLoanState} />
+            <ButtonsContainer test={"test"} />
           </ContentBody>
         </div>
       </AppWrapper>
