@@ -11,7 +11,7 @@ export default function LoanProgramCard(props) {
         <img
           className="border-circle shadow"
           src={src}
-          style={{ height: "10vh", width: "10vw" }}
+          style={{ height: "10rem", width: "10rem" }}
         />
         <p className="m-0" style={{ fontSize: "1rem", color: "#000000" }}>
           <b>{cardName}</b>
