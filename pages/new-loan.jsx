@@ -11,19 +11,16 @@ import LoanDropdown from "components/_common/LoanDropdown";
 import CreditScoreCard from "components/_common/CreditScoreCard";
 import ButtonsContainer from "components/_common/ButtonsContainer";
 
+const states = ["initial", "loanConfig", "personalInfo", "loanDetails"];
+
 export default function NewLoan() {
-  const [newLoanStatus, setNewLoanStatus] = useState("initial");
-  const [loanState, setLoanState] = useState(0);
-
-  const states = ["initial", "loanConfig", "personalInfo", "loanDetails"];
-
-  const changeLoanStatus = () => {
-    setNewLoanStatus(true);
-  };
+  const [loanState, setLoanState] = useState(states[0]);
 
   const changeState = (event) => {
-    if (loanState && event.target.value === "next") {
-      setLoanState(loanState + 1);
+    console.log(states[states.indexOf(loanState) + 1]);
+
+    if (loanState === states[0] && event.target.value === "next") {
+      setLoanState(states[states.indexOf(loanState) + 1]);
     }
 
     if (loanState >= 0 && event.target.value === "back") {
@@ -31,7 +28,8 @@ export default function NewLoan() {
     }
   };
 
-  if (newLoanStatus === "initial") {
+  if (loanState === "initial") {
+    console.log(loanState);
     return (
       <AppWrapper withNav={true} click={changeState}>
         <div className="d-flex flex-column justify-content-around align-items-center">
@@ -46,24 +44,24 @@ export default function NewLoan() {
             />
             <div className="d-flex p-0 justify-content-around container-fluid">
               <LoanProgramCard
-                click={changeLoanStatus}
+                click={changeState}
                 src={"/homeImprovement.svg"}
                 cardName={"Home Improvement"}
               />
               <LoanProgramCard
-                click={changeLoanStatus}
+                click={changeState}
                 src={"/loanPowerSport.svg"}
                 cardName={"Power Sports"}
               />
             </div>
             <div className="d-flex p-0 justify-content-around container-fluid m-2">
               <LoanProgramCard
-                click={changeLoanStatus}
+                click={changeState}
                 src={"/medicalDental.svg"}
                 cardName={"Medical / Dental"}
               />
               <LoanProgramCard
-                click={changeLoanStatus}
+                click={changeState}
                 src={"/cashLoan.svg"}
                 cardName={"Cash Loans"}
               />
@@ -74,7 +72,8 @@ export default function NewLoan() {
     );
   }
 
-  if (newLoanStatus) {
+  if (loanState === "loanConfig") {
+    console.log(loanState);
     return (
       <AppWrapper withNav={false}>
         <div className="d-flex flex-column justify-content-around align-items-center">
