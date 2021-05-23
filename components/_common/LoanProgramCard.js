@@ -10,6 +10,7 @@ export default function LoanProgramCard(props) {
         className="btn btn-link"
         style={{ textDecoration: "none" }}
         onClick={click}
+        value={"initialState"}
       >
         <img
           className="border-circle shadow"

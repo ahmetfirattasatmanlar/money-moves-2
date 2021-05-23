@@ -1,6 +1,5 @@
 export default function ButtonContainer(props) {
   const { click } = props;
-  console.log(props);
   return (
     <div
       style={{

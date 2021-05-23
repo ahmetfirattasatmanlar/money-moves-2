@@ -2,7 +2,7 @@ import Nav from "./nav";
 import ButtonsContainer from "./ButtonsContainer";
 
 export default function AppWrapper(props) {
-  const { withNav } = props;
+  const { withNav, click } = props;
   return (
     <div
       style={{
@@ -14,7 +14,7 @@ export default function AppWrapper(props) {
     >
       {props.children}
       {withNav && <Nav />}
-      {!withNav && <ButtonsContainer />}
+      {!withNav && <ButtonsContainer click={click} />}
     </div>
   );
 }

@@ -9,7 +9,7 @@ import ProgressBar from "components/_common/ProgressBar";
 import Amount from "components/_common/Amount";
 import LoanDropdown from "components/_common/LoanDropdown";
 import CreditScoreCard from "components/_common/CreditScoreCard";
-import ButtonsContainer from "components/_common/ButtonsContainer";
+import PersonalInfoCard from "components/_common/PersonalInfoCard";
 
 const states = ["initial", "loanConfig", "personalInfo", "loanDetails"];
 
@@ -17,19 +17,25 @@ export default function NewLoan() {
   const [loanState, setLoanState] = useState(states[0]);
 
   const changeState = (event) => {
-    console.log(states[states.indexOf(loanState) + 1]);
+    const index = states.indexOf(loanState);
+    const btnValue = event.target.value;
+    const limit = index < states.length - 1;
 
-    if (loanState === states[0] && event.target.value === "next") {
-      setLoanState(states[states.indexOf(loanState) + 1]);
+    if (btnValue === "next" || "initialState") {
+      if (limit) {
+        setLoanState(states[index + 1]);
+      }
     }
 
-    if (loanState >= 0 && event.target.value === "back") {
-      setLoanState("initial");
+    if (btnValue === "back") {
+      console.log(index - 1);
+      if (index > 0) {
+        setLoanState(states[index - 1]);
+      }
     }
   };
 
-  if (loanState === "initial") {
-    console.log(loanState);
+  if (loanState === states[0]) {
     return (
       <AppWrapper withNav={true} click={changeState}>
         <div className="d-flex flex-column justify-content-around align-items-center">
@@ -72,10 +78,9 @@ export default function NewLoan() {
     );
   }
 
-  if (loanState === "loanConfig") {
-    console.log(loanState);
+  if (loanState === states[1]) {
     return (
-      <AppWrapper withNav={false}>
+      <AppWrapper withNav={false} click={changeState}>
         <div className="d-flex flex-column justify-content-around align-items-center">
           <LogoContainer />
           <ContentBody>
@@ -99,8 +104,109 @@ export default function NewLoan() {
               <CreditScoreCard />
               <CreditScoreCard />
             </div>
+          </ContentBody>
+        </div>
+      </AppWrapper>
+    );
+  }
 
-            <ButtonsContainer test={"test"} />
+  if (loanState === states[2]) {
+    return (
+      <AppWrapper withNav={false} click={changeState}>
+        <div className="d-flex flex-column justify-content-around align-items-center">
+          <LogoContainer />
+          <ContentBody>
+            <ProgressBar progress={"75%"} />
+            <PageTitle
+              title={"Personal Details"}
+              subTitle={"Fill in your personal information"}
+              upperTitle={"Cash Loan Application"}
+              align={"center"}
+            />
+
+            <p>My monthly income</p>
+            <Amount />
+
+            <PersonalInfoCard
+              title={"Employment"}
+              options={[
+                "Employed full time",
+                "Employed part time",
+                "Student",
+                "Retired",
+              ]}
+            />
+            <PersonalInfoCard
+              title={"Residential Status"}
+              options={["Home owner", "Renting", "Living with parents/family"]}
+            />
+            <PersonalInfoCard
+              title={"Marital Status"}
+              options={["Maried", "Single", "Divorced", "Separeted"]}
+            />
+          </ContentBody>
+        </div>
+      </AppWrapper>
+    );
+  }
+
+  if (loanState === states[3]) {
+    return (
+      <AppWrapper withNav={false} click={changeState}>
+        <div className="d-flex flex-column justify-content-around align-items-center">
+          <LogoContainer />
+          <ContentBody>
+            <ProgressBar progress={"100%"} />
+            <PageTitle
+              title={"Your Loan"}
+              subTitle={"Details of the loan you choose"}
+              upperTitle={"Cash Loan Application"}
+              align={"center"}
+            />
+
+            <p>My monthly income</p>
+            <Amount />
+
+            <div className="border-bottom w-75 mt-4">
+              <div className="d-flex justify-content-between w-100">
+                <p>Amount</p>
+                <p>
+                  <b>$10,000</b>
+                </p>
+              </div>
+              <div className="d-flex justify-content-between w-100">
+                <p>Term</p>
+                <p>
+                  <b>1 Year</b>
+                </p>
+              </div>
+              <div className="d-flex justify-content-between w-100">
+                <p>Amortization</p>
+                <p>
+                  <b>1 Year</b>
+                </p>
+              </div>
+            </div>
+            <div className="w-75 mt-4">
+              <div className="d-flex justify-content-between">
+                <p>Amount</p>
+                <p>
+                  <b>$10,000</b>
+                </p>
+              </div>
+              <div className="d-flex justify-content-between">
+                <p>Term</p>
+                <p>
+                  <b>1 Year</b>
+                </p>
+              </div>
+              <div className="d-flex justify-content-between">
+                <p>Amortization</p>
+                <p>
+                  <b>1 Year</b>
+                </p>
+              </div>
+            </div>
           </ContentBody>
         </div>
       </AppWrapper>

@@ -3,7 +3,7 @@ import React, { Fragment } from "react";
 
 export default function LoanCard(props) {
   return (
-    <div className="border">
+    <div>
       <p style={{ fontSize: "0.7rem" }}>Loan Balance</p>
       <p className="h2" style={{ fontSize: "1.5rem" }}>
         $292,987.56
