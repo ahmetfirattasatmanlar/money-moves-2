@@ -1,7 +1,7 @@
 export default function LogoContainer() {
   return (
     <div
-      style={{ margin: "2rem auto" }}
+      style={{ height: "5rem" }}
       className="d-flex justify-content-center align-items-center"
     >
       <img src="/logoWhite.svg" />

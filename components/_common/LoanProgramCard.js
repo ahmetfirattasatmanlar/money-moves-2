@@ -1,7 +1,10 @@
 export default function LoanProgramCard(props) {
   const { src, cardName, click } = props;
   return (
-    <div className="d-flex flex-column justify-content-around align-items-center w-75">
+    <div
+      className="d-flex flex-column justify-content-around align-items-center border"
+      style={{ width: "11.5rem" }}
+    >
       <button
         type="button"
         className="btn btn-link"
