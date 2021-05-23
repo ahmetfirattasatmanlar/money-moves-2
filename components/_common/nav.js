@@ -6,7 +6,7 @@ export default function Nav() {
       style={{
         position: "fixed",
         bottom: 0,
-        height: "100px",
+        height: "10.15vh",
         maxWidth: "25rem",
       }}
       className="w-100 bg-white d-flex align-items-center justify-content-between shadow-lg"
