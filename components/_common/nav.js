@@ -57,7 +57,7 @@ export default function Nav() {
           className="d-flex flex-column justify-content-center align-items-center h-100"
           style={{ width: "9vw", height: "5vh" }}
         >
-          <img src="applications.svg" className="w-50" />
+          <img src="/applications.svg" className="w-50" />
           <a>
             <small>Applications</small>
           </a>
@@ -69,7 +69,7 @@ export default function Nav() {
           className="d-flex flex-column justify-content-center align-items-center h-100"
           style={{ width: "9vw", height: "5vh" }}
         >
-          <img src="profile.svg" className="w-50" />
+          <img src="/profile.svg" className="w-50" />
           <a>
             <small>Profile</small>
           </a>
