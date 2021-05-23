@@ -17,11 +17,7 @@ export default function PageTitle(props) {
       <h1 style={{ fontSize: "1.3rem" }}>
         <b>{title}</b>
       </h1>
-      {subTitle && (
-        <h2 style={{ fontSize: "1rem", letterSpacing: "0.1rem" }}>
-          {subTitle}
-        </h2>
-      )}
+      {subTitle && <h2 style={{ fontSize: "1rem" }}>{subTitle}</h2>}
       {element && element}
     </div>
   );
