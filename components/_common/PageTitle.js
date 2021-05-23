@@ -2,11 +2,10 @@ export default function PageTitle(props) {
   const { title, subTitle, upperTitle, element, align } = props;
   return (
     <div
-      className={`d-flex flex-column justify-content-between align-items-${align} border`}
+      className={`d-flex flex-column justify-content-between align-items-${align} border m-2`}
       style={{
         width: "90%",
         height: "12vh",
-        marginTop: "1rem",
         position: "relative",
       }}
     >

@@ -15,12 +15,14 @@ export default function NewLoan() {
   const [newLoanStatus, setNewLoanStatus] = useState("initial");
   const [loanState, setLoanState] = useState(0);
 
+  const states = ["initial", "loanConfig", "personalInfo", "loanDetails"];
+
   const changeLoanStatus = () => {
     setNewLoanStatus(true);
   };
 
   const changeState = (event) => {
-    if (loanState < 3 && event.target.value === "next") {
+    if (loanState && event.target.value === "next") {
       setLoanState(loanState + 1);
     }
 
@@ -42,7 +44,7 @@ export default function NewLoan() {
               upperTitle={"Choose a program"}
               align={"center"}
             />
-            <div className="d-flex p-0 justify-content-around container-fluid mt-4">
+            <div className="d-flex p-0 justify-content-around container-fluid">
               <LoanProgramCard
                 click={changeLoanStatus}
                 src={"/homeImprovement.svg"}
@@ -54,7 +56,7 @@ export default function NewLoan() {
                 cardName={"Power Sports"}
               />
             </div>
-            <div className="d-flex p-0 justify-content-around container-fluid mt-4">
+            <div className="d-flex p-0 justify-content-around container-fluid m-2">
               <LoanProgramCard
                 click={changeLoanStatus}
                 src={"/medicalDental.svg"}
