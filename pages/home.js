@@ -1,16 +1,20 @@
 import Link from "next/link";
 import AppWrapper from "components/_common/app-wrapper";
+import BalanceCard from "components/_common/BalanceCard";
+import LogoContainer from "components/_common/LogoContainer";
 import { FaCheck } from "react-icons/fa";
 
 export default function Home() {
   return (
     <AppWrapper withNav={true}>
-      <div className="text-white pt-5 pb-3 px-4" style={{ height: "300px" }}>
-        <div className="d-flex justify-content-between w-100">
+      <div className="text-white pt-2 pb-3 px-4" style={{ height: "300px" }}>
+        {/* <div className="d-flex justify-content-between w-100">
           <img src="/logoWhite.svg" />
           <img src="/bell.svg" />
-        </div>
-        <p>Loan Balance</p>
+        </div> */}
+        <LogoContainer icon={"bell"} justify={"between"} />
+        <BalanceCard />
+        {/* <p>Loan Balance</p>
         <p className="h2">$292,987.56</p>
         <Link href="/new-loan">
           <a
@@ -19,7 +23,7 @@ export default function Home() {
           >
             Get a new loan now
           </a>
-        </Link>
+        </Link> */}
       </div>
 
       <div
