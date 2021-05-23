@@ -2,8 +2,8 @@ export default function LoanProgramCard(props) {
   const { src, cardName, click } = props;
   return (
     <div
-      className="d-flex flex-column justify-content-around align-items-center border"
-      style={{ width: "7rem" }}
+      className="d-flex flex-column justify-content-around align-items-center"
+      style={{ width: "40%" }}
     >
       <button
         type="button"
@@ -16,7 +16,10 @@ export default function LoanProgramCard(props) {
           src={src}
           style={{ height: "50%", width: "100%" }}
         />
-        <p className="mt-3 mb-0" style={{ fontSize: "1rem", color: "#000000" }}>
+        <p
+          className="mt-3 mb-0"
+          style={{ fontSize: "0.7rem", color: "#000000" }}
+        >
           <b>{cardName}</b>
         </p>
       </button>
