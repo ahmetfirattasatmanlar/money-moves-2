@@ -13,7 +13,7 @@ export default function LoanProgramCard(props) {
           src={src}
           style={{ height: "10rem", width: "10rem" }}
         />
-        <p className="m-0" style={{ fontSize: "1rem", color: "#000000" }}>
+        <p className="mt-3 mb-0" style={{ fontSize: "1rem", color: "#000000" }}>
           <b>{cardName}</b>
         </p>
       </button>
