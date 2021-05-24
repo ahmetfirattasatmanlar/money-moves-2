@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Link from "next/link";
 import AppWrapper from "components/_common/app-wrapper";
 import BalanceCard from "components/_common/BalanceCard";
@@ -5,6 +6,18 @@ import LogoContainer from "components/_common/LogoContainer";
 import { FaCheck } from "react-icons/fa";
 
 export default function Home() {
+  const [display, setDisplay] = useState("none");
+
+  const changeDisplay = () => {
+    if (display === "none") {
+      setDisplay("flex");
+    }
+
+    if (display === "flex") {
+      setDisplay("none");
+    }
+  };
+
   return (
     <AppWrapper withNav={true}>
       <div className="text-white pt-2 pb-3 px-4" style={{ height: "275px" }}>
@@ -41,7 +54,23 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="card-footer text-center">View Details</div>
+          <div
+            className="card-body justify-content-between align-items-center border-top"
+            style={{ height: "5rem", display: `${display}` }}
+          >
+            <div>
+              <p className="text-muted m-0">Next payment</p>
+              <p className="m-0">09/01/2021</p>
+            </div>
+            <p>
+              <b>$199.99</b>
+            </p>
+          </div>
+          <div className="card-footer text-center">
+            <button className="btn" onClick={changeDisplay}>
+              View Details
+            </button>
+          </div>
         </div>
 
         <h2 className="h5 mt-4">Verification Steps</h2>

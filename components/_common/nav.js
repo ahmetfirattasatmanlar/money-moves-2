@@ -1,6 +1,10 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Nav() {
+  const route = useRouter();
+  console.log(route.pathname);
+
   return (
     <div
       style={{
@@ -16,7 +20,10 @@ export default function Nav() {
           className="d-flex flex-column justify-content-center align-items-center h-100"
           style={{ width: "9vw", height: "5vh" }}
         >
-          <img src="/home.svg" className="w-50" />
+          <img
+            src={route.pathname === "/home" ? "/homeActive.svg" : "/home.svg"}
+            className="w-50"
+          />
           <a>
             <small>Home</small>
           </a>
@@ -28,7 +35,14 @@ export default function Nav() {
           className="d-flex flex-column justify-content-center align-items-center h-100"
           style={{ width: "9vw", height: "5vh" }}
         >
-          <img src="/activity.svg" className="w-50" />
+          <img
+            src={
+              route.pathname === "/activity"
+                ? "/activityActive.svg"
+                : "/activity.svg"
+            }
+            className="w-50"
+          />
           <a>
             <small>Activity</small>
           </a>
@@ -57,7 +71,14 @@ export default function Nav() {
           className="d-flex flex-column justify-content-center align-items-center h-100"
           style={{ width: "9vw", height: "5vh" }}
         >
-          <img src="/applications.svg" className="w-50" />
+          <img
+            src={
+              route.pathname === "/applications"
+                ? "/applicationsActive.svg"
+                : "/applications.svg"
+            }
+            className="w-50"
+          />
           <a>
             <small>Applications</small>
           </a>
@@ -69,7 +90,14 @@ export default function Nav() {
           className="d-flex flex-column justify-content-center align-items-center h-100"
           style={{ width: "9vw", height: "5vh" }}
         >
-          <img src="/profile.svg" className="w-50" />
+          <img
+            src={
+              route.pathname === "/profile"
+                ? "/profileActive.svg"
+                : "/profile.svg"
+            }
+            className="w-50"
+          />
           <a>
             <small>Profile</small>
           </a>
