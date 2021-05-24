@@ -5,7 +5,7 @@ export default function Dropdown() {
         className="btn dropdown-toggle"
         type="button"
         id="dropdownMenuButton"
-        data-toggle="collapse"
+        data-toggle="dropdown"
         aria-haspopup="true"
         aria-expanded="false"
         style={{ backgroundColor: "#ffffff", border: "none" }}

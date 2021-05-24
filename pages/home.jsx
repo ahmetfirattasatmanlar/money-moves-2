@@ -55,11 +55,13 @@ export default function Home() {
             </div>
           </div>
           <div
-            className="card-body justify-content-between align-items-center border-top"
-            style={{ height: "5rem", display: `${display}` }}
+            className="card-body justify-content-between align-items-center border-top p-2"
+            style={{ height: "3rem", display: `${display}` }}
           >
             <div>
-              <p className="text-muted m-0">Next payment</p>
+              <p className="text-muted m-0">
+                <small>Next payment</small>
+              </p>
               <p className="m-0">09/01/2021</p>
             </div>
             <p>

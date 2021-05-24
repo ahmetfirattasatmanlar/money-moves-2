@@ -80,7 +80,7 @@ export default function NewLoan() {
 
   if (loanState === states[1]) {
     return (
-      <AppWrapper withNav={false} click={changeState}>
+      <AppWrapper withNav={false} withButtons={true} click={changeState}>
         <div className="d-flex flex-column justify-content-around align-items-center">
           <LogoContainer />
           <ContentBody>
@@ -112,7 +112,7 @@ export default function NewLoan() {
 
   if (loanState === states[2]) {
     return (
-      <AppWrapper withNav={false} click={changeState}>
+      <AppWrapper withNav={false} withButtons={true} click={changeState}>
         <div className="d-flex flex-column justify-content-around align-items-center">
           <LogoContainer />
           <ContentBody>
@@ -152,7 +152,7 @@ export default function NewLoan() {
 
   if (loanState === states[3]) {
     return (
-      <AppWrapper withNav={false} click={changeState}>
+      <AppWrapper withNav={false} withButtons={true} click={changeState}>
         <div className="d-flex flex-column justify-content-around align-items-center">
           <LogoContainer />
           <ContentBody>

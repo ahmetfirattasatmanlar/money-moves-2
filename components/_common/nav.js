@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 
 export default function Nav() {
   const route = useRouter();
-  console.log(route.pathname);
 
   return (
     <div

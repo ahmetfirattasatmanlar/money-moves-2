@@ -13,7 +13,7 @@ export default function PersonalInfoCard(props) {
   };
 
   return (
-    <div className="d-flex flex-column w-75 mt-4">
+    <div className="d-flex flex-column w-75 m">
       <h2 style={{ fontSize: "1.5rem" }}>{title}</h2>
       <form action="">
         {options.map((option) => {
