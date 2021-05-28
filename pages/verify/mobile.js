@@ -20,7 +20,26 @@ export default function Mobile() {
               <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="(562) 859-4936" />
             </div>
           </> : <>
-            Hey
+            <div className="text-center py-4"> <img src="/img-create-password.svg" alt="Recover password" /></div>
+            <h1 className="h3">Confirm</h1>
+            <p>Please enter the 4-digit code just sent to
++1 (562) 859-4936</p>
+
+            <div className="mt-5 row">
+              <div className="col">
+                <input type="number" className="form-control shadow-sm" style={{ height: "5rem" }} id="number1" aria-describedby="number1" />
+              </div>
+              <div className="col">
+                <input type="number" className="form-control shadow-sm" style={{ height: "5rem" }} id="number2" aria-describedby="number2" />
+              </div>
+              <div className="col">
+                <input type="number" className="form-control shadow-sm" style={{ height: "5rem" }} id="number3" aria-describedby="number3" />
+              </div>
+              <div className="col">
+                <input type="number" className="form-control shadow-sm" style={{ height: "5rem" }} id="number4" aria-describedby="number4" />
+              </div>
+            </div>
+
           </>}
 
         </div>
