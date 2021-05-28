@@ -37,7 +37,7 @@ export default function NewLoan() {
                   <div onClick={() => setLoanState(loanState + 1)}>
                     <img
                       className="rounded-circle shadow w-100 mb-2"
-                      src={'/homeImprovement.svg'}
+                      src={'/icon-home-improvement.svg'}
                     />
                     <small className="mb-0 font-weight-bold">Home Improvement</small>
                   </div>

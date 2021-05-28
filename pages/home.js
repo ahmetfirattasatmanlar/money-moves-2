@@ -2,7 +2,8 @@ import { useState } from "react";
 import Link from "next/link";
 import AppWrapper from "components/_common/app-wrapper";
 import BalanceCard from "components/_common/balance-card";
-import { FaCheck } from "react-icons/fa";
+import { FaCheck, FaChevronRight } from "react-icons/fa";
+
 import TopBar from "components/_common/top-bar";
 
 export default function Home() {
@@ -49,7 +50,7 @@ export default function Home() {
           </div>
         </div>
 
-        <h2 className="h5 mt-4">Verification Steps</h2>
+        <h2 className="h5 mt-4 font-weight-bold">Verification Steps</h2>
 
         <ul className="list-unstyled">
           <li className="d-flex align-items-center py-3">
@@ -101,6 +102,36 @@ export default function Home() {
             </div>
           </li>
         </ul>
+
+        <small className='text-danger'>--only show when verified user--</small>
+        <h2 className="h5 mt-4 font-weight-bold">Loan programs</h2>
+
+        <div className="bg-light p-2 rounded-lg d-flex align-items-center mb-3">
+          <img src="/icon-home-improvement.svg" alt="" className="mr-3" style={{ width: "2.5rem" }} />
+          Home Improvement
+          <span className="ml-auto mr-3"><FaChevronRight /></span>
+        </div>
+
+        <div className="bg-light p-2 rounded-lg d-flex align-items-center mb-3">
+          <img src="/icon-home-improvement.svg" alt="" className="mr-3" style={{ width: "2.5rem" }} />
+          Power Sport
+          <span className="ml-auto mr-3"><FaChevronRight /></span>
+        </div>
+
+        <div className="bg-light p-2 rounded-lg d-flex align-items-center mb-3">
+          <img src="/icon-medical-dental.svg" alt="" className="mr-3" style={{ width: "2.5rem" }} />
+          Medical / Dental
+          <span className="ml-auto mr-3"><FaChevronRight /></span>
+        </div>
+
+        <div className="bg-light p-2 rounded-lg d-flex align-items-center mb-3">
+          <img src="/icon-cash-loan.svg" alt="" className="mr-3" style={{ width: "2.5rem" }} />
+          Cash Loan
+          <span className="ml-auto mr-3"><FaChevronRight /></span>
+        </div>
+
+
+
       </div >
     </AppWrapper >
   );

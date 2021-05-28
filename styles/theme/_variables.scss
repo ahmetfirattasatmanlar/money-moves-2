@@ -15,8 +15,9 @@ $gray-400: #ced4da !default;
 $gray-500: #A7AAB2 !default;
 $gray-600: #6c757d !default;
 $gray-700: #5C616F !default;
-$gray-800: #343a40 !default;
+$gray-800: #424655 !default;
 $gray-900: #212529 !default;
+
 $black:    #000 !default;
 
 $grays: () !default;
@@ -166,7 +167,8 @@ $sizes: map-merge(
 // $body-bg:                   $white !default;
 $body-bg:                   #FBFCFF !default;
 
-$body-color:                $gray-900 !default;
+// $body-color:                $gray-900 !default;
+$body-color:                $gray-800 !default;
 
 
 // Links
