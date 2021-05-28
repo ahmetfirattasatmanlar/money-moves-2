@@ -9,19 +9,16 @@ export default function Nav() {
       style={{
         position: "fixed",
         bottom: 0,
-        height: "10.15vh",
         maxWidth: "25rem",
       }}
-      className="w-100 bg-white d-flex align-items-center justify-content-between shadow-lg"
+      className="w-100  pb-2 bg-white px-3 d-flex align-items-end justify-content-between shadow-lg"
     >
       <Link href="/home">
         <div
-          className="d-flex flex-column justify-content-center align-items-center h-100"
-          style={{ width: "9vw", height: "5vh" }}
+          className="d-flex flex-column justify-content-center align-items-center "
         >
           <img
             src={route.pathname === "/home" ? "/homeActive.svg" : "/home.svg"}
-            className="w-50"
           />
           <a>
             <small>Home</small>
@@ -31,8 +28,7 @@ export default function Nav() {
 
       <Link href="/activity" className="active">
         <div
-          className="d-flex flex-column justify-content-center align-items-center h-100"
-          style={{ width: "9vw", height: "5vh" }}
+          className="d-flex flex-column justify-content-center align-items-center "
         >
           <img
             src={
@@ -40,7 +36,6 @@ export default function Nav() {
                 ? "/activityActive.svg"
                 : "/activity.svg"
             }
-            className="w-50"
           />
           <a>
             <small>Activity</small>
@@ -51,13 +46,11 @@ export default function Nav() {
       <Link href="/new-loan">
         <div
           className="d-flex flex-column  align-items-center"
-          style={{ height: "117%" }}
         >
           <div
-            style={{ marginTop: "-10px", backgroundColor: "#ffffff" }}
-            className="rounded-circle d-flex flex-column justify-content-end align-items-center"
+            className="rounded-circle mt-neg-lg d-flex flex-column justify-content-end align-items-center"
           >
-            <img src="/newLoan.svg" />
+            <span className="bg-white rounded-circle p-1"><img src="/newLoan.svg" /></span>
           </div>
           <a>
             <small>New Loan</small>
@@ -67,8 +60,7 @@ export default function Nav() {
 
       <Link href="/applications">
         <div
-          className="d-flex flex-column justify-content-center align-items-center h-100"
-          style={{ width: "9vw", height: "5vh" }}
+          className="d-flex flex-column justify-content-center align-items-center "
         >
           <img
             src={
@@ -76,7 +68,6 @@ export default function Nav() {
                 ? "/applicationsActive.svg"
                 : "/applications.svg"
             }
-            className="w-50"
           />
           <a>
             <small>Applications</small>
@@ -86,8 +77,7 @@ export default function Nav() {
 
       <Link href="/profile">
         <div
-          className="d-flex flex-column justify-content-center align-items-center h-100"
-          style={{ width: "9vw", height: "5vh" }}
+          className="d-flex flex-column justify-content-center align-items-center "
         >
           <img
             src={
@@ -95,7 +85,6 @@ export default function Nav() {
                 ? "/profileActive.svg"
                 : "/profile.svg"
             }
-            className="w-50"
           />
           <a>
             <small>Profile</small>

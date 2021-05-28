@@ -9,8 +9,7 @@ export default function LoanCard(props) {
       </p>
       <Link href="/new-loan">
         <a
-          className="btn btn-outline-light btn-sm mt-2 border-light"
-          style={{ borderRadius: "10rem" }}
+          className="btn btn-outline-light btn-sm mt-2 px-3 py-2 border-light rounded-lg"
         >
           Get a new loan now
         </a>

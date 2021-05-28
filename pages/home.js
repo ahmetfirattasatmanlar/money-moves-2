@@ -12,7 +12,7 @@ export default function Home() {
     <AppWrapper nav>
       <div className="bg-gradient-dark text-white pb-5">
         <TopBar dark />
-        <div className="px-4 pb-5"><BalanceCard /></div>
+        <div className="px-4 pb-4"><BalanceCard /></div>
       </div>
 
       <div className="bg-white px-4 shadow rounded-top-lg mt-neg">
@@ -52,51 +52,48 @@ export default function Home() {
         <h2 className="h5 mt-4">Verification Steps</h2>
 
         <ul className="list-unstyled">
-          <li className="d-flex align-items-center mb-4">
+          <li className="d-flex align-items-center py-3">
             Mobile phone{" "}
             <small className="ml-auto text-success">
               <FaCheck className="mr-2" /> Verified
             </small>
           </li>
-          <li className="d-flex align-items-center mb-4">
+          <li className="d-flex align-items-center py-3">
             Government ID{" "}
             <small className="ml-auto text-success">
               <FaCheck className="mr-2" /> Verified
             </small>
           </li>
-          <li className="d-flex align-items-center mb-4">
+          <li className="d-flex align-items-center py-3">
             Bank Verification
             <div className="ml-auto">
               <Link href="/verify/banking">
                 <a
-                  className="btn btn-sm btn-outline-success rounded py-0 border-ligth"
-                  style={{ borderRadius: "10rem" }}
+                  className="btn btn-sm btn-outline-primary rounded-lg px-3 py-0 "
                 >
                   Verify
                 </a>
               </Link>
             </div>
           </li>
-          <li className="d-flex align-items-center mb-4">
+          <li className="d-flex align-items-center py-3">
             Employment Verification
             <div className="ml-auto">
               <Link href="/verify/employment">
                 <a
-                  className="btn btn-sm btn-outline-success rounded py-0 border-ligth"
-                  style={{ borderRadius: "10rem" }}
+                  className="btn btn-sm btn-outline-primary rounded-lg px-3 py-0 "
                 >
                   Verify
                 </a>
               </Link>
             </div>
           </li>
-          <li className="d-flex align-items-center mb-4">
+          <li className="d-flex align-items-center py-3">
             Selfie
             <div className="ml-auto">
               <Link href="/verify/photo">
                 <a
-                  className="btn btn-sm btn-outline-success rounded py-0 border-ligth"
-                  style={{ borderRadius: "10rem" }}
+                  className="btn btn-sm btn-outline-primary rounded-lg px-3 py-0 "
                 >
                   Verify
                 </a>

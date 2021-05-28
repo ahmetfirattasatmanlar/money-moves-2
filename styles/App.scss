@@ -27,9 +27,6 @@
 .rounded-top-lg {
   @include border-top-radius(1rem)
 }
-.negative-top-margin {
-  margin-top: -1rem;
-}
 .mt-neg {
   margin-top: -1rem;
   &-lg {margin-top: -2rem}
