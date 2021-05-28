@@ -1,10 +1,7 @@
 export default function LoanProgramCard(props) {
   const { src, cardName, click } = props;
   return (
-    <div
-      className="d-flex flex-column justify-content-around align-items-center"
-      style={{ width: "40%" }}
-    >
+    <div className="col-6">
       <button
         type="button"
         className="btn btn-link"
@@ -13,7 +10,7 @@ export default function LoanProgramCard(props) {
         value={1}
       >
         <img
-          className="border-circle shadow"
+          className="rounded-circle shadow w-100"
           src={src}
         />
         <p
