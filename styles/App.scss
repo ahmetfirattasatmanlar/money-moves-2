@@ -31,3 +31,20 @@
   margin-top: -1rem;
   &-lg {margin-top: -2rem}
 }
+ul.list-calendar {
+  list-style:none;
+  padding: 0;
+  white-space: nowrap;
+  width: 100%;
+  overflow-x: auto;
+  @extend .mt-2;
+  @extend .mb-4;
+
+  li {
+    display: inline-block;
+    @extend .h5;
+    @extend .px-1;
+    @extend .mx-2;
+    &.active { @extend .font-weight-bold; text-decoration: underline;}
+  }
+}

@@ -1,9 +1,9 @@
 export default function ApplicationsCard({ status = "", date = "", applicationType = "", amount = "" }) {
 
     const statusColor = () => {
-        if (status === "Pending") "#f19824"
-        else if (status === "Rejected") "#f55053"
-        else "#00b167"
+        if (status === "Pending") return "#f19824"
+        else if (status === "Rejected") return "#f55053"
+        else return "#00b167"
     }
 
     return (

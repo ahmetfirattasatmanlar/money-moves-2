@@ -15,7 +15,7 @@ export default function Nav() {
     >
       <Link href="/home">
         <div
-          className="d-flex flex-column justify-content-center align-items-center "
+          className="d-flex flex-column justify-content-center  align-items-center "
         >
           <img
             src={route.pathname === "/home" ? "/homeActive.svg" : "/home.svg"}
@@ -28,7 +28,7 @@ export default function Nav() {
 
       <Link href="/activity" className="active">
         <div
-          className="d-flex flex-column justify-content-center align-items-center "
+          className="d-flex flex-column justify-content-center  align-items-center "
         >
           <img
             src={
@@ -56,7 +56,7 @@ export default function Nav() {
 
       <Link href="/applications">
         <div
-          className="d-flex flex-column justify-content-center align-items-center "
+          className="d-flex flex-column justify-content-center  align-items-center "
         >
           <img
             src={
@@ -66,14 +66,14 @@ export default function Nav() {
             }
           />
           <a>
-            <small>Applications</small>
+            <small>Application</small>
           </a>
         </div>
       </Link>
 
       <Link href="/profile">
         <div
-          className="d-flex flex-column justify-content-center align-items-center "
+          className="d-flex flex-column justify-content-center  align-items-center "
         >
           <img
             src={
