@@ -41,7 +41,7 @@ export default function InputAmount() {
         style={{
           width: "100%",
           textAlign: "center",
-          fontSize: "1.5rem",
+          fontSize: "2rem",
           fontWeight: "bold",
           backgroundColor: "transparent",
           border: "none",

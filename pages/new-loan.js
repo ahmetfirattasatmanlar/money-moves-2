@@ -89,7 +89,11 @@ export default function NewLoan() {
           <div className="d-flex flex-column justify-content-around align-items-center">
             <ProgressBar progress={"50%"} />
 
-            <p>Amount</p>
+            <h6 className="mt-3 mb-4"><img src="/icon-cash-loan.svg" className="mr-2" />Cash Loan Application</h6>
+            <h4 className="h3 font-weight-bold">Configure your loan</h4>
+            <p className="text-muted mb-5">Set the loan according to your needs</p>
+
+            <div>AMOUNT</div>
             <Amount />
 
             <LoanDropdown text={"Term"} />
@@ -107,7 +111,12 @@ export default function NewLoan() {
           <div className="d-flex flex-column justify-content-around align-items-center">
             <ProgressBar progress={"75%"} />
 
-            <p>My monthly income</p>
+            <h6 className="mt-3 mb-4"><img src="/icon-cash-loan.svg" className="mr-2" />Cash Loan Application</h6>
+            <h4 className="h3 font-weight-bold">Personal details</h4>
+            <p className="text-muted mb-5">Fill in your personal information</p>
+
+            <div className="text-left w-100 font-weight-bold mb-3">My monthly income</div>
+
             <Amount />
 
             <PersonalInfoCard
@@ -178,13 +187,14 @@ export default function NewLoan() {
             </div>
           </div> : undefined}
 
-        {loanState !== 0 ? <div className="px-3 text-center d-flex mt-2">
-          <button className="btn btn-info rounded-lg w-100 mr-2" onClick={() => setLoanState(loanState - 1)}>Back</button>
-          <button className="btn btn-primary rounded-lg w-100 ml-2" onClick={() => setLoanState(loanState + 1)}>Next</button>
-        </div> : undefined}
+
       </div>
 
 
+      {(loanState !== 0 && loanState !== 4) ? <div className="bg-white text-center d-flex mt-2 col-sm-6 py-2 shadow-lg" style={{ position: "fixed", bottom: 0 }}>
+        <button className="btn btn-light rounded-lg w-100 mr-2" onClick={() => setLoanState(loanState - 1)}>Back</button>
+        <button className="btn btn-primary rounded-lg w-100 ml-2" onClick={() => setLoanState(loanState + 1)}>Next</button>
+      </div> : undefined}
     </AppWrapper>
   )
 }
