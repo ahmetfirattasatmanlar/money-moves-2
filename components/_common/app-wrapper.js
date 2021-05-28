@@ -1,13 +1,8 @@
 import Nav from "./nav";
 
-export default function AppWrapper({ nav, withButtons, click, children }) {
+export default function AppWrapper({ nav = false, children, dark = false }) {
   return (
-    <div
-      // style={{
-      //   background: "linear-gradient(to right, #2b88d8, #001f78)",
-      // }}
-      className="d-flex flex-column justify-content-between pb-5"
-    >
+    <div className={`d-flex flex-column justify-content-between ${dark ? 'bg-gradient-dark h-100 pb-0' : ''}`} style={{ paddingBottom: '5rem' }}>
       {children}
       {nav ? <Nav /> : undefined}
     </div>

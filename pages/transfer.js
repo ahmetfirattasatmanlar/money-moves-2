@@ -1,76 +1,50 @@
 import { useState } from "react";
-
+import Link from 'next/link'
 import AppWrapper from "components/_common/app-wrapper";
 import Amount from "components/_common/amount";
 import TransferCard from "components/_common/transfer-card";
-import Button from "components/_common/button";
 import TopBar from "components/_common/top-bar";
 
 export default function Transfer() {
-  const [transfer, setTransfer] = useState(false);
+  const [sent, setSent] = useState(false);
 
-  const changeStatus = () => {
-    setTransfer(!transfer);
-  };
+  return (<AppWrapper dark>
+    <div className="text-white text-center d-flex flex-column h-100">
+      <TopBar dark />
+      <div className="px-3">
+        {!sent ?
+          <>
+            <h4 className="text-center mb-5">Send money</h4>
+            <div>AMOUNT</div>
+            <Amount />
+            <p className="text-white mt-5">To Bank</p>
+            <TransferCard selectable />
 
+          </> : <>
+            <img src="/money-sent.svg" alt="" />
+            <p className="h4 font-weight-bold mt-5">Money Sent</p>
+            <p>We have sent the money to your bank account</p>
+            <TransferCard />
+            <div className="text-white d-flex flex-column align-items-center m-4">
+              <p className="mt-2 mb-0">Transfer Amount</p>
+              <p className="h2 font-weight-bold mb-1">$360.00</p>
+              <p><small>Nov 24, 2020 - 9:48 AM</small></p>
+            </div>
+          </>}
+      </div>
+      <div className="mt-auto px-3 pt-2 pb-4">
+        {!sent ?
+          <button className="btn btn-primary rounded-lg btn-block" onClick={() => setSent(true)}>Transfer funds</button>
+          :
+          <>
+            <Link href="/home">
+              <a className="btn rounded-lg btn-outline-light btn-block">Back To Home</a>
+            </Link>
+          </>
+        }
+      </div>
 
-  if (!transfer) {
-    return (
-      <AppWrapper>
-        <TopBar />
+    </div>
+  </AppWrapper>)
 
-        {/* <PageTitle title={"Send Money"} /> */}
-        <div
-          className="d-flex flex-column align-items-center justify-content-between"
-          style={{ height: "20vh", width: "90%" }}
-        >
-          <Amount />
-          <p className="text-white">To Bank</p>
-        </div>
-        <TransferCard />
-        <Button
-          transfer={transfer}
-          text={"Transfer Funds"}
-          click={changeStatus}
-        />
-      </AppWrapper>
-    );
-  }
-
-  if (transfer) {
-    return (
-      <AppWrapper>
-        <div
-          className="d-flex flex-column align-items-center justify-content-between"
-          style={{ height: "30vh", width: "90%" }}
-        >
-          <img src="/moneySent.svg" alt="" />
-          <h1 className="text-white">
-            <b>Money Sent</b>
-          </h1>
-          <p className="text-white">
-            We have sent the money to your bank account
-            </p>
-        </div>
-        <TransferCard />
-        <div className="text-white d-flex flex-column align-items-center m-4">
-          <p>
-            <b>Transfer Amount</b>
-          </p>
-          <p style={{ fontSize: "2rem" }}>
-            {" "}
-            <b>$360.00</b>{" "}
-          </p>
-          <p>
-            <small>Nov 24, 2020 -9:48 AM</small>
-          </p>
-        </div>
-        <Button
-          transfer={transfer}
-          text={"Back to home"}
-          bg={"bg-transparent"}
-        />
-      </AppWrapper>
-    );
-  }
 }

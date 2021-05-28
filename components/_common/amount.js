@@ -11,7 +11,7 @@ export default function InputAmount() {
     setAmount(event.target.value);
   };
 
-  const width = transferUrl ? "100%" : "75%";
+  // const width = transferUrl ? "100%" : "75%";
   const border = transferUrl ? "1.5px solid #fff" : "1.5px solid #000";
   const minus = transferUrl ? "/minusAlternative.svg" : "/minus.svg";
   const plus = transferUrl ? "/plusAlternative.svg" : "/plus.svg";
