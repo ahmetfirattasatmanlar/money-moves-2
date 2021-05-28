@@ -9,9 +9,9 @@ export default function Nav() {
       style={{
         position: "fixed",
         bottom: 0,
-        maxWidth: "25rem",
+        // maxWidth: "25rem",
       }}
-      className="w-100  pb-2 bg-white px-3 d-flex align-items-end justify-content-between shadow-lg"
+      className="col-sm-6 pb-2 bg-white px-3 d-flex align-items-end justify-content-between shadow-lg"
     >
       <Link href="/home">
         <div

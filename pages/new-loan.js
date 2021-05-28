@@ -14,26 +14,6 @@ export default function NewLoan() {
 
   const changeState = () => setLoanState(loanState + 1)
 
-  // const changeState = (event) => {
-
-  // const index = states.indexOf(loanState);
-  // const btnValue = event.target.value;
-  // const limit = index < states.length - 1;
-
-  // if (btnValue === "next" || "initialState") {
-  //   if (limit) {
-  //     setLoanState(states[index + 1]);
-  //   }
-  // }
-
-  // if (btnValue === "back") {
-  //   console.log(index - 1);
-  //   if (index > 0) {
-  //     setLoanState(states[index - 1]);
-  //   }
-  // }
-  // };
-
   return (
     <AppWrapper>
       <TopBar />

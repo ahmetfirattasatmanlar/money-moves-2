@@ -6,7 +6,7 @@ export default function AppWrapper({ nav, withButtons, click, children }) {
       // style={{
       //   background: "linear-gradient(to right, #2b88d8, #001f78)",
       // }}
-      className="d-flex flex-column justify-content-between"
+      className="d-flex flex-column justify-content-between pb-5"
     >
       {children}
       {nav ? <Nav /> : undefined}

@@ -12,10 +12,10 @@ export default function Home() {
     <AppWrapper nav>
       <div className="bg-gradient-dark text-white pb-5">
         <TopBar dark />
-        <div className="px-4 pb-4"><BalanceCard /></div>
+        <div className="px-3 pb-4"><BalanceCard /></div>
       </div>
 
-      <div className="bg-white px-4 shadow rounded-top-lg mt-neg">
+      <div className="bg-white px-3 shadow rounded-top-lg mt-neg">
         <div className="card shadow-sm mt-neg-lg rounded-lg border-none">
           <div className="card-body d-flex align-items-center py-2">
             <div className="w-100">

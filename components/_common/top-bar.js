@@ -1,14 +1,12 @@
 import BackButton from 'components/_common/back-button'
 import { useRouter } from 'next/router'
 
-export default function TopBar({ logo = true, back, dark = false }) {
-
+export default function TopBar({ logo = true, back = true, dark = false }) {
   const route = useRouter();
-  console.log(route.pathname)
 
   return (
-    <div className="py-3 px-4 mb-2" >
-      {(back || route.pathname !== '/home') ? <BackButton /> : undefined}
+    <div className="py-3 px-3 mb-2" >
+      {(route.pathname === '/home' || !!!back) ? undefined : <span><BackButton {...(dark && { dark })} /></span>}
       {logo ? (
         dark ? <img src="/logo-white.svg" /> : <img src="/logo-moneymoves.svg" />
       ) : undefined}

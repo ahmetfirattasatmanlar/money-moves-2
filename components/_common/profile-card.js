@@ -1,24 +1,14 @@
 export default function ProfileCard(props) {
-  console.log(props);
   return (
-    <div
-      className="card bg-transparent text-center d-flex flex-column align-items-center"
-      style={{ width: "100% ", height: "20vh", border: "none" }}
-    >
-      <img
-        src="/profilePicture.svg"
-        className="card-img-top w-50"
-        alt="..."
-        style={{ height: "70%" }}
-      />
-      <div className="card-body p-0 w-50 h-25">
-        <h5 className="card-title text-white" style={{ fontSize: "1rem" }}>
-          <b>Dylan Robinson</b>
-        </h5>
-        <p className="card-text text-white">
-          <small>$dylanrobinson</small>
-        </p>
+    <div>
+      <div className="bg-white p-1 d-inline-block rounded-circle mb-3">
+        <img
+          src="/profilePicture.svg"
+          alt="..."
+        />
       </div>
+      <h5 className="font-weight-bold mb-1">Dylan Robinsons</h5>
+      <small>$dylanrobinson</small>
     </div>
   );
 }

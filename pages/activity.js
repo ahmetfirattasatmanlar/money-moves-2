@@ -5,7 +5,10 @@ import TopBar from "components/_common/top-bar";
 export default function Activity() {
   return (
     <AppWrapper nav>
-      <TopBar />
+
+      <div className="bg-gradient-dark text-white pb-2">
+        <TopBar dark back={false} />
+      </div>
 
       <ActivityCard
         src={"transferTo.svg"}
