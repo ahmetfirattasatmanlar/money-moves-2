@@ -21,7 +21,7 @@ export default function Mobile() {
             </div>
           </> : <>
             <div className="text-center py-4"> <img src="/img-create-password.svg" alt="Recover password" /></div>
-            <h1 className="h3">Confirm</h1>
+            <h1 className="h3 font-weight-bold">Confirm</h1>
             <p>Please enter the 4-digit code just sent to
 +1 (562) 859-4936</p>
 
@@ -43,11 +43,11 @@ export default function Mobile() {
           </>}
 
         </div>
-        <div className="mt-auto p-2">
+        <div className="mt-auto px-2 pb-4">
           {!confirm ?
             <button className="btn btn-primary btn-block rounded-lg" onClick={() => setConfirm(true)}>Continue</button>
             :
-            <button>Dude</button>
+            <button className="btn btn-link text-primary btn-block">Resend code in 00:56</button>
           }
         </div>
       </div>
