@@ -1,7 +1,7 @@
 import AppWrapper from "components/_common/app-wrapper";
 import Link from "next/link";
 import TopBar from 'components/_common/top-bar'
-import Features from "components/_common/Features";
+import Features from "components/_common/features";
 import ProfileCard from "components/_common/profile-card";
 
 export default function Profile() {
