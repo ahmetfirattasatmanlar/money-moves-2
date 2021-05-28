@@ -1,31 +1,36 @@
 @import "theme/bootstrap.scss";
-html,
-body {
-  width: 100vw;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  position: relative;
+// html,
+// body {
+//   width: 100vw;
+//   min-height: 100vh;
+//   display: flex;
+//   justify-content: center;
+//   position: relative;
 
-  #__next {
-    overflow-x: hidden;
-    background-color: #343a40;
-    height: 100vh;
-    width: 100vw;
-    top: 0;
-    left: 0;
-    position: relative;
-  }
-}
-
-.test {
-  border: 2px solid red;
-}
-
-.background {
-  background-color: #343a40;
-}
+//   #__next {
+//     overflow-x: hidden;
+//     background-color: #343a40;
+//     height: 100vh;
+//     width: 100vw;
+//     top: 0;
+//     left: 0;
+//     position: relative;
+//   }
+// }
 
 .bg-gradient {
   @include gradient-y(#e8ebf5, #ffffff);
+}
+.bg-gradient-dark {
+  @include gradient-directional(#2A85D6, #10469A, 45deg)
+}
+.rounded-top-lg {
+  @include border-top-radius(1rem)
+}
+.negative-top-margin {
+  margin-top: -1rem;
+}
+.mt-neg {
+  margin-top: -1rem;
+  &-lg {margin-top: -2rem}
 }

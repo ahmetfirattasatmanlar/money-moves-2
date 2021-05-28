@@ -6,6 +6,5 @@ export default function BackButton() {
 
   return (
     <button onClick={() => router.back()} className="btn btn-link text-dark"><IoIosArrowBack/></button>
-
   )
 }

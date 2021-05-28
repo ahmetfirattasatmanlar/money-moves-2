@@ -1,44 +1,23 @@
 import { useState } from "react";
 import Link from "next/link";
 import AppWrapper from "components/_common/app-wrapper";
-import BalanceCard from "components/_common/BalanceCard";
-import LogoContainer from "components/_common/LogoContainer";
+import BalanceCard from "components/_common/balance-card";
 import { FaCheck } from "react-icons/fa";
+import TopBar from "components/_common/top-bar";
 
 export default function Home() {
-  const [display, setDisplay] = useState("none");
-
-  const changeDisplay = () => {
-    if (display === "none") {
-      setDisplay("flex");
-    }
-
-    if (display === "flex") {
-      setDisplay("none");
-    }
-  };
+  const [details, setDetails] = useState(false);
 
   return (
-    <AppWrapper withNav={true}>
-      <div className="text-white pt-2 pb-3 px-4" style={{ height: "275px" }}>
-        <LogoContainer icon={"bell"} justify={"between"} />
-        <BalanceCard />
+    <AppWrapper nav>
+      <div className="bg-gradient-dark text-white pb-5">
+        <TopBar dark />
+        <div className="px-4 pb-5"><BalanceCard /></div>
       </div>
 
-      <div
-        className="bg-white px-4"
-        style={{
-          borderRadius: "1rem",
-          border: "solid #ffffff",
-          marginTop: "-30px",
-          height: "100vh",
-        }}
-      >
-        <div
-          className="card shadow-sm shadow-sm"
-          style={{ marginTop: "-50px", borderRadius: "1.5rem" }}
-        >
-          <div className="card-body d-flex align-items-center">
+      <div className="bg-white px-4 shadow rounded-top-lg mt-neg">
+        <div className="card shadow-sm mt-neg-lg rounded-lg border-none">
+          <div className="card-body d-flex align-items-center py-2">
             <div className="w-100">
               <p className="m-0">
                 <small className="text-muted">Available Credit</small>
@@ -54,24 +33,19 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div
-            className="card-body justify-content-between align-items-center border-top p-2"
-            style={{ height: "3rem", display: `${display}` }}
-          >
-            <div>
-              <p className="text-muted m-0">
-                <small>Next payment</small>
-              </p>
-              <p className="m-0">09/01/2021</p>
-            </div>
-            <p>
-              <b>$199.99</b>
-            </p>
-          </div>
-          <div className="card-footer text-center">
-            <button className="btn" onClick={changeDisplay}>
-              View Details
-            </button>
+          {details ?
+            <div className="card-body d-flex border-top py-1 align-items-center">
+              <div className="w-100">
+                <p className="text-muted m-0">
+                  <small>Next payment</small>
+                </p>
+                <p className="m-0">09/01/2021</p>
+              </div>
+              <span className="h4 m-0 font-weight-bold">$199.99</span>
+            </div> : undefined
+          }
+          <div className="card-footer bg-transparent py-1 text-muted text-center" onClick={() => setDetails(!details)}>
+            {!details ? "View" : "Hide"} Details
           </div>
         </div>
 
@@ -130,7 +104,7 @@ export default function Home() {
             </div>
           </li>
         </ul>
-      </div>
-    </AppWrapper>
+      </div >
+    </AppWrapper >
   );
 }

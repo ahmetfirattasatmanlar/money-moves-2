@@ -83,7 +83,7 @@
 }
 
 .rounded-lg {
-  border-radius: $border-radius-lg !important;
+  border-radius: $border-radius-lg*5 !important;
 }
 
 .rounded-circle {
