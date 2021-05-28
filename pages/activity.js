@@ -7,7 +7,7 @@ export default function Activity() {
     <AppWrapper nav>
 
       <div className="bg-gradient-dark text-white pb-2">
-        <TopBar dark back={false} />
+        <TopBar dark back={false} center />
       </div>
 
       <ActivityCard

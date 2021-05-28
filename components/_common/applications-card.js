@@ -1,31 +1,24 @@
-export default function ApplicationsCard(props) {
-    const{ src, status, date, cardName, amount } = props
+export default function ApplicationsCard({ status = "", date = "", applicationType = "", amount = "" }) {
 
     const statusColor = () => {
-        if(status === "Pending") {
-            return "#f19824"
-        }
-
-        if(status === "Rejected") {
-            return "#f55053"
-        }
-
-        return "#00b167"
+        if (status === "Pending") "#f19824"
+        else if (status === "Rejected") "#f55053"
+        else "#00b167"
     }
 
     return (
-        <div className="d-flex justify-content-around align-items-center" style={{width: "100%", margin: "10px"}}>
-            <img src={src} style={{width: "50px", height: "50px"}}/>
-            <div className="d-flex justify-content-around w-75">
-                <div className="d-flex flex-column align-items-start">
-                    <p><b>${amount}</b></p>
-                    <p style={{fontSize: "0.8rem"}}>{cardName}</p>
-                </div>
-                <div className="d-flex flex-column align-items-end">
-                    <p style={{color: `${statusColor()}`}}>{status}</p>
-                    <p style={{fontSize: "0.8rem"}}>{date}</p>
-                </div>
+        <div className="d-flex align-items-center py-3">
+            {/* <img src={src} /> */}
+            {applicationType === "Power Sports" ? <img src="/icon-power-sports.svg" /> : undefined}
+            {applicationType === "Cash Loan" ? <img src="/icon-cash-loan.svg" /> : undefined}
+            <div className="d-flex flex-column align-items-start ml-3">
+                <p className="m-0"><strong>${amount}</strong></p>
+                <small>{applicationType}</small>
             </div>
-        </div>
+            <div className="d-flex flex-column align-items-end ml-auto">
+                <p className="m-0" style={{ color: `${statusColor()}` }}>{status}</p>
+                <small>{date}</small>
+            </div>
+        </div >
     )
 }
