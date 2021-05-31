@@ -4,6 +4,7 @@ import BackButton from 'components/_common/back-button'
 import AppWrapper from 'components/_common/app-wrapper'
 import { FiHelpCircle } from 'react-icons/fi'
 import { FaCheck } from 'react-icons/fa'
+import { FaCheck } from 'react-icons/fa'
 
 export default function Photo() {
   const [checkQuality, setCheckQuality] = useState(false)
@@ -32,7 +33,7 @@ export default function Photo() {
             </div>
           </div>
 
-          <div className="shadow ">
+          <div className="shadow">
             <div className="card shadow-lg rounded-lg border-0 mb-4 text-center px-3 pb-bottom-app">
               <img src="/img-photo-quality.png" alt="" className="img-fluid w-50 shadow-lg rounded-lg mx-auto" style={{ marginTop: "-5rem" }} />
               <div className="mt-5">

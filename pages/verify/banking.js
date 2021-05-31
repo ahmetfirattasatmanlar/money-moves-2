@@ -1,4 +1,4 @@
-// import Link from 'next/link'
+import Link from 'next/link'
 import AppWrapper from 'components/_common/app-wrapper'
 import BackButton from 'components/_common/back-button'
 import { FaCheck, FaChevronRight } from "react-icons/fa";
@@ -40,7 +40,9 @@ export default function Banking() {
           </div>
         </div>
         <div className="mt-auto px-2 pb-4">
-          <button className="btn btn-primary btn-block rounded-lg">Confirm</button>
+          <Link href="/verify">
+            <a className="btn btn-primary btn-block rounded-lg">Confirm</a>
+          </Link>
         </div>
       </div>
 

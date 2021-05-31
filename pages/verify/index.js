@@ -1,14 +1,16 @@
 import Link from 'next/link'
 import AppWrapper from 'components/_common/app-wrapper'
-import BackButton from 'components/_common/back-button'
 import { FiHelpCircle } from 'react-icons/fi'
 import { AiOutlineLock } from 'react-icons/ai'
+import { IoIosArrowBack } from 'react-icons/io'
 
 export default function Verify() {
   return (
     <AppWrapper>
       <div className="px-3 d-flex justify-content-between align-items-center">
-        <BackButton />
+        <Link href="/home">
+          <a className="btn btn-link pl-0"><IoIosArrowBack /></a>
+        </Link>
         <strong>Verify Identity</strong>
         <span><FiHelpCircle /></span>
       </div>
