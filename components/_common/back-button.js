@@ -2,8 +2,6 @@ import { useRouter } from "next/router"
 import { IoIosArrowBack } from 'react-icons/io'
 
 export default function BackButton({ dark = false }) {
-
-  console.log(dark)
   const router = useRouter()
 
   return (
