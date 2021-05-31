@@ -75,13 +75,6 @@ export default function NewLoan() {
 
               </div>
             </div>
-
-
-
-
-
-
-
           </div> : undefined}
 
 
@@ -91,19 +84,19 @@ export default function NewLoan() {
 
             <h6 className="mt-3 mb-4"><img src="/icon-cash-loan.svg" className="mr-2" />Cash Loan Application</h6>
             <h4 className="h3 font-weight-bold">Configure your loan</h4>
-            <p className="text-muted mb-5">Set the loan according to your needs</p>
+            <p className="text-muted mb-4">Set the loan according to your needs</p>
 
             <div>AMOUNT</div>
             <Amount />
-
+            <br />
             <LoanDropdown text={"Term"} />
             <LoanDropdown text={"Amortization"} />
 
-            <h3>Estimated credit score</h3>
-            <div className="d-flex justify-content-around">
-              <CreditScoreCard />
-              <CreditScoreCard />
-              <CreditScoreCard />
+            <p className="mt-4 text-left w-100">Estimated credit score</p>
+            <div className="d-flex justify-content-between align-items-center">
+              <CreditScoreCard name="Good" interestRate={"14,99"} monthlyPayment={"299,99"} />
+              <CreditScoreCard active name="Average" interestRate={"19,99"} monthlyPayment={"349,99"} />
+              <CreditScoreCard name="Poor" interestRate={"24,99"} monthlyPayment={"399,99"} />
             </div>
           </div> : undefined}
 

@@ -51,3 +51,8 @@ ul.list-calendar {
     &.active { @extend .font-weight-bold; text-decoration: underline;}
   }
 }
+.active-card {
+  @extend .border-primary;
+  border-width: 2px;
+  background: rgba($primary, .1);
+}

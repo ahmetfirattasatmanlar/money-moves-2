@@ -1,29 +1,13 @@
-export default function LoanDropdown(props) {
-  const { text } = props;
+export default function LoanDropdown({ text = "" }) {
   return (
-    <div class="dropdown m-3 bg-light w-50">
-      <button
-        class="btn btn-secondary dropdown-toggle w-100 bg-light"
-        type="button"
-        id="dropdownMenuButton"
-        data-toggle="dropdown"
-        aria-haspopup="true"
-        aria-expanded="false"
-        style={{ textAlign: "center" }}
-      >
-        {text}
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">
-          Action
-        </a>
-        <a class="dropdown-item" href="#">
-          Another action
-        </a>
-        <a class="dropdown-item" href="#">
-          Something else here
-        </a>
-      </div>
+    <div className="card pt-2 w-100  mb-4 rounded">
+      <label htmlFor="term" className="px-3 mb-0 font-weight-normal">{text}</label>
+      <select name="term" id="term" className="form-control">
+        <option value="1">1 Year</option>
+        <option value="1">2 Year</option>
+        <option value="1">3 Year</option>
+        <option value="1">4 Year</option>
+      </select>
     </div>
   );
 }
