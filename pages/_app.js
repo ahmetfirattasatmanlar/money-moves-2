@@ -5,7 +5,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <div
       className="mx-auto bg-gradient col-sm-6 px-0 "
-      style={{ height: "100vh", position: 'relative', overflowY: 'scroll' }}
+      style={{ height: "100vh", position: 'relative' }}
     >
       <Component {...pageProps} />
     </div>

@@ -13,7 +13,7 @@ export default function Nav() {
       }}
       className="col-sm-6 pb-2 bg-white px-3 d-flex align-items-end justify-content-between shadow-lg"
     >
-      <Link href="/home">
+      <Link href="/home" >
         <div
           className="d-flex flex-column justify-content-center  align-items-center "
         >
@@ -26,7 +26,7 @@ export default function Nav() {
         </div>
       </Link>
 
-      <Link href="/activity" className="active">
+      <Link href="/activity" className="active" >
         <div
           className="d-flex flex-column justify-content-center  align-items-center "
         >
@@ -43,7 +43,7 @@ export default function Nav() {
         </div>
       </Link>
 
-      <Link href="/new-loan">
+      <Link href="/new-loan" >
         <div className="d-flex flex-column  align-items-center">
           <div className="rounded-circle mt-neg-lg d-flex flex-column justify-content-end align-items-center">
             <span className="bg-white rounded-circle p-2"><img src="/icon-btn-new.svg" className="rounded-circle" style={{ boxShadow: "0 .3rem .7rem rgba(23,97,197,.7)" }} /></span>
