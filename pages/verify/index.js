@@ -13,7 +13,7 @@ export default function Verify() {
         <span><FiHelpCircle /></span>
       </div>
 
-      <div className="px-3">
+      <div className="px-3 pb-bottom-app">
         <Link href="/verify/mobile">
           <a className="card border-0 pt-3 pb-2 px-3 shadow-lg rounded-lg text-dark mb-4">
             <span className="d-flex align-items-start">

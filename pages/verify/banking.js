@@ -6,7 +6,7 @@ import { FaCheck, FaChevronRight } from "react-icons/fa";
 export default function Banking() {
   return (
     <AppWrapper>
-      <div className="d-flex flex-column h1-00" >
+      <div className="d-flex flex-column h-100" >
         <div className="px-3 mb-5 d-flex justify-content-between align-items-center">
           <BackButton />
           <strong className="pr-4">Bank Verification</strong>
