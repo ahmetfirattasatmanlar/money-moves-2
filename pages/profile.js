@@ -18,7 +18,7 @@ export default function Profile() {
         </div>
       </div>
 
-      <div className="bg-light px-3 shadow">
+      <div className="bg-light px-3 shadow pb-bottom-app">
         <div className="card shadow-sm mt-neg-lg rounded-lg border-0 mb-4">
           <div className="card-body d-flex">
             <div className="mr-3">

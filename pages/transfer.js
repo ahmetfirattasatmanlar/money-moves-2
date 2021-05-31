@@ -11,7 +11,7 @@ export default function Transfer() {
   return (<AppWrapper dark>
     <div className="text-white text-center d-flex flex-column h-100">
       <TopBar dark />
-      <div className="px-3">
+      <div className="px-3 ">
         {!sent ?
           <>
             <h4 className="text-center mb-5">Send money</h4>

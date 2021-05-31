@@ -20,7 +20,7 @@ export default function NewLoan() {
         <TopBar dark />
       </div>
 
-      <div className="bg-white px-3 shadow rounded-top-lg mt-neg pt-2">
+      <div className="bg-white px-3 shadow rounded-top-lg mt-neg pt-2 pb-bottom-app">
 
         {loanState === 0 ?
           <div className="d-flex flex-column justify-content-around align-items-center">

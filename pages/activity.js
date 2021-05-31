@@ -9,7 +9,7 @@ export default function Activity() {
         <TopBar dark back={false} center />
       </div>
 
-      <div className="bg-white shadow rounded-top-lg mt-neg pt-4 pb-5">
+      <div className="bg-white shadow rounded-top-lg mt-neg pt-4 pb-bottom-app">
         <h4 className="text-center px-3 font-weight-bold mb-4">Activity</h4>
         <ul className="list-calendar">
           <li>Jan</li>
