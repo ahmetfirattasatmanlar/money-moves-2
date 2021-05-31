@@ -72,7 +72,7 @@ export default function Register() {
                     <div className="modal-body py-5">
                       {/* If Accepted */}
                       <div>
-                        <img src="/img-loan-approved.svg" alt="" />
+                        <img src="/icon-member-success.svg" alt="" />
                         <p className="text-primary font-weight-bold mt-4">Congratulations</p>
                         <p className="h4 font-weight-bold">You are member now!</p>
                         <p>Get ready to start using Moneymoves and get money to reach your goals.</p>
