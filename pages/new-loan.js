@@ -175,7 +175,58 @@ export default function NewLoan() {
 
         {loanState === 5 ? <>
 
-          Power
+          <p className="h5 font-weight-bold my-2">Power Sports - Nov 23, 2021</p>
+          <p>Congratulations! Your MoneyMoves Loan has been approved</p>
+
+          <table className="table card">
+            <tbody>
+              <tr>
+                <th scope="row" className="bg-secondary border-0">Approved Loan Amount</th>
+                <td className="border-0 font-weight-bold text-right" >$50,000</td>
+              </tr>
+              <tr>
+                <th scope="row" className="bg-secondary border-0">Administration Fee</th>
+                <td className="border-0 font-weight-bold text-right" >$399.00</td>
+              </tr>
+              <tr>
+                <th scope="row" className="bg-secondary border-0">Total Loan</th>
+                <td className="border-0 font-weight-bold text-right" >$50,399.00</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <hr />
+
+          <table className="table card">
+            <tbody>
+              <tr>
+                <th scope="row" className="bg-secondary border-0">Monthly Payment</th>
+                <td className="border-0 font-weight-bold text-right" >$199.00</td>
+              </tr>
+              <tr>
+                <th scope="row" className="bg-secondary border-0">Interest Rate</th>
+                <td className="border-0 font-weight-bold text-right" >14.99%</td>
+              </tr>
+              <tr>
+                <th scope="row" className="bg-secondary border-0">APR</th>
+                <td className="border-0 font-weight-bold text-right" >19.99%</td>
+              </tr>
+              <tr>
+                <th scope="row" className="bg-secondary border-0">Term</th>
+                <td className="border-0 font-weight-bold text-right" >60 months</td>
+              </tr>
+              <tr>
+                <th scope="row" className="bg-secondary border-0">Amortization Period</th>
+                <td className="border-0 font-weight-bold text-right" >120 months</td>
+              </tr>
+              <tr>
+                <th scope="row" className="bg-secondary border-0">Balloon Payment</th>
+                <td className="border-0 font-weight-bold text-right" >$5,000</td>
+              </tr>
+            </tbody>
+          </table>
+
+
 
         </> : undefined}
 

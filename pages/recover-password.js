@@ -41,8 +41,8 @@ export default function RecoverPassword() {
 
             <ul className="list-unstyled mt-3">
               <li className="py-1"><span className="text-success"><FaCheck /></span> Has at least 8 characters</li>
-              <li className="py-1"><span className="text-secondary"><FaCheck /></span> Has an uppercase letter or symbol</li>
-              <li className="py-1"><span className="text-secondary"><FaCheck /></span> Has a number</li>
+              <li className="py-1"><span className="text-muted"><FaCheck /></span> Has an uppercase letter or symbol</li>
+              <li className="py-1"><span className="text-muted"><FaCheck /></span> Has a number</li>
             </ul>
           </>
         }
