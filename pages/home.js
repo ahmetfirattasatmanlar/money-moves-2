@@ -16,7 +16,7 @@ export default function Home() {
         <div className="px-3 pb-4"><BalanceCard /></div>
       </div>
 
-      <div className="bg-white px-3 shadow rounded-top-lg mt-neg">
+      <div className="bg-white px-3 shadow rounded-top-lg mt-neg pb-bottom-app">
         <div className="card shadow-sm mt-neg-lg rounded-lg border-none">
           <div className="card-body d-flex align-items-center py-2">
             <div className="w-100">
