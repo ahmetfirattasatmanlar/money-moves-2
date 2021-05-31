@@ -112,6 +112,7 @@ export default function NewLoan() {
 
             <Amount />
 
+            <br />
             <PersonalInfoCard
               title={"Employment"}
               options={[
@@ -132,62 +133,100 @@ export default function NewLoan() {
           </div> : undefined}
 
         {loanState === 3 ?
-          <div className="d-flex flex-column justify-content-around align-items-center">
-            <ProgressBar progress={"100%"} />
-
-            <p>My monthly income</p>
-            <Amount />
-
-            <div>
-              <div className="d-flex justify-content-between w-100">
-                <p>Amount</p>
-                <p>
-                  <b>$10,000</b>
-                </p>
-              </div>
-              <div className="d-flex justify-content-between w-100">
-                <p>Term</p>
-                <p>
-                  <b>1 Year</b>
-                </p>
-              </div>
-              <div className="d-flex justify-content-between w-100">
-                <p>Amortization</p>
-                <p>
-                  <b>1 Year</b>
-                </p>
-              </div>
+          <div >
+            <div className="text-center">
+              <ProgressBar progress={"100%"} />
+              <h6 className="mt-3 mb-4"><img src="/icon-cash-loan.svg" className="mr-2" />Cash Loan Application</h6>
+              <h4 className="h3 font-weight-bold">Your loan</h4>
+              <p className="text-muted mb-5">Details of the loan you chose</p>
             </div>
-            <div className="w-75 mt-4">
-              <div className="d-flex justify-content-between">
-                <p>Credit</p>
-                <p>
-                  <b>$700</b>
-                </p>
-              </div>
-              <div className="d-flex justify-content-between">
-                <p>Interest Rate</p>
-                <p>
-                  <b>14,99%</b>
-                </p>
-              </div>
-              <div className="d-flex justify-content-between">
-                <p>Monthly Payment</p>
-                <p>
-                  <b>$399.99</b>
-                </p>
-              </div>
-            </div>
+
+
+            <dl className="d-flex align-items-bottom justify-content-between">
+              <dt className="font-weight-normal">Amount</dt>
+              <dd className="font-weight-bold">$10,000</dd>
+            </dl>
+            <dl className="d-flex align-items-bottom justify-content-between">
+              <dt className="font-weight-normal">Term</dt>
+              <dd className="font-weight-bold">1 Year</dd>
+            </dl>
+            <dl className="d-flex align-items-bottom justify-content-between">
+              <dt className="font-weight-normal">Amortization</dt>
+              <dd className="font-weight-bold">1 Year</dd>
+            </dl>
+
+            <hr />
+
+            <dl className="d-flex align-items-bottom justify-content-between">
+              <dt className="font-weight-normal">Credit</dt>
+              <dd className="font-weight-bold">$700</dd>
+            </dl>
+            <dl className="d-flex align-items-bottom justify-content-between">
+              <dt className="font-weight-normal">Interest Rate</dt>
+              <dd className="font-weight-bold">14,99%</dd>
+            </dl>
+            <dl className="d-flex align-items-bottom justify-content-between">
+              <dt className="font-weight-normal">Monthly Payment</dt>
+              <dd className="font-weight-bold">$399.99</dd>
+            </dl>
+
           </div> : undefined}
+
+
+        {loanState === 5 ? <>
+
+          Power
+
+        </> : undefined}
+
 
 
       </div>
 
 
-      {(loanState !== 0 && loanState !== 4) ? <div className="bg-white text-center d-flex mt-2 col-sm-6 py-2 shadow-lg" style={{ position: "fixed", bottom: 0 }}>
+
+
+
+      {loanState === 4 ? <div className="custom-modal">
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content text-center">
+            <div className="modal-body py-5">
+              {/* If Accepted */}
+              <div>
+                <img src="/img-loan-approved.svg" alt="" />
+                <p className="text-primary font-weight-bold mt-4">Congratulations</p>
+                <p className="h4">Your Loan was approved!</p>
+                <p>The loan was credited to your account, now you can achieve that goal you wanted.</p>
+                <button type="button" className="btn btn-primary rounded-lg shadow-lg w-75" onClick={() => setLoanState(loanState + 1)}>View Loan</button>
+
+              </div>
+
+              {/* If Rejected */}
+              {/* <div>
+                <img src="/img-loan-rejected.svg" alt="" />
+
+                <p className="text-primary font-weight-bold">Sorry</p>
+                <p className="h4">Your Loan was Rejected</p>
+                <p>We are sorry, your application does not meet our requirements, please try again.</p>
+                <button type="button" className="btn btn-primary rounded-lg shadow-lg w-75" onClick={() => setLoanState(0)}>OK</button>
+
+              </div> */}
+
+            </div>
+          </div>
+        </div>
+      </div> : undefined}
+
+
+
+
+
+      {(loanState !== 0 && loanState !== 4 && loanState !== 5) ? <div className="bg-white text-center d-flex mt-2 col-sm-6 py-2 shadow-lg" style={{ position: "fixed", bottom: 0 }}>
         <button className="btn btn-light rounded-lg w-100 mr-2" onClick={() => setLoanState(loanState - 1)}>Back</button>
         <button className="btn btn-primary rounded-lg w-100 ml-2" onClick={() => setLoanState(loanState + 1)}>Next</button>
       </div> : undefined}
+
+
     </AppWrapper>
   )
 }
