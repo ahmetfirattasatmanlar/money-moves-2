@@ -7,10 +7,11 @@ import Link from 'next/link'
 
 export default function Register() {
   const [createPassword, setCreatePassword] = useState(false)
+  const [accountSuccess, setAccountSuccess] = useState(false)
 
   return (
     <div className="d-flex flex-column h-100">
-      <div className="d-flex align-items-center justify-content-between py-2">
+      <div className="d-flex align-items-center justify-content-between py-2 px-3 ">
         <div className="w-25"><BackButton /></div>
         <div className="w-100"><img src="/logo-moneymoves.svg" alt="logo money moves" className="img-fluid" /></div>
         <div className="w-25"></div>
@@ -62,11 +63,35 @@ export default function Register() {
           </div>
 
           :
-          <button className="btn btn-primary py-3 btn-block" style={{ borderRadius: '10rem' }}>
-            <Link href="/home">
-              <a className="text-white">Create Account</a>
-            </Link>
-          </button>
+          <>
+            <button className="btn btn-primary py-3 btn-block rounded-lg" onClick={() => setAccountSuccess(true)}>Create Account</button>
+            {accountSuccess ?
+              <div className="custom-modal">
+                <div className="modal-dialog modal-dialog-centered">
+                  <div className="modal-content text-center">
+                    <div className="modal-body py-5">
+                      {/* If Accepted */}
+                      <div>
+                        <img src="/img-loan-approved.svg" alt="" />
+                        <p className="text-primary font-weight-bold mt-4">Congratulations</p>
+                        <p className="h4 font-weight-bold">You are member now!</p>
+                        <p>Get ready to start using Moneymoves and get money to reach your goals.</p>
+                        {/* <button type="button" className="btn btn-primary rounded-lg shadow-lg w-75">I'm ready to start</button> */}
+                        <Link href="/home">
+                          <a className="btn btn-primary rounded-lg shadow-lg w-75">I'm ready to start</a>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              : undefined}
+          </>
+          // {/* // <button className="btn btn-primary py-3 btn-block" style={{ borderRadius: '10rem' }}>
+          // //   <Link href="/home">
+          // //     <a className="text-white">Create Account</a>
+          // //   </Link>
+          // // </button> */}
         }
 
       </div>

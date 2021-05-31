@@ -9,7 +9,7 @@ export default function RecoverPassword() {
   return (
     <div className="d-flex flex-column h-100">
 
-      <div className="d-flex align-items-center justify-content-center py-2">
+      <div className="d-flex align-items-center justify-content-center py-2 px-3">
         <div className="w-25"><BackButton /></div>
         <div className="w-100"><img src="/logo-moneymoves.svg" alt="logo money moves" className="img-fluid" /></div>
         <div className="w-25"></div>

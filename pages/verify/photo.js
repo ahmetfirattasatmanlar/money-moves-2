@@ -4,7 +4,6 @@ import BackButton from 'components/_common/back-button'
 import AppWrapper from 'components/_common/app-wrapper'
 import { FiHelpCircle } from 'react-icons/fi'
 import { FaCheck } from 'react-icons/fa'
-import { FaCheck } from 'react-icons/fa'
 
 export default function Photo() {
   const [checkQuality, setCheckQuality] = useState(false)
