@@ -18,6 +18,11 @@
 //   }
 // }
 
+
+#__next {
+  max-width: 26.56rem;
+  margin: 0 auto;
+}
 .bg-gradient {
   @include gradient-y(#e8ebf5, #ffffff);
 }
