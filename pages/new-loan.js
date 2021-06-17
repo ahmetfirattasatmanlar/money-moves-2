@@ -10,8 +10,19 @@ import TopBar from "components/_common/top-bar";
 
 export default function NewLoan() {
     const [loanState, setLoanState] = useState(0);
+    const [cardStatus, setCardStatus] = useState({ Good: false, Average: true, Poor: false });
 
     // const changeState = () => setLoanState(loanState + 1)
+
+    const changeStatus = (data) => {
+        const copyState = { ...cardStatus };
+        const keys = Object.keys(copyState);
+        keys.forEach((key) => {
+            copyState[key] = false;
+        });
+        copyState[data] = true;
+        setCardStatus(copyState);
+    };
 
     return (
         <AppWrapper>
@@ -72,18 +83,20 @@ export default function NewLoan() {
                         <h4 className="h3 font-weight-bold">Configure your loan</h4>
                         <p className="text-muted mb-4">Set the loan according to your needs</p>
 
-                        <div>AMOUNT</div>
-                        <Amount defaultValue={10000} />
-                        <br />
-                        <LoanDropdown text={"Term"} />
-                        <LoanDropdown text={"Amortization"} />
+                        <form action="">
+                            <div className="text-center">AMOUNT</div>
+                            <Amount defaultValue={10000} />
+                            <br />
+                            <LoanDropdown text={"Term"} />
+                            <LoanDropdown text={"Amortization"} />
 
-                        <p className="mt-4 text-left w-100">Estimated credit score</p>
-                        <div className="d-flex justify-content-between align-items-center">
-                            <CreditScoreCard name="Good" interestRate={"14,99"} monthlyPayment={"299,99"} />
-                            <CreditScoreCard active name="Average" interestRate={"19,99"} monthlyPayment={"349,99"} />
-                            <CreditScoreCard name="Poor" interestRate={"24,99"} monthlyPayment={"399,99"} />
-                        </div>
+                            <p className="mt-4 text-left w-100">Estimated credit score</p>
+                            <div className="d-flex justify-content-between align-items-center">
+                                <CreditScoreCard active={cardStatus.Good} click={changeStatus} name="Good" interestRate={"14,99"} monthlyPayment={"299,99"} />
+                                <CreditScoreCard active={cardStatus.Average} click={changeStatus} name="Average" interestRate={"19,99"} monthlyPayment={"349,99"} />
+                                <CreditScoreCard active={cardStatus.Poor} click={changeStatus} name="Poor" interestRate={"24,99"} monthlyPayment={"399,99"} />
+                            </div>
+                        </form>
                     </div>
                 ) : undefined}
 
