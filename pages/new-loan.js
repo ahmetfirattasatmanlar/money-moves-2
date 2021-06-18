@@ -10,8 +10,19 @@ import TopBar from "components/_common/top-bar";
 
 export default function NewLoan() {
     const [loanState, setLoanState] = useState(0);
+    const [cardStatus, setCardStatus] = useState({ Good: false, Average: true, Poor: false });
 
     // const changeState = () => setLoanState(loanState + 1)
+
+    const changeStatus = (data) => {
+        const copyState = { ...cardStatus };
+        const keys = Object.keys(copyState);
+        keys.forEach((key) => {
+            copyState[key] = false;
+        });
+        copyState[data] = true;
+        setCardStatus(copyState);
+    };
 
     return (
         <AppWrapper>
@@ -28,29 +39,29 @@ export default function NewLoan() {
                             <h4 className="h3 font-weight-bold">Choose program</h4>
                             <p className="text-muted mb-5">We have a program to suit your needs</p>
 
-                            <div className="row">
-                                <div className="col-6 mb-5">
+                            <div className="row d-flex justify-content-center">
+                                <div className="col-4 mx-2 mb-5">
                                     <div onClick={() => setLoanState(loanState + 1)}>
                                         <img className="rounded-circle shadow w-100 mb-2" src={"/icon-home-improvement.svg"} />
                                         <small className="mb-0 font-weight-bold">Home Improvement</small>
                                     </div>
                                 </div>
 
-                                <div className="col-6 mb-5">
+                                <div className="col-4 mx-2 mb-5">
                                     <div onClick={() => setLoanState(loanState + 1)}>
                                         <img className="rounded-circle shadow w-100 mb-2" src={"/icon-power-sports.svg"} />
                                         <small className="mb-0 font-weight-bold">Power Sports</small>
                                     </div>
                                 </div>
 
-                                <div className="col-6 mb-5">
+                                <div className="col-4 mx-2 mb-5">
                                     <div onClick={() => setLoanState(loanState + 1)}>
                                         <img className="rounded-circle shadow w-100 mb-2" src={"/medicalDental.svg"} />
                                         <small className="mb-0 font-weight-bold">Medical / Dental</small>
                                     </div>
                                 </div>
 
-                                <div className="col-6 mb-5">
+                                <div className="col-4 mx-2 mb-5">
                                     <div onClick={() => setLoanState(loanState + 1)}>
                                         <img className="rounded-circle shadow w-100 mb-2" src={"/icon-cash-loan.svg"} />
                                         <small className="mb-0 font-weight-bold">Cash Loans</small>
@@ -72,18 +83,20 @@ export default function NewLoan() {
                         <h4 className="h3 font-weight-bold">Configure your loan</h4>
                         <p className="text-muted mb-4">Set the loan according to your needs</p>
 
-                        <div>AMOUNT</div>
-                        <Amount defaultValue={10000} />
-                        <br />
-                        <LoanDropdown text={"Term"} />
-                        <LoanDropdown text={"Amortization"} />
+                        <form action="">
+                            <div className="text-center">AMOUNT</div>
+                            <Amount defaultValue={10000} />
+                            <br />
+                            <LoanDropdown text={"Term"} />
+                            <LoanDropdown text={"Amortization"} />
 
-                        <p className="mt-4 text-left w-100">Estimated credit score</p>
-                        <div className="d-flex justify-content-between align-items-center">
-                            <CreditScoreCard name="Good" interestRate={"14,99"} monthlyPayment={"299,99"} />
-                            <CreditScoreCard active name="Average" interestRate={"19,99"} monthlyPayment={"349,99"} />
-                            <CreditScoreCard name="Poor" interestRate={"24,99"} monthlyPayment={"399,99"} />
-                        </div>
+                            <p className="mt-4 text-left w-100">Estimated credit score</p>
+                            <div className="d-flex justify-content-between align-items-center">
+                                <CreditScoreCard active={cardStatus.Good} click={changeStatus} name="Good" interestRate={"14,99"} monthlyPayment={"299,99"} />
+                                <CreditScoreCard active={cardStatus.Average} click={changeStatus} name="Average" interestRate={"19,99"} monthlyPayment={"349,99"} />
+                                <CreditScoreCard active={cardStatus.Poor} click={changeStatus} name="Poor" interestRate={"24,99"} monthlyPayment={"399,99"} />
+                            </div>
+                        </form>
                     </div>
                 ) : undefined}
 
@@ -105,7 +118,7 @@ export default function NewLoan() {
                         <br />
                         <PersonalInfoCard title={"Employment"} options={["Employed full time", "Employed part time", "Student", "Retired"]} />
                         <PersonalInfoCard title={"Residential Status"} options={["Home owner", "Renting", "Living with parents/family"]} />
-                        <PersonalInfoCard title={"Marital Status"} options={["Maried", "Single", "Divorced", "Separeted"]} />
+                        <PersonalInfoCard title={"Marital Status"} options={["Maried", "Single", "Divorced", "Separated"]} />
                     </div>
                 ) : undefined}
 
