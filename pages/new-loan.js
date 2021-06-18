@@ -39,29 +39,29 @@ export default function NewLoan() {
                             <h4 className="h3 font-weight-bold">Choose program</h4>
                             <p className="text-muted mb-5">We have a program to suit your needs</p>
 
-                            <div className="row">
-                                <div className="col-6 mb-5">
+                            <div className="row d-flex justify-content-center">
+                                <div className="col-4 mx-2 mb-5">
                                     <div onClick={() => setLoanState(loanState + 1)}>
                                         <img className="rounded-circle shadow w-100 mb-2" src={"/icon-home-improvement.svg"} />
                                         <small className="mb-0 font-weight-bold">Home Improvement</small>
                                     </div>
                                 </div>
 
-                                <div className="col-6 mb-5">
+                                <div className="col-4 mx-2 mb-5">
                                     <div onClick={() => setLoanState(loanState + 1)}>
                                         <img className="rounded-circle shadow w-100 mb-2" src={"/icon-power-sports.svg"} />
                                         <small className="mb-0 font-weight-bold">Power Sports</small>
                                     </div>
                                 </div>
 
-                                <div className="col-6 mb-5">
+                                <div className="col-4 mx-2 mb-5">
                                     <div onClick={() => setLoanState(loanState + 1)}>
                                         <img className="rounded-circle shadow w-100 mb-2" src={"/medicalDental.svg"} />
                                         <small className="mb-0 font-weight-bold">Medical / Dental</small>
                                     </div>
                                 </div>
 
-                                <div className="col-6 mb-5">
+                                <div className="col-4 mx-2 mb-5">
                                     <div onClick={() => setLoanState(loanState + 1)}>
                                         <img className="rounded-circle shadow w-100 mb-2" src={"/icon-cash-loan.svg"} />
                                         <small className="mb-0 font-weight-bold">Cash Loans</small>
@@ -118,7 +118,7 @@ export default function NewLoan() {
                         <br />
                         <PersonalInfoCard title={"Employment"} options={["Employed full time", "Employed part time", "Student", "Retired"]} />
                         <PersonalInfoCard title={"Residential Status"} options={["Home owner", "Renting", "Living with parents/family"]} />
-                        <PersonalInfoCard title={"Marital Status"} options={["Maried", "Single", "Divorced", "Separeted"]} />
+                        <PersonalInfoCard title={"Marital Status"} options={["Maried", "Single", "Divorced", "Separated"]} />
                     </div>
                 ) : undefined}
 

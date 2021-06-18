@@ -90,8 +90,8 @@ hr {
 .slider-panel {
   position: fixed;
   bottom: 0;
-  left: 0;
-  width: 100%;
+  left: 34% ;
+  width: 26.56rem;
   height: 100%;
   z-index: $zindex-modal-backdrop;
   opacity: 0;
@@ -123,4 +123,12 @@ hr {
       transform: translateY(0);
     }
   }
+}
+
+
+@media screen and (max-width: 425px) {
+ .slider-panel {
+   left: 0;
+   width: 100%;
+ } 
 }

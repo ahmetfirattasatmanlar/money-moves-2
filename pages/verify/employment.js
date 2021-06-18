@@ -103,8 +103,18 @@ export default function Employment() {
                                 <div className="card-body py-0 pl-0 pr-3 rounded-bottom d-flex  align-items-center">
                                     <select name="State" id="State" className="form-control" value={state} onChange={fillState}>
                                         <option value="AB">AB</option>
-                                        <option value="CD">CD</option>
-                                        <option value="EF">EF</option>
+                                        <option value="BC">BC</option>
+                                        <option value="MB">MB</option>
+                                        <option value="NB">NB</option>
+                                        <option value="NL">NL</option>
+                                        <option value="NT">NT</option>
+                                        <option value="NS">NS</option>
+                                        <option value="NU">NU</option>
+                                        <option value="ON">ON</option>
+                                        <option value="PE">PE</option>
+                                        <option value="QC">QC</option>
+                                        <option value="SK">SK</option>
+                                        <option value="YT">YT</option>
                                     </select>
                                 </div>
                             </div>
@@ -117,7 +127,7 @@ export default function Employment() {
                             </label>
                         </div>
                         <div className="card-body p-0 rounded-bottom">
-                            <input type="text" className="form-control px-3" name="Postal Code" id="Postal Code" placeholder="34562" value={postalCode} onChange={fillPostalCode} />
+                            <input type="text" className="form-control px-3" name="Postal Code" id="Postal Code" placeholder="A1B 2C4" value={postalCode} onChange={fillPostalCode} />
                         </div>
                     </div>
                     <div className="mt-4">
