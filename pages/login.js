@@ -4,13 +4,24 @@ import { useState } from "react";
 export default function Login() {
     const [withEmail, isWithEmail] = useState(false);
     const [password, setPassword] = useState("");
+    const [username, setUsername] = useState("");
 
     const getPassword = (event) => {
         setPassword(event.target.value);
-        console.log();
     };
 
-    console.log(password.length);
+    const getUsername = (event) => {
+        setUsername(event.target.value);
+    };
+
+    const btnStatus = () => {
+        const user = username.length >= 8;
+        const pass = password.length >= 8;
+
+        console.log(user && pass);
+
+        return user && pass ? false : true;
+    };
 
     return (
         <div className="py-5 text-center px-3">
@@ -44,7 +55,7 @@ export default function Login() {
             {withEmail ? (
                 <form>
                     <div className="mb-3">
-                        <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username or email" />
+                        <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username or email" onChange={getUsername} />
                         {/* <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div> */}
                     </div>
                     <div className="mb-3">
@@ -58,7 +69,7 @@ export default function Login() {
                     </div>
 
                     <Link href="/home">
-                        <button className="btn btn-primary py-3 btn-block" disabled={password.length < 8 ? true : false} style={{ borderRadius: "10rem" }}>
+                        <button className="btn btn-primary py-3 btn-block" disabled={btnStatus()} style={{ borderRadius: "10rem" }}>
                             Sign In
                         </button>
                     </Link>

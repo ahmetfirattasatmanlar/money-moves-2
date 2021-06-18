@@ -240,7 +240,7 @@ export default function NewLoan() {
 
             {loanState === 4 ? (
                 <div className="custom-modal">
-                    <div className="modal-dialog modal-dialog-centered">
+                    <div className="container modal-dialog modal-dialog-centered">
                         <div className="modal-content text-center">
                             <div className="modal-body py-5">
                                 {/* If Accepted */}
