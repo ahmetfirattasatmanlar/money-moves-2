@@ -118,7 +118,7 @@ export default function NewLoan() {
                         <br />
                         <PersonalInfoCard title={"Employment"} options={["Employed full time", "Employed part time", "Student", "Retired"]} />
                         <PersonalInfoCard title={"Residential Status"} options={["Home owner", "Renting", "Living with parents/family"]} />
-                        <PersonalInfoCard title={"Marital Status"} options={["Maried", "Single", "Divorced", "Separated"]} />
+                        <PersonalInfoCard title={"Marital Status"} options={["Married", "Single", "Divorced", "Separated"]} />
                     </div>
                 ) : undefined}
 
