@@ -6,6 +6,7 @@ import { BsPlusCircle, BsDashCircle } from "react-icons/bs";
 
 export default function Employment() {
     const [yearsOfEmployment, setYearsOfEmployment] = useState(0);
+    const [monthsOfEmployment, setMonthsOfEmployment] = useState(0);
     const [company, setCompany] = useState("");
     const [street, setStreet] = useState("");
     const [city, setCity] = useState("");
@@ -34,7 +35,6 @@ export default function Employment() {
 
     const getBtnStatus = () => {
         const isValidForm = company && city && street && state && postalCode && yearsOfEmployment;
-        console.log(isValidForm);
         return isValidForm ? false : true;
     };
 
@@ -49,6 +49,20 @@ export default function Employment() {
             setYearsOfEmployment(yearsOfEmployment + 1);
         }
     };
+
+    const selectMonths = (event) => {
+        const target = event.target.value;
+
+        if (target === "minus") {
+            setMonthsOfEmployment(monthsOfEmployment - 1);
+        }
+
+        if (target === "plus") {
+            setMonthsOfEmployment(monthsOfEmployment + 1);
+        }
+    };
+
+    console.log(monthsOfEmployment);
 
     return (
         <AppWrapper>
@@ -130,16 +144,31 @@ export default function Employment() {
                             <input type="text" className="form-control px-3" name="Postal Code" id="Postal Code" placeholder="A1B 2C4" value={postalCode} onChange={fillPostalCode} />
                         </div>
                     </div>
-                    <div className="mt-4">
-                        <label htmlFor="Years">Year Worked Here</label>
-                        <div className="h2 d-flex align-items-center">
-                            <button type="button" className="d-flex justify-content-center align-items-center flex-column btn p-0 m-0" value="minus" disabled={yearsOfEmployment <= 0} onClick={selectYears}>
-                                <BsPlusCircle className="m-2 w-100 h-100 pe-none" />
-                            </button>
-                            <span className="mx-4">{yearsOfEmployment}</span>
-                            <button type="button" className="d-flex justify-content-center align-items-center flex-column btn p-0 m-0" value="plus" onClick={selectYears}>
-                                <BsDashCircle className="m-2 w-100 h-100 pe-none" />
-                            </button>
+                    <div className="mt-4 d-flex justify-content-around">
+                        <div>
+                            <label htmlFor="Years">Year Worked Here</label>
+                            <div className="h2 d-flex align-items-center">
+                                <button type="button" className="d-flex justify-content-center align-items-center flex-column btn p-0 m-0" value="minus" disabled={yearsOfEmployment <= 0} onClick={selectYears}>
+                                    <BsDashCircle className="m-2 w-100 h-100 pe-none" />
+                                </button>
+                                <span className="mx-4">{yearsOfEmployment}</span>
+                                <button type="button" className="d-flex justify-content-center align-items-center flex-column btn p-0 m-0" value="plus" onClick={selectYears}>
+                                    <BsPlusCircle className="m-2 w-100 h-100 pe-none" />
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label htmlFor="Years">Months Worked Here</label>
+                            <div className="h2 d-flex align-items-center">
+                                <button type="button" className="d-flex justify-content-center align-items-center flex-column btn p-0 m-0" value="minus" disabled={monthsOfEmployment <= 0} onClick={selectMonths}>
+                                    <BsDashCircle className="m-2 w-100 h-100 pe-none" />
+                                </button>
+                                <span className="mx-4">{monthsOfEmployment}</span>
+                                <button type="button" className="d-flex justify-content-center align-items-center flex-column btn p-0 m-0" value="plus" disabled={monthsOfEmployment >= 12} onClick={selectMonths}>
+                                    <BsPlusCircle className="m-2 w-100 h-100 pe-none" />
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -65,8 +65,8 @@ ul.list-calendar {
 .custom-modal {
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 34.5%;
+  width: 26.56rem;
   height: 100%;
   z-index: $zindex-modal-backdrop;
   background-color: rgba($modal-backdrop-bg, $modal-backdrop-opacity);
@@ -127,7 +127,7 @@ hr {
 
 
 @media screen and (max-width: 425px) {
- .slider-panel {
+ .slider-panel, .custom-modal {
    left: 0;
    width: 100%;
  } 
