@@ -1,4 +1,8 @@
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import { useForm } from "react-hook-form";
+import validation from "../../scripts/validation";
+
 import Link from "next/link";
 import AppWrapper from "components/_common/app-wrapper";
 import BackButton from "components/_common/back-button";
@@ -7,7 +11,6 @@ import { FaChevronRight, FaCheck } from "react-icons/fa";
 import { FiHelpCircle } from "react-icons/fi";
 import { IoIosArrowBack } from "react-icons/io";
 import { ImCloudUpload, ImCamera } from "react-icons/im";
-import { useForm } from "react-hook-form";
 
 export default function GovernmentId() {
     const [onSlide, setOnSlide] = useState(false);
@@ -16,6 +19,8 @@ export default function GovernmentId() {
     const [takePicture, setTakePicture] = useState(false);
     const [uploaded, setUploaded] = useState(null);
     const [formData, setFormData] = useState(null);
+
+    const route = useRouter();
 
     const { register, handleSubmit } = useForm();
 
@@ -29,24 +34,10 @@ export default function GovernmentId() {
 
     const onSubmit = (data) => setFormData(data);
 
-    const validateForm = () => {
-        let notFilled = [];
-        for (let property in formData) {
-            if (formData[property] === "") {
-                notFilled.push(property);
-            }
-        }
-
-        if (notFilled.length > 0) {
-            console.log(notFilled);
-            return false;
-        }
-        console.log("Form validated and sent to the server");
-    };
-
     useEffect(() => {
         if (formData) {
-            validateForm();
+            validation(formData);
+            route.push("/verify");
         }
     }, [formData]);
 
