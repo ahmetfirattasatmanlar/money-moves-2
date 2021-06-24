@@ -1,5 +1,4 @@
 const validateForm = (data) => {
-    console.log(data);
     let notFilled = [];
     for (let property in data) {
         if (property === "monthsOfEmployment") {
