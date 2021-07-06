@@ -1,4 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import { useForm } from "react-hook-form";
+import validation from "../../scripts/validation";
+
 import Link from "next/link";
 import AppWrapper from "components/_common/app-wrapper";
 import BackButton from "components/_common/back-button";
@@ -7,36 +10,14 @@ import { BsPlusCircle, BsDashCircle } from "react-icons/bs";
 export default function Employment() {
     const [yearsOfEmployment, setYearsOfEmployment] = useState(0);
     const [monthsOfEmployment, setMonthsOfEmployment] = useState(0);
-    const [company, setCompany] = useState("");
-    const [street, setStreet] = useState("");
-    const [city, setCity] = useState("");
-    const [state, setState] = useState("");
-    const [postalCode, setPostalcode] = useState("");
+    const [formData, setFormData] = useState({});
 
-    const fillCompany = (event) => {
-        setCompany(event.target.value);
+    let defaultValues = {
+        yearsOfEmployment: 0,
+        monthsOfEmployment: 0,
     };
 
-    const fillCity = (event) => {
-        setCity(event.target.value);
-    };
-
-    const fillStreet = (event) => {
-        setStreet(event.target.value);
-    };
-
-    const fillPostalCode = (event) => {
-        setPostalcode(event.target.value);
-    };
-
-    const fillState = (event) => {
-        setState(event.target.value);
-    };
-
-    const getBtnStatus = () => {
-        const isValidForm = company && city && street && state && postalCode && yearsOfEmployment;
-        return isValidForm ? false : true;
-    };
+    const { register, handleSubmit } = useForm();
 
     const selectYears = (event) => {
         const target = event.target.value;
@@ -62,7 +43,14 @@ export default function Employment() {
         }
     };
 
-    console.log(monthsOfEmployment);
+    const onSubmit = (data) => setFormData(data);
+
+    useEffect(() => {
+        const keys = Object.keys(formData);
+        if (keys.length > 0) {
+            validation(formData);
+        }
+    }, [formData]);
 
     return (
         <AppWrapper>
@@ -72,113 +60,114 @@ export default function Employment() {
                     <strong className="pr-4">Employment Verification</strong>
                     <span>&nbsp;</span>
                 </div>
-                <div className="px-3">
-                    Complete the information of the company where you work
-                    <div className="card border-0 shadow mt-4">
-                        <div className="card-header border-0 bg-transparent pb-0 pt-2 px-3 rounded-top">
-                            <label htmlFor="Company Name" className="m-0">
-                                Company Name
-                            </label>
+                <form action="" onSubmit={handleSubmit(onSubmit)}>
+                    <div className="px-3">
+                        Complete the information of the company where you work
+                        <div className="card border-0 shadow mt-4">
+                            <div className="card-header border-0 bg-transparent pb-0 pt-2 px-3 rounded-top">
+                                <label htmlFor="Company Name" className="m-0">
+                                    Company Name
+                                </label>
+                            </div>
+                            <div className="card-body p-0 rounded-bottom">
+                                <input type="text" className="form-control px-3" name="Company Name" id="Company Name" placeholder="Money Moves" {...register("companyName")} />
+                            </div>
                         </div>
-                        <div className="card-body p-0 rounded-bottom">
-                            <input type="text" className="form-control px-3" name="Company Name" id="Company Name" placeholder="Money Moves" value={company} onChange={fillCompany} />
+                        <div className="card border-0 shadow mt-4">
+                            <div className="card-header border-0 bg-transparent pb-0 pt-2 px-3 rounded-top">
+                                <label htmlFor="Street Address" className="m-0">
+                                    Street Address
+                                </label>
+                            </div>
+                            <div className="card-body p-0 rounded-bottom">
+                                <input type="text" className="form-control px-3" name="Street Address" id="Street Address" placeholder="Street Address" {...register("streetAddress")} />
+                            </div>
                         </div>
-                    </div>
-                    <div className="card border-0 shadow mt-4">
-                        <div className="card-header border-0 bg-transparent pb-0 pt-2 px-3 rounded-top">
-                            <label htmlFor="Street Address" className="m-0">
-                                Street Address
-                            </label>
-                        </div>
-                        <div className="card-body p-0 rounded-bottom">
-                            <input type="text" className="form-control px-3" name="Street Address" id="Street Address" placeholder="Street Address" value={street} onChange={fillStreet} />
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col ">
-                            <div className="card border-0 shadow mt-4">
-                                <div className="card-header border-0 bg-transparent pb-0 pt-2 px-3 rounded-top">
-                                    <label htmlFor="City" className="m-0">
-                                        City
-                                    </label>
+                        <div className="row">
+                            <div className="col ">
+                                <div className="card border-0 shadow mt-4">
+                                    <div className="card-header border-0 bg-transparent pb-0 pt-2 px-3 rounded-top">
+                                        <label htmlFor="City" className="m-0">
+                                            City
+                                        </label>
+                                    </div>
+                                    <div className="card-body p-0 rounded-bottom">
+                                        <input type="text" className="form-control px-3" name="City" id="City" placeholder="Vancouver" {...register("city")} />
+                                    </div>
                                 </div>
-                                <div className="card-body p-0 rounded-bottom">
-                                    <input type="text" className="form-control px-3" name="City" id="City" placeholder="Vancouver" value={city} onChange={fillCity} />
+                            </div>
+                            <div className="col">
+                                <div className="card border-0 shadow mt-4">
+                                    <div className="card-header border-0 bg-transparent pb-0 pt-2 px-3 rounded-top">
+                                        <label htmlFor="State" className="m-0">
+                                            State
+                                        </label>
+                                    </div>
+                                    <div className="card-body p-0 rounded-bottom d-flex  align-items-center">
+                                        <select name="State" id="State" className="form-control w-100" {...register("state")}>
+                                            <option value="AB">AB</option>
+                                            <option value="BC">BC</option>
+                                            <option value="MB">MB</option>
+                                            <option value="NB">NB</option>
+                                            <option value="NL">NL</option>
+                                            <option value="NT">NT</option>
+                                            <option value="NS">NS</option>
+                                            <option value="NU">NU</option>
+                                            <option value="ON">ON</option>
+                                            <option value="PE">PE</option>
+                                            <option value="QC">QC</option>
+                                            <option value="SK">SK</option>
+                                            <option value="YT">YT</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="col">
-                            <div className="card border-0 shadow mt-4">
-                                <div className="card-header border-0 bg-transparent pb-0 pt-2 px-3 rounded-top">
-                                    <label htmlFor="State" className="m-0">
-                                        State
-                                    </label>
-                                </div>
-                                <div className="card-body py-0 pl-0 pr-3 rounded-bottom d-flex  align-items-center">
-                                    <select name="State" id="State" className="form-control" value={state} onChange={fillState}>
-                                        <option value="AB">AB</option>
-                                        <option value="BC">BC</option>
-                                        <option value="MB">MB</option>
-                                        <option value="NB">NB</option>
-                                        <option value="NL">NL</option>
-                                        <option value="NT">NT</option>
-                                        <option value="NS">NS</option>
-                                        <option value="NU">NU</option>
-                                        <option value="ON">ON</option>
-                                        <option value="PE">PE</option>
-                                        <option value="QC">QC</option>
-                                        <option value="SK">SK</option>
-                                        <option value="YT">YT</option>
-                                    </select>
-                                </div>
+                        <div className="card border-0 shadow mt-4">
+                            <div className="card-header border-0 bg-transparent pb-0 pt-2 px-3 rounded-top">
+                                <label htmlFor="Postal Code" className="m-0">
+                                    Postal Code
+                                </label>
+                            </div>
+                            <div className="card-body p-0 rounded-bottom">
+                                <input type="text" className="form-control px-3" name="Postal Code" id="Postal Code" placeholder="A1B 2C4" {...register("postalCode")} />
                             </div>
                         </div>
-                    </div>
-                    <div className="card border-0 shadow mt-4">
-                        <div className="card-header border-0 bg-transparent pb-0 pt-2 px-3 rounded-top">
-                            <label htmlFor="Postal Code" className="m-0">
-                                Postal Code
-                            </label>
-                        </div>
-                        <div className="card-body p-0 rounded-bottom">
-                            <input type="text" className="form-control px-3" name="Postal Code" id="Postal Code" placeholder="A1B 2C4" value={postalCode} onChange={fillPostalCode} />
-                        </div>
-                    </div>
-                    <div className="mt-4 d-flex justify-content-around">
-                        <div>
-                            <label htmlFor="Years">Year Worked Here</label>
-                            <div className="h2 d-flex align-items-center">
-                                <button type="button" className="d-flex justify-content-center align-items-center flex-column btn p-0 m-0" value="minus" disabled={yearsOfEmployment <= 0} onClick={selectYears}>
-                                    <BsDashCircle className="m-2 w-100 h-100 pe-none" />
-                                </button>
-                                <span className="mx-4">{yearsOfEmployment}</span>
-                                <button type="button" className="d-flex justify-content-center align-items-center flex-column btn p-0 m-0" value="plus" onClick={selectYears}>
-                                    <BsPlusCircle className="m-2 w-100 h-100 pe-none" />
-                                </button>
+                        <div className="mt-4 d-flex justify-content-around">
+                            <div className="d-flex flex-column align-items-center">
+                                <label htmlFor="Years">Year Worked Here</label>
+                                <div className="h2 d-flex justify-content-center">
+                                    {/* <button type="button" className="d-flex justify-content-center align-items-center flex-column btn p-0 m-0" value="minus" disabled={yearsOfEmployment <= 0} onClick={selectYears}>
+                                        <BsDashCircle className="m-2 w-100 h-100 pe-none" />
+                                    </button> */}
+                                    <input type="number" className="mx-4 w-50 text-center" placeholder="0" {...register("yearsOfEmployment")} />
+                                    {/* <button type="button" className="d-flex justify-content-center align-items-center flex-column btn p-0 m-0" value="plus" onClick={selectYears}>
+                                        <BsPlusCircle className="m-2 w-100 h-100 pe-none" />
+                                    </button> */}
+                                </div>
                             </div>
-                        </div>
 
-                        <div>
-                            <label htmlFor="Years">Months Worked Here</label>
-                            <div className="h2 d-flex align-items-center">
-                                <button type="button" className="d-flex justify-content-center align-items-center flex-column btn p-0 m-0" value="minus" disabled={monthsOfEmployment <= 0} onClick={selectMonths}>
-                                    <BsDashCircle className="m-2 w-100 h-100 pe-none" />
-                                </button>
-                                <span className="mx-4">{monthsOfEmployment}</span>
-                                <button type="button" className="d-flex justify-content-center align-items-center flex-column btn p-0 m-0" value="plus" disabled={monthsOfEmployment >= 12} onClick={selectMonths}>
-                                    <BsPlusCircle className="m-2 w-100 h-100 pe-none" />
-                                </button>
+                            <div className="d-flex flex-column align-items-center">
+                                <label htmlFor="Years">Months Worked Here</label>
+                                <div className="h2 d-flex justify-content-center">
+                                    {/* <button type="button" className="d-flex justify-content-center align-items-center flex-column btn p-0 m-0" value="minus" disabled={monthsOfEmployment <= 0} onClick={selectMonths}>
+                                        <BsDashCircle className="m-2 w-100 h-100 pe-none" />
+                                    </button> */}
+                                    {/* <span className="mx-4">{monthsOfEmployment}</span> */}
+                                    <input type="number" className="mx-4 w-50 text-center" placeholder="0" {...register("monthsOfEmployment")} />
+                                    {/* <button type="button" className="d-flex justify-content-center align-items-center flex-column btn p-0 m-0" value="plus" disabled={monthsOfEmployment >= 12} onClick={selectMonths}>
+                                        <BsPlusCircle className="m-2 w-100 h-100 pe-none" />
+                                    </button> */}
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className="mt-auto px-2 pb-4">
-                    <Link href="/verify">
-                        <button disabled={getBtnStatus()} className="btn btn-primary btn-block rounded-lg">
+                    <div className="mt-auto px-2 pb-4">
+                        <button type="submit" className="btn btn-primary btn-block rounded-lg">
                             Confirm
                         </button>
-                    </Link>
-                </div>
+                    </div>
+                </form>
             </div>
         </AppWrapper>
     );

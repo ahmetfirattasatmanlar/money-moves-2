@@ -4,7 +4,7 @@ export default function CreditScoreCard({ click, name = "Good", interestRate = 0
     };
 
     return (
-        <div className={`card d-flex justify-content-center rounded-lg ${active ? "active-card" : ""}`} style={{ width: "calc(33% - .5rem)", cursor: "pointer" }} onClick={sendName}>
+        <div className={`card d-flex justify-content-center rounded-lg ${active ? "active-card" : ""}`} style={{ cursor: "pointer" }} onClick={sendName}>
             <div className="card-body pb-0 w-100 d-flex flex-column align-items-center">
                 <h5 className="card-title h6">{name}</h5>
                 <p className="m-0 card-text">{interestRate}%</p>
